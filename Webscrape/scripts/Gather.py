@@ -5,7 +5,7 @@ import re
 import time
 import concurrent.futures
 from bs4 import BeautifulSoup
-import io
+from io import open
 from selenium.common.exceptions import NoSuchWindowException, NoSuchElementException
 from datetime import datetime
 
@@ -132,6 +132,7 @@ data = t.split("\n")
 #     v = s.find("VARIATIONS")
 #     driver.quit()
 #     return link_t + "~" + s[m + 9:v - 3]
+
 if data[0] != 'No results found':
     filtered = []
     for word in data:
@@ -154,7 +155,7 @@ if data[0] != 'No results found':
         for result in results:
             lines.append(result.__str__())
 
-        with io.open(os.path.join('D:\projects\Pythonnnn\TuluProject\Webscrape\data\outputs','text.txt'), "w", encoding="utf-8") as f:
+        with open(os.path.join('D:\projects\Pythonnnn\TuluProject\Webscrape\data\outputs', 'text.txt'), "w", encoding="utf-8") as f:
             for line in lines:
                 f.write(line)
 
