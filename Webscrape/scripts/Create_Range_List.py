@@ -29,14 +29,20 @@ for line in file:
 #             time.sleep(5)
 
 def check_id(id,index):
-    print(id,index)
+    timeout = 0
+    time.sleep(10)
     r = None
     while r is None:
         try:
-            r = requests.get(('https://tuludictionary.in/dictionary/cgi-bin/web/html/detail.php?search=' + str(id) + '00000000' + str(index)),timeout=10)
+            r = requests.get(('https://tuludictionary.in/dictionary/cgi-bin/web/html/detail.php?search=' + str(id) + '00000000' + str(index)),timeout=5)
         except:
+            timeout += 1
             now = datetime.now()
             print(" Timed Out :", now.strftime("%H:%M:%S"))
+            if timeout == 3:
+                time.sleep(20)
+                print("Strike Out")
+                timeout = 0
             time.sleep(5)
 
     if r.text.find("<b>&nbsp") != -1:
@@ -58,6 +64,7 @@ def find_end(id):
         index -= 1
         end = check_id(id, index)
 
+    print(id, index)
     return index
 
 def thread_p(data):
@@ -74,21 +81,22 @@ def thread_p(data):
         f.flush()
     f.close()
 
-start = 1111
-end = 1131
+# start = 1320
+# end = 1340
 
-while start < len(ids):
-    now = datetime.now()
-    print("start Time =", now.strftime("%H:%M:%S"))
-
-    print(start,end)
-    data = ids[start:end]
-    thread_p(data)
-    start += 20
-    end += 20
-
-    now = datetime.now()
-    print("end Time =", now.strftime("%H:%M:%S"))
-
-data = ids[start-20:]
+# while start < len(ids):
+#     now = datetime.now()
+#     print("start Time =", now.strftime("%H:%M:%S"))
+#
+#     print(start,end)
+#     data = ids[start:end]
+#     thread_p(data)
+#     start += 20
+#     end += 20
+#
+#     now = datetime.now()
+#     print("end Time =", now.strftime("%H:%M:%S"))
+#
+# print(start)
+data = ids[1336:]
 thread_p(data)
