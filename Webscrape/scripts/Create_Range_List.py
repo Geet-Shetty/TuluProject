@@ -29,8 +29,9 @@ for line in file:
 #             time.sleep(5)
 
 def check_id(id,index):
+    print(id, index)
     timeout = 0
-    time.sleep(10)
+    time.sleep(2)
     r = None
     while r is None:
         try:
@@ -64,7 +65,6 @@ def find_end(id):
         index -= 1
         end = check_id(id, index)
 
-    print(id, index)
     return index
 
 def thread_p(data):
