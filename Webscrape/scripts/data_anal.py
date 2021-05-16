@@ -1,56 +1,57 @@
-import time
-from datetime import datetime
-
-import bs4
-import requests
-from requests import ConnectTimeout
-
 ids_n = []
 
 file = open("D:\projects\Pythonnnn\TuluProject\Webscrape\data\ids_ranges.txt", "r")
 for line in file:
     ids_n.append(int(line.split(" : ")[1]))
 
+# 29 2 and ended at 119 23
+
+def count(s_id, s_index, e_id, e_index, data):
+    data = data[s_id:e_id+1]
+    sum = 0
+    for val in data:
+        sum += val
+    sum -= (s_index + data[len(data)-1] - e_index - 1)
+    print(sum)
 
 def mean(data):
     sum = 0
     for num in data:
         sum += num
 
+    print("total:",sum)
     return sum / len(data)
 
 def median(data):
     data = sorted(data)
     return data[len(data)//2]
 
-print(mean(ids_n))
-print(median(ids_n))
+def map_count(num):
+    step = 10
+    remainder = num % step
+    total = (num - remainder)/step
+    if(remainder != 0):
+          total += (step-remainder)
+    return total
 
-def check_id(id,index):
-    r = None
-    while r is None:
-        try:
-            r = requests.get(('https://tuludictionary.in/dictionary/cgi-bin/web/html/detail.php?search=' + str(id) + '00000000' + str(index)),timeout=5)
-        except:
-            now = datetime.now()
-            print(" Timed Out :", now.strftime("%H:%M:%S"))
-            time.sleep(5)
+def find_min_requests(data):
+    sum = 0
+    for max in data:
+        sum += map_count(max)
+    return sum
 
-    if r.text.find("<b>&nbsp") != -1:
-        r.close()
-        return None
-    else:
-        r.close()
-        return id
+# print(find_min_requests(ids_n))
+# print(mean(ids_n))
+# print(median(ids_n))
 
+# count(29,2,119,23,ids_n)
 
-print(check_id(1,280))
+def file_len(fname):
+    c = 0
+    with open(fname,encoding="utf-8") as f:
+        for i, l in enumerate(f):
+            if 'html' in l:
+                c += 1
+    return c
 
-now = datetime.now()
-print("start Time =", now.strftime("%H:%M:%S"))
-time.sleep(5)
-now = datetime.now()
-print("end Time =", now.strftime("%H:%M:%S"))
-
-
-
+print( round((file_len('D:\projects\Pythonnnn\TuluProject\Webscrape\data\data.txt')/68495) * 100,2), '%')

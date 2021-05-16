@@ -27,7 +27,7 @@ def check_id(id):
 with concurrent.futures.ThreadPoolExecutor() as executor:
     results = executor.map(check_id, ids)
 
-    f = open("../data/ids.txt", "w")
+    f = open("../../data/ids.txt", "w")
     for id in results:
         if id is not None:
             f.write(str(id)+'\n')

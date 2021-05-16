@@ -83,7 +83,6 @@ driver.implicitly_wait(3)
 
 driver.switch_to.default_content()
 driver.switch_to.frame('resultside')
-
 t = None # search results list
 while t is None:
     try:
