@@ -54,4 +54,4 @@ def file_len(fname):
                 c += 1
     return c
 
-print( round((file_len('D:\projects\Pythonnnn\TuluProject\Webscrape\data\data.txt')/68495) * 100,2), '%')
+print( round((file_len('D:\projects\Pythonnnn\TuluProject\Webscrape\data\\raw_html_data.txt')/68495) * 100,2), '%')

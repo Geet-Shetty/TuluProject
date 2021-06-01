@@ -67,7 +67,7 @@ def check_init(d,pos,file,index):
 
 d = read_range()
 
-f1 = open('D:/projects/Pythonnnn/TuluProject/Webscrape/data/data.txt','a',encoding="utf-8")
+f1 = open('D:/projects/Pythonnnn/TuluProject/Webscrape/data/raw_html_data.txt','a',encoding="utf-8")
 f2 = open('D:/projects/Pythonnnn/TuluProject/Webscrape/data/pointer.txt','r')
 
 pos = int(f2.readline())
