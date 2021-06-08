@@ -6,7 +6,7 @@ import bs4
 
 ids = []
 
-file = open("/Webscrape/data/ids.txt", "r")
+file = open("/data_creation/data/ids.txt", "r")
 for line in file:
     ids.append(int(line))
 

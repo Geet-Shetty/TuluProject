@@ -7,7 +7,7 @@ requests_counter = 0
 
 def read_range():
     data = []
-    file = open("/Webscrape/data/ids_ranges.txt", "r")
+    file = open("/data_creation/data/ids_ranges.txt", "r")
     for line in file:
         data.append(line)
     return data
@@ -39,11 +39,11 @@ def get(id, index, file):
 
 def save_pointer(val, current_id, file):
     if val is not None:
-        f = open('/Webscrape/data/pointer.txt', 'w')
+        f = open('/data_creation/data/pointer.txt', 'w')
         f.write(str(current_id)+'\n')
         f.write(str(val)+'\n')
         f.close()
-        f1 = open('/Webscrape/data/requests.txt', 'a')
+        f1 = open('/data_creation/data/requests.txt', 'a')
         f1.write(str(requests_counter)+'\n')
         f1.close()
         file.close()
@@ -67,8 +67,8 @@ def check_init(d,pos,file,index):
 
 d = read_range()
 
-f1 = open('/Webscrape/data/raw_html_data.txt', 'a', encoding="utf-8")
-f2 = open('/Webscrape/data/pointer.txt', 'r')
+f1 = open('/data_creation/data/raw_html_data.txt', 'a', encoding="utf-8")
+f2 = open('/data_creation/data/pointer.txt', 'r')
 
 pos = int(f2.readline())
 index = int(f2.readline())

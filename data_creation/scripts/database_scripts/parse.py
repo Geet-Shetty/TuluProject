@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-raw_html_data = open('/Webscrape/data/raw_html_data.txt', 'r', encoding="utf-8")
+raw_html_data = open('/data_creation/data/raw_html_data.txt', 'r', encoding="utf-8")
 
 bold_tag = ['variations (region/caste wise)', 'dialects', 'suffix', 'meanings', 'examples', 'references', 'language references']
 
@@ -49,5 +49,5 @@ def write_to_file(filepath, dictionary):
     file.close()
 
 headers_dict = create_headers_dict(raw_html_data)
-write_to_file("/Webscrape/scripts/headers_data.txt", headers_dict)
+write_to_file("/data_creation/scripts/headers_data.txt", headers_dict)
 

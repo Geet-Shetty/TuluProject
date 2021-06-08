@@ -1,6 +1,6 @@
 ids_n = []
 
-file = open("/Webscrape/data/ids_ranges.txt", "r")
+file = open("/data_creation/data/ids_ranges.txt", "r")
 for line in file:
     ids_n.append(int(line.split(" : ")[1]))
 
