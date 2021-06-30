@@ -8,7 +8,7 @@ All : 8576
 Common Harijan Tribal Jain : 1446
 Northen Dialects : 9279
 Southern dialects : 6277
-Indeclinable participle of ಅನ್  (ụnụ)  : 5
+Indeclinable participle of ಅನ್  (ụnụ)  : 5
 North brahmin Dialect : 3155
 North common harijan tribal jain dialect : 2115
 Interjection : 181
@@ -63,7 +63,7 @@ Dictionary of Rev. Manner : 1325
 Bhagavato.(1.11.8,104) : 0
 Bhagavato.(1.9.4,82) : 10
 Bhagavato.(1.11.45,112) : 9
-Verb causative of 1ಅಳಪು  (ụḷapu)  : 0
+Verb causative of 1ಅಳಪು  (ụḷapu)  : 0
 Bhagavato.(1.17.3,146) : 1
 Bhagavato.(3.23.4,277) : 0
 Bhagavato.(1.12.16,118) : 5
@@ -145,13 +145,13 @@ Bhagavato.(1.6.45,62) : 6
 Bhagavato.(2.3.31,204) : 0
 Bhagavato.(2.5.23,217) : 2
 Bhagavato.(3.13.6,312) : 8
-Verb causative of ಅಗಪು  (agapu)  : 1
+Verb causative of ಅಗಪು  (agapu)  : 1
 Bhagavato.(2.4.16,208) : 1
 Bhagavato.(3.17.11,342) : 14
 Bhagavato.(3.13.46,319) : 5
 Srii Bhagavato (Ed. Venktataraja Puninchattaya), Noun : 16
 Bhagavato.(1.5.28,47) : 7
-Verb active of 2ಅಗೆಲ್  (agelụ)  : 1
+Verb active of 2ಅಗೆಲ್  (agelụ)  : 1
 Bhagavato.(2.2.4,192) : 0
 Figurative, Momen propium (proper noun) : 15
 South harijan tribal dialects : 972
@@ -182,7 +182,7 @@ Bhagavato.(1.14.14,135) : 0
 Bhagavato.(1.3.22,26) : 13
 Bhagavato.(1.10.16,95) : 5
 Bhagavato.(1.9.10,85) : 1
-Verb causative of ಅಡೆಂಗ್  (aḍeṅgụ)  : 1
+Verb causative of ಅಡೆಂಗ್  (aḍeṅgụ)  : 1
 Bhagavato.(3.23.19,380) : 0
 Bhagavato.(3.3.6,247) : 3
 Bhagavato.(1.9.17,85) : 2
@@ -196,7 +196,7 @@ Bhagavato.(1.16.11,148) : 1
 Bhagavato.(1.17.29,160) : 1
 Verb reflexive : 81
 Bhagavato.(3.1.5,227) : 5
-Verb causative of ಅಡೆಯೊಳ್  (aḍeyoḷụ)  : 0
+Verb causative of ಅಡೆಯೊಳ್  (aḍeyoḷụ)  : 0
 Belief : 35
 MR.(1) : 27
 Adjective, Combination/combined : 0
@@ -210,7 +210,7 @@ Bhagavato.(2.1.33,198) : 1
 Bhagavato.(1.8.17,75) : 14
 Bhagavato.(1.5.11,43) : 4
 Bible : 30
-Verb causative of 1ಅಣೆ  (aṇe)  : 0
+Verb causative of 1ಅಣೆ  (aṇe)  : 0
 Bhagavato.(1.17.35,152) : 0
 Noun, Rare occurance, Vocative : 0
 Tulu English Dictionary (Ed. by Prof. M. Mariappa Bhat and Dr. A Shanker Kedilaya), Verb active : 1
@@ -272,7 +272,7 @@ Bhagavato. (3.16.34, 337.) : 1
 Bhagavato.(3.17.30,345) : 2
 Bhagavato.(3.18.8,348) : 7
 Bhagavato.(3.22.4.370) : 1
-Noun, Vocative of 1ಅಪ್ಪೆ  (appe)  : 1
+Noun, Vocative of 1ಅಪ್ಪೆ  (appe)  : 1
 Bhagavato.(3.13.26,316) : 2
 Bhagavato.(3.3.85,250) : 0
 Bhagavato.(3.18.26,351) : 14
@@ -289,7 +289,7 @@ Bhagavato.(3.7.4,270) : 1
 Bhagavato.(3.14.31,325) : 2
 Bhagavato.(2.4.33,211) : 0
 Adverb, Onomatopoeic : 0
-Interjection, Plural of 2ಅಬ  (aba)  : 1
+Interjection, Plural of 2ಅಬ  (aba)  : 1
 Bhagavato.(1.7.6,65) : 3
 Bhagavato.(3.4.18,256) : 2
 Bhagavato.(3.17.36,346) : 0
@@ -315,12 +315,12 @@ Bhagavato.(1.9.48,92) : 7
 Bhagavato.(1.17.41,163) : 0
 Bhagavato.(3.22.26,374) : 3
 Bhagavato.(3.4.1,253) : 1
-Noun, Vocative of 2ಅಮ್ಮೆ  (amme)  : 1
+Noun, Vocative of 2ಅಮ್ಮೆ  (amme)  : 1
 Noun, Momen propium (proper noun), Vocative : 4
-  of ಅಮ್ಮೆರ್  (ammerụ)  : 0
+  of ಅಮ್ಮೆರ್  (ammerụ)  : 0
 Vocative : 4
 Bhagavato.(1.10.8,94) : 4
-Pronoun of 1ಅವು  (avu)  : 1
+Pronoun of 1ಅವು  (avu)  : 1
 MR.(125) : 7
 Bhagavato.(3.22.33,375) : 4
 Bhagavato.(1.1.3,2) : 9
@@ -338,8 +338,8 @@ Bhagavato.(1,7,33,70) : 0
 Tulu English Dictionary (Ed. by Prof. M. Mariappa Bhat and Dr. A Shanker Kedilaya) : 52
 Bhagavato.(3.1.30,232) : 5
 Bhagavato.(1.7.19,67) : 5
-10 of 2ಅರಪು  (arapu)  : 1
-Verb causative of 2ಅರಪು  (arapu)  : 1
+10 of 2ಅರಪು  (arapu)  : 1
+Verb causative of 2ಅರಪು  (arapu)  : 1
 Bhagavato.(1.2.36,19) : 12
 Bhagavato.(1.18.21,170) : 1
 Bhagavato.(1.6.27,58) : 16
@@ -347,7 +347,7 @@ Bhagavato.(1.6.35,60) : 1
 Baby Talk & Song : 0
 Bhagavato.(1.9.24,86) : 7
 Bhagavato.(3.1.20,230) : 9
-Verb causative of 2ಅರಿಪು  (aripu)  : 3
+Verb causative of 2ಅರಿಪು  (aripu)  : 3
 MG. : 99
 Abusive, Noun : 10
 Bhagavato.(1.8.15.75) : 0
@@ -356,12 +356,12 @@ Bhagavato.(3.21.7,364) : 4
 Bhagavato.(1.10.46,101) : 2
 Bhagavato.(3.23.20,380) : 7
 Bhagavato.(2.5.43,221) : 2
-Verb causative of 1ಅರೆಂಜ್  (areñjụ)  : 0
+Verb causative of 1ಅರೆಂಜ್  (areñjụ)  : 0
 Bhagavato.(3.13.5,312) : 16
-Verb causative of 1ಅರೆಪು  (arepu)  : 1
+Verb causative of 1ಅರೆಪು  (arepu)  : 1
 Bhagavato.(1.14.3,132) : 1
 Bhagavato.(1.13.23,129) : 3
-Verb causative of 3ಅರ್ಕ್  (arkụ)  : 0
+Verb causative of 3ಅರ್ಕ್  (arkụ)  : 0
 Bhagavato.(3.19.7,354) : 5
 Bhagavato.(1.5.25,46) : 0
 Bhagavato.(1.10.5,93) : 23
@@ -379,19 +379,19 @@ Bhagavato.(3.7.2,270) : 0
 Bhagavato.(3.23.15,379) : 15
 Adjective, Figurative, Verb neuter : 1
 MR.(14) : 3
-Verb causative of 1ಅರಲ್  (aralụ)  : 2
-Verb causative of ಅರ್ಲ್  (arlụ)  : 0
+Verb causative of 1ಅರಲ್  (aralụ)  : 2
+Verb causative of ಅರ್ಲ್  (arlụ)  : 0
 Bhagavato.(1.6.12,55) : 2
 Bhagavato.(3.20.4,359) : 1
 Bhagavato.(1.17.43,154) : 0
 GM.(18.17.62) : 0
 Tulu Vyaakarana (by S. U. Paniyadi) : 10
 Kissanwar Glossary of Kannada words (by Ullal Narasinga Rao) : 10
-Verb causative of ಅಲೆಜ್  (alejụ)  : 1
-Verb causative of 2ಅಲೆಪು  (alepu)  : 0
-Verb causative of 3ಅಲೆ  (ale)  : 1
+Verb causative of ಅಲೆಜ್  (alejụ)  : 1
+Verb causative of 2ಅಲೆಪು  (alepu)  : 0
+Verb causative of 3ಅಲೆ  (ale)  : 1
 Kv.(9.6,41) : 0
-Verb causative of 1ಅಲ್ಗ್  (algụ)  : 0
+Verb causative of 1ಅಲ್ಗ್  (algụ)  : 0
 Kv.(6.129,18) : 4
 Bhagavato.(1.3.11,24) : 0
 Bhagavato.(3.13.8,313) : 13
@@ -404,7 +404,7 @@ Bhagavato.(1.9.8,82) : 3
 Kv.(8.46,34) : 0
 Kv.(8.52,34) : 0
 Bhagavato.(3.19.9,355) : 2
-Verb reflexive of ಅವತರಿಪು  (avataripu)  : 0
+Verb reflexive of ಅವತರಿಪು  (avataripu)  : 0
 Bhagavato.(1.2.16,14) : 20
 Noun, Paaddana, Tulu folk literature : 7
 Bhagavato.(1.2.21.15) : 5
@@ -420,7 +420,7 @@ Bhagavato.(3.9.8,282) : 5
 Bhagavato.(2.3.5,199) : 4
 Bhagavato.(3.4.34,211) : 0
 Bhagavato.(1.12.48,124) : 0
-Verb causative of ಅವಸಾನಿಪು  (avasaanipu)  : 0
+Verb causative of ಅವಸಾನಿಪು  (avasaanipu)  : 0
 Bhagavato.(3.16.51,339) : 0
 Bhagavato.(3.19.3,354) : 4
 Bhagavato.(1.17.8,156) : 5
@@ -433,10 +433,10 @@ Bhagavato.(1.5.15,44) : 12
 Kv.(8.83,38) : 5
 Emphatic : 0
 Kv.(8.64,36) : 1
-Oblique of 2ಅವು  (avu)  : 1
+Oblique of 2ಅವು  (avu)  : 1
 Accusive : 0
 Bhagavato.(3.12.32,307) : 0
-Oblique of 1ಅವು  (avu)  : 0
+Oblique of 1ಅವು  (avu)  : 0
 Bhagavato.(2.5.37,220) : 4
 Bhagavato.(3.24.37,388) : 4
 Bhagavato.(1.5.32,48) : 2
@@ -485,7 +485,7 @@ Pancavati Raamaayana Vaali Sugreevera Kaalago (by Sankayya Bhagavatha; Ed. T. Ke
 Bhagavato.(1.3.34,29) : 7
 Bhagavato.(3.10.8,289) : 0
 Bhagavato.(3.22.32,375) : 8
-Verb causative of ಅಳೆಂಚ್  (aḷeñcụ)  : 2
+Verb causative of ಅಳೆಂಚ್  (aḷeñcụ)  : 2
 Bhagavato.(1.11.39,111) : 3
 MR.(7) : 34
 Bhagavato.(1.5.23,46) : 9
@@ -508,14 +508,14 @@ Adverb, Figurative : 7
 Bhagavato.(1.19,23,179) : 1
 Bhagavato.(1.10.34,99) : 4
 Bhagavato.(1.2.30,18) : 3
-Adjective, Participle, Present tense of 2ಆ  (aa)  : 0
+Adjective, Participle, Present tense of 2ಆ  (aa)  : 0
 Bhagavato.(1.1.24,8) : 17
 Kv.(8.22,31) : 4
 Bhagavato.(1.2.31,18) : 8
 Bhagavato.(3.6.16,266) : 3
 Kv.(8.81,38) : 1
-Verb causative of 2ಆ  (aa)  : 2
-Verb causative of ಆಗ್ಮಳ್ಪು  (aagụmaḷpu)  : 0
+Verb causative of 2ಆ  (aa)  : 2
+Verb causative of ಆಗ್ಮಳ್ಪು  (aagụmaḷpu)  : 0
 GT.(16) : 4
 Bhagavato.(1.8.1,71) : 3
 Bhagavato.(1.19.20,178) : 5
@@ -526,7 +526,7 @@ Bhagavato.(3.8.19,278) : 4
 Bhagavato.(1.17.7,155) : 4
 GT.(2.7,12) : 1
 Numerical, Ordinal numeral : 3
-Verb causative of ಆಜ್  (aajụ)  : 1
+Verb causative of ಆಜ್  (aajụ)  : 1
 Bhagavato.(1.2.35,19) : 5
 Bhagavato.(3.2.56,243) : 5
 Bhagavato.(1.6.49,63) : 4
@@ -534,11 +534,11 @@ MR.(9) : 17
 Adverb, Numerical : 0
 Bhagavato.(2.4.3,205) : 5
 Bhagavato.(3.24.4,382) : 0
-Verb causative of ಆಟ್  (aaṭụ)  : 1
+Verb causative of ಆಟ್  (aaṭụ)  : 1
 Folksong : 122
 Bhagavato.(3.15.16,329) : 1
 Bhagavato.(3.2.32,239) : 1
-Verb causative of 1ಆಡ್  (aaḍụ)  : 1
+Verb causative of 1ಆಡ್  (aaḍụ)  : 1
 Bhagavato.(3.19.14,356) : 4
 Bhagavato.(1.1.22,7) : 9
 Bhagavato.(3.6.20,267) : 2
@@ -603,7 +603,7 @@ Bhagavato.(1.17.47,164) : 2
 Bhagavato.(26.19,226) : 0
 Bhagavato.(3.4.16,256) : 0
 Bhagavato.(1.16.11,143) : 0
-Verb causative of ಆನಂದಿಪು  (aanandipu)  : 0
+Verb causative of ಆನಂದಿಪು  (aanandipu)  : 0
 Bhagavato.(1.10.41,100) : 2
 Bhagavato.(3.1.40,234) : 1
 GM.(1.13,2) : 0
@@ -614,8 +614,8 @@ Giite Mallige (by Mulki Narasimga Rao) : 11
 GM.(4.7,16) : 1
 Bhagavato.(1.1.5.2) : 0
 Participle, Present tense : 1
-Participle, Present tense of 2ಆ  (aa)  : 3
-Indeclinable participle of 2ಆ  (aa)  : 1
+Participle, Present tense of 2ಆ  (aa)  : 3
+Indeclinable participle of 2ಆ  (aa)  : 1
 Bhagavato.(1.7.23,68) : 6
 Bhagavato.(2.5.13,215) : 0
 Bhagavato.(1.12.2,115) : 0
@@ -633,7 +633,7 @@ aaye : 0
 Bhagavato.(3.20.19,359) : 0
 Bhagavato.(3.22.11,371) : 6
 Bhagavato.(2.6.8,224) : 8
-Adjective, Past participle of 2ಆ  (aa)  : 4
+Adjective, Past participle of 2ಆ  (aa)  : 4
 Bhagavato.(1.1.1,1) : 13
 Bhagavato.(3.2.20,304) : 0
 Bhagavato.(3.15.21,330) : 2
@@ -646,9 +646,9 @@ Bhagavato.(1.4.2,30) : 8
 Bhagavato.(1.17.23,159) : 3
 Bhagavato.(1.1.20,96) : 2
 Bhagavato.(2.6.20,6) : 1
-Verb reflexive of ಆರಾಧಿಪು  (aaraadhipu)  : 0
-Verb causative of ಆರಾಧಿಪು  (aaraadhipu)  : 0
-Verb reflexive of ಆರಾಧಿಪ  (aaraadhipa)  : 0
+Verb reflexive of ಆರಾಧಿಪು  (aaraadhipu)  : 0
+Verb causative of ಆರಾಧಿಪು  (aaraadhipu)  : 0
+Verb reflexive of ಆರಾಧಿಪ  (aaraadhipa)  : 0
 Bhagavato.(3.10,26,292) : 0
 Bhagavato.(1.2.38,20) : 15
 Bhagavato.(1.14.18,136) : 0
@@ -672,7 +672,7 @@ Bhagavato.(1.12.29,121) : 16
 Bhagavato.(1.2.39,20) : 8
 Bhagavato.(1.1.4,2) : 5
 Subjunctive, Verb neuter : 3
-Permissive, Verb neuter of 2ಆ  (aa)  : 1
+Permissive, Verb neuter of 2ಆ  (aa)  : 1
 Bhagavato.(1.19.19,178) : 4
 Bhagavato.(1.12.46,124) : 4
 AS.(32) : 1
@@ -696,13 +696,13 @@ Bhagavato.(3.4.3,254) : 0
 Bhagavato.(2.6.9,224) : 0
 Bhagavato.(1.1.26,8) : 5
 Bhagavato.(1.10.35,9) : 0
-Verb reflexive of ಆಶ್ಲೈಪು  (aaślaipu)  : 0
+Verb reflexive of ಆಶ್ಲೈಪು  (aaślaipu)  : 0
 Bhagavato.(2.1.4,184) : 1
 Bhagavato.(1.9.41,90) : 4
 GM.(9.9,33) : 0
 Dictionary of Rev. Manner, Figurative, Noun : 0
 GM.(16.20,58) : 0
-Past participle of 2ಆ  (aa)  : 0
+Past participle of 2ಆ  (aa)  : 0
 Bhagavato.(1.3.10,23) : 7
 Bhagavato.(1.11.22,107) : 5
 Bhagavato.(1.10.31,98) : 2
@@ -715,7 +715,7 @@ Kv.(7.61,26) : 10
 Bhagavato.(3.23.12,379) : 4
 Bhagavato.(3.13.20,316) : 0
 Bhagavato.(2.15.18,216) : 1
-Verb causative of 2ಇಂಗ್  (iṅgụ)  : 1
+Verb causative of 2ಇಂಗ್  (iṅgụ)  : 1
 song : 30
 Bhagavato.(1.3.17,25) : 4
 TK. : 2
@@ -732,10 +732,10 @@ Bhagavato.(3.22.35,375) : 2
 Bhagavato.(3.18.5,347) : 2
 Bhagavato.(1.8.23,77) : 1
 Bhagavato.(1.3.27,28) : 2
-Verb reflexive of ಇಜಿ  (iji)  : 0
+Verb reflexive of ಇಜಿ  (iji)  : 0
 Bhagavato.(3.23.5,377) : 7
 Bhagavato.(1.10.17,95) : 5
-Verb causative of ಇಡ್  (iḍụ)  : 1
+Verb causative of ಇಡ್  (iḍụ)  : 1
 Bhagavato.(1.19.25,179) : 5
 Bhagavato.(3.13.34,317) : 4
 Bhagavato.(1.4.14,33) : 1
@@ -754,8 +754,8 @@ Bhagavato.(3.3.11,248) : 6
 Bhagavato.(1.7.30,70) : 4
 GM.(3) : 4
 MR.(16) : 12
-Verb causative of 2ಇರ್ಕ್  (irkụ)  : 0
-Verb causative of 3ಇರ್ಕ್  (irkụ)  : 0
+Verb causative of 2ಇರ್ಕ್  (irkụ)  : 0
+Verb causative of 3ಇರ್ಕ್  (irkụ)  : 0
 Bhagavato.(3.16.30,336) : 1
 South brahmin dialect, South common harijan tribal jain dialects, Numerical : 0
 MR.(18) : 3
@@ -798,7 +798,7 @@ Bhagavato.(1.9.15,84) : 1
 Bhagavato.(1.11.1,102) : 7
 MR.(10) : 16
 Bhagavato.(2.4.36,211) : 4
-Verb causative of ಉಂಡಾಕ್  (uṇḍaakụ)  : 0
+Verb causative of ಉಂಡಾಕ್  (uṇḍaakụ)  : 0
 Bhagavato.(2.4.22,209) : 0
 Bhagavato.(3.10.11.289) : 0
 PV.(7) : 7
@@ -838,8 +838,8 @@ Bhagavato.(1.17.37,162) : 1
 Srii Bhagavato (Ed. Venktataraja Puninchattaya), Verb active : 9
 Bhagavato.(2.5.20,216) : 4
 Kv.(9.76,50) : 8
-10 of 1ಉಣ್ಂಗ್  (uṇụṅgụ)  : 4
-Verb causative of 1ಉಣ್ಂಗ್  (uṇụṅgụ)  : 4
+10 of 1ಉಣ್ಂಗ್  (uṇụṅgụ)  : 4
+Verb causative of 1ಉಣ್ಂಗ್  (uṇụṅgụ)  : 4
 Common Harijan Tribal, Figurative, Noun : 15
 Bhagavato.(1.14.19,136) : 6
 South common harijan tribal jain dialects, Noun : 10
@@ -883,7 +883,7 @@ Bhagavato.(3.12.36,307) : 5
 Bhagavato.(3.12.46,309) : 6
 Formal Northern Dialects : 9
 Kl.(48) : 1
-Verb causative of 1ಉದಿಪು  (udipu)  : 3
+Verb causative of 1ಉದಿಪು  (udipu)  : 3
 Bhagavato.(2.5.7,214) : 8
 Bhagavato.(1.3.29,28) : 9
 Bhagavato.(1.9.31,88) : 0
@@ -941,7 +941,7 @@ Bhagavato.(2.4.27,210) : 2
 Bhagavato.(1.9.19,85) : 0
 MR.(69) : 8
 MR.(32) : 0
-Verb causative of 1ಉರಿಪ್ಪು  (urippu)  : 0
+Verb causative of 1ಉರಿಪ್ಪು  (urippu)  : 0
 Bhagavato.(1.9.25,87) : 6
 MR.(87-88,8) : 3
 Bhagavato.(3.14.28,325) : 40
@@ -964,7 +964,7 @@ Gd.(8) : 0
 MG. (25) : 4
 Northen Dialects, Adjective, Figurative : 6
 Adjective, Figurative : 52
-Verb causative of ಉರ್ಡ್  (urḍụ)  : 0
+Verb causative of ಉರ್ಡ್  (urḍụ)  : 0
 Bhagavato.(2.5.44,221) : 0
 Kl.(21) : 3
 Bhagavato.(1.7.31,70) : 9
@@ -988,7 +988,7 @@ Bhagavato.(1.10.36,99) : 14
 MR.(15) : 13
 MR.(73) : 8
 MR.(375) : 11
-Verb reflexive of ಉಸ್  (usụ)  : 0
+Verb reflexive of ಉಸ್  (usụ)  : 0
 MR.(417) : 9
 MR.(393) : 6
 Bhagavato.(1.7.20,67) : 7
@@ -1003,11 +1003,11 @@ Bhagavato.(3.14.1,320) : 3
  Kl.(225,40) : 0
 Kalevala (Tr. Amrta Someshwara) : 27
 Kv.(8.16,30) : 1
-Verb causative of 2ಊದ್  (uudụ)  : 1
+Verb causative of 2ಊದ್  (uudụ)  : 1
 Bhagavato.(3.8.30,280) : 2
 MR.(62) : 2
-  of 1ಊರ್  (uurụ)  : 0
-Verb causative of 1ಊರ್  (uurụ)  : 0
+  of 1ಊರ್  (uurụ)  : 0
+Verb causative of 1ಊರ್  (uurụ)  : 0
 AS.(48) : 0
 Bhagavato.(3.13.49,320) : 6
 Bhagavato.(3.1.18,230) : 3
@@ -1015,8 +1015,8 @@ Bhagavato.(2.2.17,195) : 0
 Bhagavato.(1.2.28,17) : 4
 MR.(54) : 5
  prv : 1
-Verb causative of 2ಊಸು  (uusu)  : 1
-Figurative, Derogatory, Verb causative of 2ಊಸು  (uusu)  : 1
+Verb causative of 2ಊಸು  (uusu)  : 1
+Figurative, Derogatory, Verb causative of 2ಊಸು  (uusu)  : 1
 PV.(40) : 16
 Bhagavato.(3.11.9,297) : 0
 Bhagavato.(1.1.29,9) : 22
@@ -1038,12 +1038,12 @@ MR.(14-15) : 0
 MR.(256) : 6
 MR.(313) : 4
 MR.(353) : 2
-Verb causative of 2ಎಕ್ಕ್  (ekkụ)  : 1
+Verb causative of 2ಎಕ್ಕ್  (ekkụ)  : 1
 PV.(38) : 4
 Bhagavato.(1.5.16,44) : 4
 Bhagavato.(1.1.19,6) : 6
 Bhagavato.(1.8.20.76) : 0
-Verb causative of 1ಎಟ್ಟ್  (eṭṭụ)  : 0
+Verb causative of 1ಎಟ್ಟ್  (eṭṭụ)  : 0
 Bhagavato.(1.3.25,27) : 5
 PV.(35) : 15
 Bhagavato.(3.14.3,321) : 1
@@ -1065,11 +1065,11 @@ Bhagavato.(3.7.28,274) : 7
 Bhagavato.(1.3.15,25) : 5
 Bhagavato.(1.7.25,69) : 0
 Bhagavato.(3.9.37,287) : 1
-Verb causative of 2ಎತ್ತ್  (ettụ)  : 1
-Figurative, Verb causative of 2ಎತ್ತ್  (ettụ)  : 1
+Verb causative of 2ಎತ್ತ್  (ettụ)  : 1
+Figurative, Verb causative of 2ಎತ್ತ್  (ettụ)  : 1
 MR.(322) : 5
 MR.(95) : 5
-Verb causative of 5ಎತ್ತ್  (ettụ)  : 0
+Verb causative of 5ಎತ್ತ್  (ettụ)  : 0
 Bhagavato.(1.6.24,57) : 3
 Kv.(7.63,27) : 6
 MR.(378) : 4
@@ -1098,7 +1098,7 @@ Bhagavato.(1.2.22,16) : 3
 Bhagavato.(1.10.12,94) : 4
 MR.(56) : 6
 Bhagavato.(Footnote,Pp.13) : 0
-Verb causative of 3ಎರಗ್  (eragụ)  : 1
+Verb causative of 3ಎರಗ್  (eragụ)  : 1
 Kv.(9.13,42) : 1
 GT.(2.8,12) : 1
 MR.(12) : 11
@@ -1109,7 +1109,7 @@ Kv.(9.1,41) : 1
 Harijan Tribal, Noun : 16
 MR.(3) : 7
 Kl.(55,10) : 0
-Verb causative of 2ಎರ್ಕ್  (erkụ)  : 1
+Verb causative of 2ಎರ್ಕ್  (erkụ)  : 1
 Northen Dialects, Figurative, Noun : 62
 Bhagavato.(3.11.25,300) : 0
 MR.(291) : 4
@@ -1135,7 +1135,7 @@ Bhagavato.(3.6.28,268) : 4
 Kv.(9.102,53) : 0
 Bhagavato.(1.18.4,166) : 4
 Bhagavato.(3.2.5,235) : 2
-Verb reflexive of 1ಎೞ್  (eḻụ)  : 0
+Verb reflexive of 1ಎೞ್  (eḻụ)  : 0
 Bhagavato.(1.10.30,98) : 9
 Bhagavato.(1.1.10,4) : 14
 Kv.(7.13,20) : 3
@@ -1186,7 +1186,7 @@ MR.(80) : 2
 Adjective, Figurative, Noun : 3
 Kv.(8.8,29) : 0
 Bhagavato.(1.7.11,66) : 4
-Verb causative of 2ಏರ್  (eerụ)  : 1
+Verb causative of 2ಏರ್  (eerụ)  : 1
 Bhagavato.(3.17.18,344) : 5
 Bhagavato.(1.4.29,37) : 3
 Common Harijan Tribal Jain, Noun : 2
@@ -1213,7 +1213,7 @@ Bhagavato.(1.8.13,74) : 1
 PV.(10) : 4
 MR.(345) : 2
 Kv.(8.72,37) : 0
-Verb causative of ಒಂದ್  (ondụ)  : 1
+Verb causative of ಒಂದ್  (ondụ)  : 1
 Bhagavato.(1.8.40,80) : 5
 Bhagavato.(3.5.9,260) : 4
 MR.(51) : 3
@@ -1224,7 +1224,7 @@ Noun, Plural : 26
 Pronoun (exclsive) : 0
 MR.(351) : 2
 Bhagavato.(3.16.32,336) : 0
-Verb causative of 1ಒಚ್ಚ್  (occụ)  : 0
+Verb causative of 1ಒಚ್ಚ್  (occụ)  : 0
 MR.(352) : 4
 MR.(186) : 2
 MR.(46) : 1
@@ -1239,7 +1239,7 @@ Bhagavato.(2.5.10,215) : 14
 Bhagavato.(2.2.34,198) : 1
 MG.(9) : 0
 MR.(333) : 5
-Verb causative of 1ಒಡ್ಡು  (oḍḍu)  : 2
+Verb causative of 1ಒಡ್ಡು  (oḍḍu)  : 2
 Bhagavato.(3.22.19,373) : 11
 MR.(376) : 4
 MR.(25) : 4
@@ -1251,7 +1251,7 @@ AS.(59) : 1
 Bhagavato.(1.5.2,41) : 0
 Bhagavato.(3.4.30,258) : 0
 AS.(5) : 5
-Verb causative of 1ಒತ್ತು  (ottu)  : 1
+Verb causative of 1ಒತ್ತು  (ottu)  : 1
 Bhagavato.(3.16.33,336) : 0
 Kv.(7.71,28) : 1
 Bhagavato.(2.4.18,208) : 1
@@ -1286,7 +1286,7 @@ MR.(187) : 5
 Bhagavato.(2.6.17,226) : 3
 Bhagavato.(1.4.13,33) : 2
 Kv.(9.88,51) : 8
-Verb causative of 1ಒರಗ್  (oragụ)  : 2
+Verb causative of 1ಒರಗ್  (oragụ)  : 2
 MR.(258) : 3
 MR.(392) : 1
 MG.(14) : 3
@@ -1295,7 +1295,7 @@ MR.(312) : 3
 Kv.(9.42,46) : 0
 Bhagavato.(1.9.10,83) : 8
 Bhagavato.(3.20.20,361) : 4
-Verb causative of ಒರಿಪು  (oripu)  : 3
+Verb causative of ಒರಿಪು  (oripu)  : 3
 MR.(300) : 3
 Bhagavato.(3.3.26,250) : 5
 Bhagavato.(1.10.23,97) : 1
@@ -1304,7 +1304,7 @@ MR.(61) : 6
 MR.(67) : 12
 Bhagavato.(3.14.13,322) : 7
 Bhagavato.(3.3.7,247) : 0
-Verb causative of ಒರ್ದ್  (ordụ)  : 1
+Verb causative of ಒರ್ದ್  (ordụ)  : 1
 Bhagavato.(3.10.30,292) : 0
 MR.(26) : 3
 Kv.(8.55,35) : 0
@@ -1340,7 +1340,7 @@ Bhagavato.(3.5.26,263) : 2
 Kv.(8.49,34) : 2
 Kv.(7.24,22) : 3
 Bhagavato.(1.12.15,117) : 2
-Verb causative of ಒೞ್  (ozụ)  : 0
+Verb causative of ಒೞ್  (ozụ)  : 0
 Bhagavato.(3.24.39,389) : 1
 MR.(130) : 3
 Bhagavato.(1.5.13,261) : 0
@@ -1364,7 +1364,7 @@ Bhagavato.(1.14.42,140) : 5
 Kv.(10.41,55) : 6
 Bhagavato.(3.11.22,299) : 0
 PV.(5) : 10
-Verb causative of 1ಓದ್  (oodụ)  : 1
+Verb causative of 1ಓದ್  (oodụ)  : 1
 MR.(339) : 6
 MR.(295) : 5
 MR.(297) : 2
@@ -1410,10 +1410,10 @@ Bhagavato.(3.15.22,330) : 0
 Kv.(7.3,19) : 3
 MR.(28) : 6
 MR.(349) : 6
-Verb causative of ಕಂಟಿಯು  (kaṇṭiyu)  : 1
+Verb causative of ಕಂಟಿಯು  (kaṇṭiyu)  : 1
 Bhagavato.(1.10.18,96) : 24
 MR.(109) : 0
-Verb reflexive of ಕಂಟಿಯು  (kaṇṭiyu)  : 3
+Verb reflexive of ಕಂಟಿಯು  (kaṇṭiyu)  : 3
 MR.(31) : 5
 Bhagavato.(1.13.38,132) : 2
 MR.(273) : 1
@@ -1422,7 +1422,7 @@ Dictionary of Rev. Manner, Adjective, Adverb : 1
 MR.(47) : 2
 Bhagavato.(3.8.9,276) : 2
 Bhagavato.(1.2.7,12) : 5
-Verb causative of 2ಕಂತ್   (kantụ)  : 0
+Verb causative of 2ಕಂತ್   (kantụ)  : 0
 Bhagavato.(1.12.34,121) : 0
 Bhagavato.(3.12.23,305) : 6
 Bhagavato.(1.4.33,38) : 3
@@ -1433,9 +1433,9 @@ Bhagavato.(1.8.14,74) : 2
 Bhagavato.(1.13.14,127) : 6
 Bhagavato.(3.3.28,51) : 0
 Kv.(9.76.50) : 2
-Verb causative of 1ಕಕ್ಕ್  (kakkụ)  : 1
+Verb causative of 1ಕಕ್ಕ್  (kakkụ)  : 1
 Bhagavato.(3.13.32,317) : 6
-Verb causative of ಕಚ್ಚ್  (kaccụ)  : 0
+Verb causative of ಕಚ್ಚ್  (kaccụ)  : 0
 Northen Dialects, Figurative : 8
 Kv.(10.32,54) : 7
 Bhagavato.(3.1.8,228) : 0
@@ -1459,19 +1459,19 @@ GT.(32) : 0
 PV.(12)  : 0
 GT.(15) : 0
 Bhagavato.(3.6.22,267) : 5
-Verb causative of 1ಕಟ್ಟ್  (kaṭṭụ)  : 1
-Verb causative of 2ಕಟ್ಟ್  (kaṭṭụ)  : 0
-Verb causative of 3ಕಟ್ಟ್  (kaṭṭụ)  : 0
-Verb causative of 6ಕಟ್ಟ್  (kaṭṭụ)  : 0
-Verb causative of 8ಕಟ್ಟ್  (kaṭṭụ)  : 0
-Verb causative of 9ಕಟ್ಟ್  (kaṭṭụ)  : 0
+Verb causative of 1ಕಟ್ಟ್  (kaṭṭụ)  : 1
+Verb causative of 2ಕಟ್ಟ್  (kaṭṭụ)  : 0
+Verb causative of 3ಕಟ್ಟ್  (kaṭṭụ)  : 0
+Verb causative of 6ಕಟ್ಟ್  (kaṭṭụ)  : 0
+Verb causative of 8ಕಟ್ಟ್  (kaṭṭụ)  : 0
+Verb causative of 9ಕಟ್ಟ್  (kaṭṭụ)  : 0
 Bhagavato.(1.9.34,89) : 1
 North brahmin Dialect, Noun : 34
-Verb reflexive of 2ಕಟ್ಟ್  (kaṭṭụ)  : 0
+Verb reflexive of 2ಕಟ್ಟ್  (kaṭṭụ)  : 0
 Bhagavato.(1.11.15,105) : 4
 South East Common : 6
 AS.(24) : 0
-Verb causative of 1ಕಡಪ್ಪು  (kaḍappu)  : 3
+Verb causative of 1ಕಡಪ್ಪು  (kaḍappu)  : 3
 Kv.(3.3,28) : 3
 MR.(24) : 0
 Bhagavato.(1.2.40,20) : 1
@@ -1649,7 +1649,7 @@ Kv.(7.43,24) : 2
 Kv.(7.53,25) : 5
 Bhagavato.(3.11.17,298) : 7
 MR.(309) : 2
-Verb causative of 1ಕಲೆಂಕ್  (kaleṅkụ)  : 4
+Verb causative of 1ಕಲೆಂಕ್  (kaleṅkụ)  : 4
 MR.(379) : 3
 Bhagavato.(2.5.33,219) : 2
 Bhagavato.(1.2.29,18) : 4
@@ -1661,8 +1661,8 @@ MR.(405) : 0
 Bhagavato.(3.10.15,290) : 0
 Bhagavato.(1.2.19,15) : 1
 Bhagavato.(3.19.20,357) : 0
-Verb causative of ಕಲ್ಪು   (kalpu)  : 3
-Figurative, Verb causative of ಕಲ್ಪು   (kalpu)  : 3
+Verb causative of ಕಲ್ಪು   (kalpu)  : 3
+Figurative, Verb causative of ಕಲ್ಪು   (kalpu)  : 3
 Bhagavato.(1.2.19,150) : 0
 Bhagavato.(3.10.27,292) : 0
 Bhagavato.(1.9.49,92) : 5
@@ -1680,8 +1680,8 @@ Bhagavato.(3.10.13,290) : 15
 Bhagavato.(1.10.27,97) : 2
 South brahmin dialect, Noun, Rare occurance : 7
 Bhagavato.(1.10.6,93) : 1
-Verb causative of 2ಕಳೆ  (kaḷe)  : 2
-Northen Dialects, Verb causative of 2ಕಳೆ  (kaḷe)  : 2
+Verb causative of 2ಕಳೆ  (kaḷe)  : 2
+Northen Dialects, Verb causative of 2ಕಳೆ  (kaḷe)  : 2
 Bhagavato.(3.20.25,362) : 2
 Kv.(8.50,34) : 0
 Bhagavato.(3.5.5,259) : 1
@@ -1698,9 +1698,9 @@ Bhagavato.(3.12.5,302) : 3
 Kl.(60,11) : 0
 Bhagavato.(3.3.23,250) : 4
 Bhagavato.(3.3.40,253) : 1
-Northen Dialects, Southern dialects, Verb reflexive of 1ಕಾಪು  (kaapu)  : 0
-  of 1ಕಾಪು  (kaapu)  : 0
-Southern dialects, Verb reflexive of 1ಕಾಪು  (kaapu)  : 0
+Northen Dialects, Southern dialects, Verb reflexive of 1ಕಾಪು  (kaapu)  : 0
+  of 1ಕಾಪು  (kaapu)  : 0
+Southern dialects, Verb reflexive of 1ಕಾಪು  (kaapu)  : 0
 Bhagavato.(1.17.33,161) : 2
 Bhagavato.(3.13.40,318) : 4
 Kl.(91,17) : 0
@@ -1717,14 +1717,14 @@ Bhagavato.(2.2.12,194) : 1
 Bhagavato.(3.9.17,283) : 0
 Bhagavato.(1.4.23,35) : 8
 Bhagavato.(3.18.31,352) : 4
-Verb causative of 1ಕಾಯ್  (kaayụ)  : 0
+Verb causative of 1ಕಾಯ್  (kaayụ)  : 0
 Bhagavato.(3.14.2,321) : 1
 MR.(217) : 1
 MR.(118) : 0
 Bhagavato.(1.10.19,96) : 8
 Bhagavato.(2.4.25,209) : 1
 Bhagavato.(3.20.22,362) : 5
-Verb causative of 1ಕಾರ್  (kaarụ)  : 0
+Verb causative of 1ಕಾರ್  (kaarụ)  : 0
 PV.(14) : 7
 PV.(46) : 2
 Bhagavato.(3.16.31,336) : 0
@@ -1780,7 +1780,7 @@ Bhagavato.(3.5.19,262) : 7
 Bhagavato.(3,21,6,364) : 1
 Verb neuter, Figurative : 1
 Bhagavato. (1.14.35,139) : 0
-Verb causative of 1ಕುಂದ್  (kundụ)  : 1
+Verb causative of 1ಕುಂದ್  (kundụ)  : 1
 Bhagavato.(3.8.27,279) : 2
 Bhagavato. (3.12.23,305) : 0
 SK.(25) : 3
@@ -1841,13 +1841,13 @@ Bhagavato.(1.18.12,168) : 0
 Bhagavato.(3.7.29,274) : 1
 Bhagavato.(1.19,28,180) : 0
 Bhagavato.(3.21.8,365) : 0
-Verb causative of 1ಕುರಿ  (kuri)  : 3
+Verb causative of 1ಕುರಿ  (kuri)  : 3
 Bhagavato.(1.13.21,129) : 6
 Bhagavato.(3.18.2,347) : 0
 Bhagavato.(3.1.15,333) : 1
 Bhagavato.(1.8.33,78) : 3
 MG.(63) : 8
-Verb causative of 1ಕುರ್ಕ್  (kurkụ)  : 2
+Verb causative of 1ಕುರ್ಕ್  (kurkụ)  : 2
 North, Secret Language of Nalke community : 1
 DM.(44) : 13
 DM.(58) : 6
@@ -1869,13 +1869,13 @@ Bhagavato.(3.16.19,334) : 2
 Bhagavato.(2.4.10,207) : 4
 PV.(12) : 7
 DM.(52) : 6
-Verb causative of ಕುಳ್ಪು  (kuḷpu)  : 1
+Verb causative of ಕುಳ್ಪು  (kuḷpu)  : 1
 Bhagavato.(1.4.31,37) : 3
-  of ಕುಳ್ಳ್  (kuḷḷụ)  : 2
-Verb causative of ಕುಳ್ಳ್  (kuḷḷụ)  : 2
+  of ಕುಳ್ಳ್  (kuḷḷụ)  : 2
+Verb causative of ಕುಳ್ಳ್  (kuḷḷụ)  : 2
 Northen Dialects, Onomatopoeic : 1
-Verb causative of 1ಕೂಟ್  (kuuṭụ)  : 1
-Verb causative of 2ಕೂಟ್  (kuuṭụ)  : 1
+Verb causative of 1ಕೂಟ್  (kuuṭụ)  : 1
+Verb causative of 2ಕೂಟ್  (kuuṭụ)  : 1
 PV.(43) : 4
 Kv.(9.74,50) : 2
 DM.(56) : 2
@@ -1925,7 +1925,7 @@ Bhagavato.(1.18.18,170) : 7
 MR.(364) : 1
 MR.(419) : 0
 MR.(182) : 2
-Verb causative of ಕೆತ್ತ್  (kettụ)  : 1
+Verb causative of ಕೆತ್ತ್  (kettụ)  : 1
 Bhagavato.(3.12.25,305) : 3
 Bhagavato.(1.13.15,128) : 6
 Bhagavato.(3.1.19,230) : 1
@@ -1934,8 +1934,8 @@ Bhagavato.(3.6.3,264) : 1
 MR.(282) : 1
 Kl.(201,36) : 1
 Bhagavato.(1.8.9,73) : 1
-Verb causative of 1ಕೆರೆಪು  (kerepu)  : 3
-Verb causative of 2ಕೆರೆಪು  (kerepu)  : 3
+Verb causative of 1ಕೆರೆಪು  (kerepu)  : 3
+Verb causative of 2ಕೆರೆಪು  (kerepu)  : 3
 Northen Dialects, Uses : 2
 Maadirana Gaade (by Dumappa Master) : 28
 South brahmin dialect, Figurative, Noun : 9
@@ -1973,8 +1973,8 @@ MR.(269) : 4
 MR.(259) : 6
 North Common Tribal : 1
 Auxiliary Verb : 0
-Verb causative of 1ಕೊಣ್  (koṇụ)  : 1
-Figurative, Verb causative of 1ಕೊಣ್  (koṇụ)  : 1
+Verb causative of 1ಕೊಣ್  (koṇụ)  : 1
+Figurative, Verb causative of 1ಕೊಣ್  (koṇụ)  : 1
 MR.(37) : 7
 Combination/combined, Momen propium (proper noun) : 1
 DM.(37) : 8
@@ -2068,7 +2068,7 @@ MR.(372) : 4
 Bhagavato.(3.11.28,300) : 4
 Bhagavato.(3.18.16,349) : 3
 Bhagavato.(3.18.38,353) : 0
-Verb causative of ಗಗ್ಗೆರ್  (gaggerụ)  : 0
+Verb causative of ಗಗ್ಗೆರ್  (gaggerụ)  : 0
 Bhagavato.(1.11.54,114) : 3
 Bhagavato.(1.8.42,80) : 2
 Bhagavato.(1.13.1,125) : 1
@@ -2095,8 +2095,8 @@ Bhagavato.(3.13.19,315) : 3
 Bhagavato.(1.5.27,47) : 1
 Formal speech, Verb neuter : 0
 Bhagavato.(2.3.17,201) : 0
-Verb causative of ಗದ್ದ್  (gaddụ)  : 1
-Figurative, Verb causative of ಗದ್ದ್  (gaddụ)  : 1
+Verb causative of ಗದ್ದ್  (gaddụ)  : 1
+Figurative, Verb causative of ಗದ್ದ್  (gaddụ)  : 1
 MR.(260) : 6
 MR.(403) : 3
 Bhagavato.(3.8.23,279) : 5
@@ -2105,7 +2105,7 @@ Bhagavato.(1.8.3,72) : 2
 Kl.(109,20) : 1
 Bhagavato.91.18,32,172) : 1
 Bhagavato.(2.3.1,198) : 1
-Verb causative of ಗರಿಪ್ಪು  (garippu)  : 7
+Verb causative of ಗರಿಪ್ಪು  (garippu)  : 7
 Bhagavato.(3.13,14,314) : 2
 Kl.(128,23) : 0
 Bhagavato.(1.4.35,38) : 1
@@ -2139,16 +2139,16 @@ Kl.(25,5) : 0
 MR.(265) : 1
 PV.(36) : 11
 Kl.(89,17) : 2
-  of ಗಿಚ್ಚ್  (giccụ)  : 0
-Verb causative of ಗಿಚ್ಚ್  (giccụ)  : 0
+  of ಗಿಚ್ಚ್  (giccụ)  : 0
+Verb causative of ಗಿಚ್ಚ್  (giccụ)  : 0
 PV.(44) : 2
-Verb causative of 1ಗಿಡ್ಂಗ್  (giḍụṅgụ)  : 0
-Figurative, Verb causative of 1ಗಿಡ್ಂಗ್  (giḍụṅgụ)  : 0
+Verb causative of 1ಗಿಡ್ಂಗ್  (giḍụṅgụ)  : 0
+Figurative, Verb causative of 1ಗಿಡ್ಂಗ್  (giḍụṅgụ)  : 0
 Kl.(47,9) : 1
 MR.(410) : 0
 Bhagavato.((1.6.30,59) : 9
 Bhagavato.(1.10.37,99) : 9
-Verb causative of 3ಗಿರಿ  (giri)  : 0
+Verb causative of 3ಗಿರಿ  (giri)  : 0
 DM.(47) : 2
 MG.(6) : 1
 MG.(16) : 2
@@ -2186,27 +2186,27 @@ Kv.(8.14,30) : 3
 Bhagavato.(3.17.1.,340) : 1
 Bhagavato.(2.23.15,379) : 0
 Bhagavato.(3.13.12,313) : 1
-Verb reflexive of 1ಗೃಹಿಪು  (gṛhipu)  : 0
+Verb reflexive of 1ಗೃಹಿಪು  (gṛhipu)  : 0
 DM.(67) : 0
 DM.(40) : 4
 DM.(51-52) : 1
 Bhagavato.(3.13.30,317) : 4
-Verb active of ಗೆಜಲ್  (gejalụ)  : 3
-Verb causative of ಗೆಜಲ್  (gejalụ)  : 0
-Verb reflexive of ಗೆಪ್ಪು  (geppu)  : 2
+Verb active of ಗೆಜಲ್  (gejalụ)  : 3
+Verb causative of ಗೆಜಲ್  (gejalụ)  : 0
+Verb reflexive of ಗೆಪ್ಪು  (geppu)  : 2
 Kv.(6.129,16) : 2
-Verb causative of 1ಗೆಬ್ಬಟ್ಟ್  (gebbaṭṭụ)  : 0
+Verb causative of 1ಗೆಬ್ಬಟ್ಟ್  (gebbaṭṭụ)  : 0
 Bhagavato.(3.13.17,314) : 0
 MR.(172) : 0
 Kv.(8.56,35) : 0
 MR.(119) : 1
-Verb reflexive of ಗೆರ್ಭೀಕರಿಪು  (gerbhiikaripu)  : 0
+Verb reflexive of ಗೆರ್ಭೀಕರಿಪು  (gerbhiikaripu)  : 0
 Bhagavato.(2.6.10,224) : 1
 Bhagavato.(1.11.19,106) : 0
 Kv.(9.38,45) : 6
 MR.(239) : 7
 GT.(24) : 1
-Verb causative of 1ಗೊಬ್ಬು  (gobbu)  : 1
+Verb causative of 1ಗೊಬ್ಬು  (gobbu)  : 1
 Bhagavato.(3.13.47,320) : 2
 MR.(111) : 0
 Bhagavato.(1.9.9.,83) : 1
@@ -2217,7 +2217,7 @@ Bhagavato.(3.18.6,347) : 4
 Bhagavato.(1.7.27,69) : 1
 Bhagavato.(3.21.24,367) : 0
 Figurative, Verb active, Verb neuter : 2
-Verb causative of ಗೋಡ್  (gooḍụ)  : 1
+Verb causative of ಗೋಡ್  (gooḍụ)  : 1
 Northen Dialects, Adjective, Figurative, Noun : 0
 MR.(334) : 9
 Bhagavato.(1.10.33,99) : 3
@@ -2254,10 +2254,10 @@ Bhagavato.(3.2.41,241) : 0
 Bhagavato.(3.15.5,327) : 2
 Bhagavato.(2.2.11,194) : 0
 Bhagavato.(1.11.31,109) : 0
-Verb causative of ಘೋರ್ಣಿಪು  (ghoorṇipu)  : 0
+Verb causative of ಘೋರ್ಣಿಪು  (ghoorṇipu)  : 0
 Bhagavato.(1.10.28,98) : 1
 Bhagavato.(1.7.14,66) : 2
-Verb causative of ಘೋಷಿಪು  (ghooṣipu)  : 0
+Verb causative of ಘೋಷಿಪು  (ghooṣipu)  : 0
 Bhagavato.(2.2.24,196) : 2
 Bhagavato.(3.18.18,349) : 3
 MR.(343) : 1
@@ -2315,7 +2315,7 @@ Bhagavato.(3.1.23.231) : 0
 MR.(316) : 1
 MR.(227) : 3
 Bhagavato.(1.17.2,154) : 0
-Verb causative of ಚಿಂಬು  (cimbu)  : 0
+Verb causative of ಚಿಂಬು  (cimbu)  : 0
 South West Jain : 0
 Bhagavato.(3.3.30,251) : 2
 Bhagavato.(1.7.2,62) : 0
@@ -2328,7 +2328,7 @@ Bhagavato.(3.10.24,292) : 0
 Bhagavato.(3.2.17,237) : 1
 Bhagavato.(1.1.23,7) : 0
 MR.(275) : 8
-Verb causative of ಚಿರ್oಟ್  (cirụṇṭụ)  : 9
+Verb causative of ಚಿರ್oಟ್  (cirụṇṭụ)  : 9
 DM.(96) : 1
 Kl.(127,23) : 0
 Kl.(134,24) : 0
@@ -2397,7 +2397,7 @@ DM.(31) : 4
 Kv.(6.108,16) : 6
 Kv.(7.15,20) : 3
 Kv.(8.61,35) : 3
-Verb causative of ಜನಿಪು  (janipu)  : 0
+Verb causative of ಜನಿಪು  (janipu)  : 0
 Bhagavato.(3.4.22,257) : 1
 Bhagavato.(1.6.17,56) : 2
 Bhagavato.(1.3.2,22) : 2
@@ -2434,19 +2434,19 @@ Kv.(8.99,40) : 0
 Kv.(9.3,41) : 0
 Bhagavato.(1.14.31,139) : 0
 Kv.(9.12,42) : 5
-Verb causative of ಜೆಪ್ಪು  (jeppu)  : 3
-Figurative, Verb causative of ಜೆಪ್ಪು  (jeppu)  : 3
-Verb causative of ಜೆರ್ಪು  (jerpu)  : 0
-Figurative, Verb causative of ಜೆರ್ಪು  (jerpu)  : 0
-Verb reflexive of ಜೆಪ್ಪು  (jeppu)  : 1
-Verb causative of ಜೇಂಕ್  (jeeṅkụ)  : 0
+Verb causative of ಜೆಪ್ಪು  (jeppu)  : 3
+Figurative, Verb causative of ಜೆಪ್ಪು  (jeppu)  : 3
+Verb causative of ಜೆರ್ಪು  (jerpu)  : 0
+Figurative, Verb causative of ಜೆರ್ಪು  (jerpu)  : 0
+Verb reflexive of ಜೆಪ್ಪು  (jeppu)  : 1
+Verb causative of ಜೇಂಕ್  (jeeṅkụ)  : 0
 Kl.(245,44) : 2
 Kv.(6.115,17) : 2
 Bhagavato.(1.6.25,58) : 4
 Kl.(100,20) : 0
 Baby talk, Verb active : 2
 Bhagavato.(3.2.48,242) : 5
-Verb causative of 1ಜೋಡ್  (jooḍụ)  : 1
+Verb causative of 1ಜೋಡ್  (jooḍụ)  : 1
 Kl.(426,75) : 0
 Bhagavato.(3.19.11,355) : 1
 Bhagavato.(3.19.24,357) : 0
@@ -2477,14 +2477,14 @@ South-West South-Central Harijan Tribal : 324
 Bhagavato.(3.22.8,378) : 9
 AS.(30) : 1
 MG.(60) : 4
-Verb causative of 1ತಗ್ಗ್  (taggụ)  : 6
+Verb causative of 1ತಗ್ಗ್  (taggụ)  : 6
 MK.(75) : 0
 Kv.(7.69,27) : 1
 Bhagavato.(1.13.16,128)  : 0
 Bhagavato.(3.14.5,321) : 10
 SK.(68) : 5
 MR.(74) : 0
-Verb reflexive of 2ತಟ್ಟ್  (taṭṭụ)  : 2
+Verb reflexive of 2ತಟ್ಟ್  (taṭṭụ)  : 2
 Bhagavato.(1.13.30,130) : 3
 Bib.(4) : 0
 Southern dialects, Verb neuter : 1
@@ -2492,9 +2492,9 @@ KP.(11) : 0
 Bhagavato.(1.6.13.55) : 0
 Kv.(8.80,38) : 1
 Kv.(9.52,47) : 1
-Verb reflexive of 2ತಡೆ  (taḍe)  : 1
+Verb reflexive of 2ತಡೆ  (taḍe)  : 1
 South West - South Central Harijan Tribal : 73
-Verb causative of ತಣಿ  (taṇi)  : 1
+Verb causative of ತಣಿ  (taṇi)  : 1
 MR.(401) : 0
 Kv.(8.82,38) : 1
 MR.(397) : 1
@@ -2519,7 +2519,7 @@ Bhagavato.(3.16.9,332) : 0
 Bhagavato.(3.16.24,335) : 1
 PV.(19) : 0
 Kv.(10.56,57) : 1
-Verb causative of 1ತಪ್ಪು  (tappu)  : 1
+Verb causative of 1ತಪ್ಪು  (tappu)  : 1
 MR.(163) : 0
 Posessive : 0
 Bhagavato.(1.2.26,17) : 3
@@ -2561,30 +2561,30 @@ MK.(1) : 1
 Kaanige (by N.S. Kille) : 1
 MK.(64) : 2
 MG.(3) : 14
-Verb causative of 1ತಲ್ಕ್  (talkụ)  : 1
+Verb causative of 1ತಲ್ಕ್  (talkụ)  : 1
 Bhagavato.(3.21.17,366) : 1
 AS.(10) : 0
 South Central Brahmin Common dialect : 17
-Verb causative of ತಳಂಕ್  (taḷaṅkụ)  : 1
+Verb causative of ತಳಂಕ್  (taḷaṅkụ)  : 1
 Bhagavato.(3.21.11,365) : 5
 Bhagavato.(3.13.3,311) : 2
 Bhagavato.(3.3.22,250) : 11
 Bhagavato.(3.13.11,313) : 0
-Verb causative of ತಳ್ಳ್  (taḷḷụ)  : 1
+Verb causative of ತಳ್ಳ್  (taḷḷụ)  : 1
 Bhagavato.(1.14.36,139) : 3
 Bhagavato.(1.7.10,65) : 7
 Bhagavato.(3.2.38,240) : 5
 MR.(20) : 19
 MR.(97) : 6
-Verb reflexive of 1ತಾಂಗ್  (taaṅgụ)  : 2
+Verb reflexive of 1ತಾಂಗ್  (taaṅgụ)  : 2
 Kl.(215,39) : 0
-Verb causative of ತಾಂಟ್  (taaṇṭụ)  : 6
-Figurative, Verb causative of ತಾಂಟ್  (taaṇṭụ)  : 6
-Verb causative of ತಾಗ್  (taagụ)  : 6
-Figurative, Verb causative of ತಾಗ್  (taagụ)  : 6
+Verb causative of ತಾಂಟ್  (taaṇṭụ)  : 6
+Figurative, Verb causative of ತಾಂಟ್  (taaṇṭụ)  : 6
+Verb causative of ತಾಗ್  (taagụ)  : 6
+Figurative, Verb causative of ತಾಗ್  (taagụ)  : 6
 SK.(43) : 0
 Kv.(9.40,45) : 1
-Verb causative of ತಾಡಿಪು  (taaḍipu)  : 0
+Verb causative of ತಾಡಿಪು  (taaḍipu)  : 0
 Bhagavato.(1.16.1,141) : 0
 Bhagavato.(3.1.4,227) : 0
 Bhagavato.(1.1.20,7) : 0
@@ -2604,14 +2604,14 @@ Bhagavato.(3.8.10,276) : 11
 MG.(62) : 0
 Kv.(9.83,51) : 0
 KP.(67) : 13
-Verb causative of 2ತಿಕ್ಕ್  (tikkụ)  : 3
+Verb causative of 2ತಿಕ್ಕ್  (tikkụ)  : 3
 Bhagavato.(3.12.16,304) : 7
-Verb causative of ತಿಗಿಪು  (tigipu)  : 0
+Verb causative of ತಿಗಿಪು  (tigipu)  : 0
 Bhagavato.(3.12.11,342) : 2
 DM.(70) : 1
 Bhagavato.(2.2.44,241) : 0
 Bhagavato.(1.4.31,35) : 6
-Verb causative of ತಿದ್ದ್  (tiddụ)  : 1
+Verb causative of ತಿದ್ದ್  (tiddụ)  : 1
 Siva Brahmin dialect : 4
 Bhagavato.(3.17.8,342) : 13
 MR.(48) : 1
@@ -2628,12 +2628,12 @@ Bhagavato.(3.21.18,366) : 2
 Bhagavato.(3.13.44,319) : 7
 Bhagavato.(1.17.40,153) : 1
 MR.(103) : 12
-Verb reflexive of ತುಚ್ಚ್  (tuccụ)  : 0
+Verb reflexive of ತುಚ್ಚ್  (tuccụ)  : 0
 Bhagavato.(1.3.9.23) : 0
 MK.(17) : 1
 Bhagavato.(3.1.29,232) : 0
-Verb reflexive of 1ತೂ  (tuu)  : 5
-Figurative, Verb reflexive of 1ತೂ  (tuu)  : 5
+Verb reflexive of 1ತೂ  (tuu)  : 5
+Figurative, Verb reflexive of 1ತೂ  (tuu)  : 5
 Bhagavato.(3.1.42,234) : 1
 Bhagavato.(1.12.5,115) : 2
 Bhagavato.(1.4.41,40) : 2
@@ -2645,7 +2645,7 @@ Bhagavato.(3.2.43,241) : 6
 PV.(45) : 3
 Bhagavato.(3.19.17,356) : 1
 GT.(33) : 0
-Verb causative of 1ತೋಡ್  (tooḍụ)  : 2
+Verb causative of 1ತೋಡ್  (tooḍụ)  : 2
 Bhagavato.(1.17.5,146) : 0
 MR.(173) : 0
 Bhagavato.(3.24.16,385) : 0
@@ -2664,19 +2664,19 @@ Bhagavato.(1.17.41.163) : 0
 Bhagavato.(3.23.4,377) : 0
 MR.(196) : 3
 MR.(112) : 0
-Verb causative of 1ದಂಟ್  (daṇṭụ)  : 0
+Verb causative of 1ದಂಟ್  (daṇṭụ)  : 0
 Kl.(63,11) : 0
 Bhagavato.(3.18.9,348) : 2
 Bhagavato.(1.14.35,139) : 2
 Bhagavato.(3.20.9,359) : 0
 Bhagavato.(3.13.10,317) : 1
 Bhagavato.(3.8.21, 278) : 0
-Verb causative of 1ದಕ್ಕ್  (dakkụ)  : 1
-Verb reflexive of 1ದಕ್ಕ್  (dakkụ)  : 0
+Verb causative of 1ದಕ್ಕ್  (dakkụ)  : 1
+Verb reflexive of 1ದಕ್ಕ್  (dakkụ)  : 0
 Kl.(140,25) : 1
 PV.(23) : 1
 Bhagavato.(3.9.41, 287)  : 0
-Verb causative of 1ದಪ್ಪು  (dappu)  : 0
+Verb causative of 1ದಪ್ಪು  (dappu)  : 0
 Bhagavato.(1.17.8,14) : 1
 Bhagavato.(1.7.22,68) : 0
 Bhagavato.(3.21.15,366) : 2
@@ -2687,12 +2687,12 @@ Bhagavato.(3.9.20,284) : 0
 Bhagavato.(3.11.20,299) : 3
 Bhagavato.(3.15.14,328) : 0
 Bhagavato.(1.12.41,123) : 1
-Verb causative of ದಾಂಟ್  (daaṇṭụ)  : 1
+Verb causative of ದಾಂಟ್  (daaṇṭụ)  : 1
 Bhagavato.(3.13.51,320) : 0
 Kv.(9.101,53) : 0
 Bhagavato.(1.13.16,25) : 0
 Northen Dialects, Figurative, Particle : 0
-Verb causative of ದಿಂಜ್  (diñjụ)  : 4
+Verb causative of ದಿಂಜ್  (diñjụ)  : 4
 Bhagavato.(1.9.7,82) : 1
 Bhagavato.(3.11.8,297) : 8
 Bhagavato.(3.13.18,314) : 0
@@ -2704,16 +2704,16 @@ SK.(22) : 1
 Kv.(8.68,36) : 0
 Kv.(9.93,52) : 0
 Northen Dialects, Verb active, Figurative : 4
-Verb reflexive of ದೀಡ್  (diiḍụ)  : 0
-Verb causative of ದೀಡ್  (diiḍụ)  : 1
-Verb reflexive of ದೀಡ್ಪಾ  (diiḍpaa)  : 1
+Verb reflexive of ದೀಡ್  (diiḍụ)  : 0
+Verb causative of ದೀಡ್  (diiḍụ)  : 1
+Verb reflexive of ದೀಡ್ಪಾ  (diiḍpaa)  : 1
 Bhagavato.(3.7.6,270) : 0
-Verb causative of ದೀ  (dii)  : 0
+Verb causative of ದೀ  (dii)  : 0
 Kv.(6.127,18) : 0
 Bhagavato.(3.5.17,261) : 1
 Kv.(8.28,33) : 0
 Bhagavato.(3.7.20,273) : 3
-Verb reflexive of ದೀ  (dii)  : 0
+Verb reflexive of ದೀ  (dii)  : 0
 Bhagavato.(3.21.32,369) : 0
 MR.(144) : 2
 Bhagavato.(1.17.10,156) : 0
@@ -2741,22 +2741,22 @@ MR.(101) : 0
 Bhagavato.(1.18.36,173) : 1
 Adverb, Interrogative : 1
 Bhagavato.(2.5.30,218) : 0
-Verb causative of ದೆಕ್ಕ್  (dekkụ)  : 0
+Verb causative of ದೆಕ್ಕ್  (dekkụ)  : 0
 MR.(91) : 0
-Verb causative of ದೆಹಿಪು  (dehipu)  : 0
+Verb causative of ದೆಹಿಪು  (dehipu)  : 0
 Bhagavato.(1.14.12,134) : 0
 Kl.(191,35) : 0
 Common dialect (of Bunt, Billava, Mogaveera and communities other than Brahmin, Jain, Harijan, & Tribal), Momen propium (proper noun) : 2
 Bhagavato.(1.18.27.171) : 0
 Bhagavato.(1.16.42,154) : 2
-Noun, Plural of ದೇವೆರ್  (deeverụ)  : 0
+Noun, Plural of ದೇವೆರ್  (deeverụ)  : 0
 Bhagavato.(3.14.6,321) : 1
 Bhagavato.(1.19.9,176) : 0
 Bhagavato.(3.13.50,320) : 0
-Verb causative of ದೊಂಕ್  (doṅkụ)  : 0
+Verb causative of ದೊಂಕ್  (doṅkụ)  : 0
 MR.(268) : 7
 MR.(274) : 0
-Verb causative of ದೊರಿ  (dori)  : 1
+Verb causative of ದೊರಿ  (dori)  : 1
 Bhagavato.(1.17.20,149) : 3
 Bhagavato.(3.1.16,229) : 8
 Bhagavato.(3.1.9,228) : 0
@@ -2777,22 +2777,22 @@ Bhagavato.(3.1.8,235) : 0
 PV.(33) : 3
 Bhagavato.(3.9.27,285) : 1
 Bhagavato.(1.13.17,128) : 2
-Verb causative of ಧ್ವನಿಪು  (dhvanipu)  : 0
+Verb causative of ಧ್ವನಿಪು  (dhvanipu)  : 0
 Bhagavato.(1.6.32,59) : 0
 Singular : 3
 Bhagavato.(3.22.41,376) : 1
 Bhagavato.(13.2.60,244) : 0
 Oracle, Noun : 3
-Verb causative of ನಕ್ಕ್  (nakkụ)  : 1
+Verb causative of ನಕ್ಕ್  (nakkụ)  : 1
 Bhagavato.(1.11.36,110) : 0
 Kv.(7.48,25) : 0
-Verb reflexive of 1ನಟ್ಟ್  (naṭṭụ)  : 2
+Verb reflexive of 1ನಟ್ಟ್  (naṭṭụ)  : 2
 Bhagavato.(1.4.26,36) : 6
 Bhagavato.(1.13.10,127) : 5
 Pronoun, First Person Plural Inclusive : 1
-Verb reflexive of ನಮಿಪು  (namipu)  : 0
+Verb reflexive of ನಮಿಪು  (namipu)  : 0
 Bhagavato.(1.9.42,90) : 0
-Verb neuter of ನಮಿಪು  (namipu)  : 0
+Verb neuter of ನಮಿಪು  (namipu)  : 0
 Bhagavato.(1.17.25,150) : 0
 Bhagavato.(3.12.33,307) : 2
 South common harijan tribal dialects, Noun : 4
@@ -2801,12 +2801,12 @@ Bhagavato.(1.8.8,73) : 5
 Bhagavato.(1.17.6,155) : 0
 Bhagavato.(3.13.20,315) : 3
 Bhagavato.(1.18.35,173) : 0
-Verb causative of 1ನರ್ಗ್  (nargụ)  : 1
+Verb causative of 1ನರ್ಗ್  (nargụ)  : 1
 Bhagavato.(1.16.141) : 1
 First person Plural, Pronoun : 0
 Bhagavato.(1.3.2.,22) : 0
-Verb causative of ನಾಟ್  (naaṭụ)  : 1
-Verb causative of 1ನಾಡ್  (naaḍụ)  : 1
+Verb causative of ನಾಟ್  (naaṭụ)  : 1
+Verb causative of 1ನಾಡ್  (naaḍụ)  : 1
 Common Harijan Tribal, Verb neuter : 4
 Bhagavato.(1.14.13,134) : 11
 Medicinal, Northen Dialects : 2
@@ -2814,8 +2814,8 @@ Bhagavato.(1.9.11,84) : 0
 MK.(18) : 0
 Formal speech, Southern dialects, South common harijan tribal dialects, Noun : 0
 Bhagavato.(3.24.19,385) : 0
-Verb causative of ನಿಂಜ್  (niñjụ)  : 1
-Verb causative of ನಿಗಿ  (nigi)  : 2
+Verb causative of ನಿಂಜ್  (niñjụ)  : 1
+Verb causative of ನಿಗಿ  (nigi)  : 2
 Bhagavato.(1.17.26,159) : 1
 South East, Noun : 2
 Bhagavato.(3.22.17,372) : 1
@@ -2830,7 +2830,7 @@ Bhagavato.(2.1.17,187) : 3
 Bhagavato.(1.8.43,80) : 2
 Bhagavato.(3.24.18,385) : 0
 Bhagavato.(3.22.33,369) : 0
-Verb causative of ನಿಲ್  (nilụ)  : 1
+Verb causative of ನಿಲ್  (nilụ)  : 1
 Bhagavato.(1.16.23,145) : 3
 Bhagavato.(3.20.27,362) : 0
 Bhagavato.(3.17.34,346) : 0
@@ -2839,33 +2839,33 @@ Bhagavato.(1.5.11,45) : 0
 Bhagavato.(3.10.34,293) : 0
 Bhagavato.(1.12.14,117) : 6
 Bhagavato.(3.21.21,368) : 1
-Verb causative of ನೀಡ್  (niiḍụ)  : 2
+Verb causative of ನೀಡ್  (niiḍụ)  : 2
 Dictionary of Rev. Manner, Common Harijan Tribal : 0
 Bhagavato.(1.11.38,116) : 1
 Bhagavato.(1.11.43,112) : 1
-Verb causative of ನುಂಗ್  (nuṅgụ)  : 0
+Verb causative of ನುಂಗ್  (nuṅgụ)  : 0
 South east common harijan tribal dialects, Noun : 3
 Kl.(250,45) : 1
 Secret Language of Nalke Community : 2
-Verb causative of ನೂಕ್  (nuukụ)  : 1
-Verb causative of ನೂಟ್  (nuuṭụ)  : 0
+Verb causative of ನೂಕ್  (nuukụ)  : 1
+Verb causative of ನೂಟ್  (nuuṭụ)  : 0
 Bhagavato.(3.3.9,247) : 3
 Kl.(166,29) : 2
-Verb causative of ನೂರ್  (nuurụ)  : 0
-Verb causative of ನೃತ್ತಿಪು  (nṛttipu)  : 0
+Verb causative of ನೂರ್  (nuurụ)  : 0
+Verb causative of ನೃತ್ತಿಪು  (nṛttipu)  : 0
 Bhagavato.(3.3.41,253) : 0
-Verb causative of 1ನೆಂದ್  (nendụ)  : 0
+Verb causative of 1ನೆಂದ್  (nendụ)  : 0
 Posessive, Singular : 0
 Bhagavato.(2.2.65,245) : 0
 Kl.(384,68) : 1
-Verb causative of ನೆಯಿಪು  (neyipu)  : 1
+Verb causative of ನೆಯಿಪು  (neyipu)  : 1
 Bhagavato.(3.12.15,304) : 0
-Verb causative of ನೆರ್  (nerụ)  : 1
+Verb causative of ನೆರ್  (nerụ)  : 1
 Pronoun, Dative : 0
 Bhagavato.(1.13.20,129) : 5
-Verb causative of ನೇಲ್  (neelụ)  : 1
+Verb causative of ನೇಲ್  (neelụ)  : 1
 Kl.(88,16) : 2
-Verb causative of ನೋಪು  (noopu)  : 1
+Verb causative of ನೋಪು  (noopu)  : 1
 Bhagavato.(3.18.4,347) : 0
 Bhagavato.(1.9.5,82) : 4
 Bhagavato.(1.14.1, 132) : 0
@@ -2879,15 +2879,15 @@ Northen Dialects, Southern dialects, Noun : 3
 MR.(143) : 0
 Bhagavato.(3.16.12,333) : 1
 Dictionary of Rev. Manner, Particle : 1
-Verb causative of ಪಠಿಪು  (paṭhipu)  : 0
+Verb causative of ಪಠಿಪು  (paṭhipu)  : 0
 Northen Dialects, Derogatory, Noun : 12
-Verb reflexive of ಪಡೆ  (paḍe)  : 2
+Verb reflexive of ಪಡೆ  (paḍe)  : 2
 GM.(2) : 0
 MK.(29) : 3
 Indeclinable, Particle : 1
 Northen Dialects, Indeclinable, Particle : 1
-Verb causative of 1ಪತ್ತ್  (pattụ)  : 1
-Figurative, Verb causative of 1ಪತ್ತ್  (pattụ)  : 1
+Verb causative of 1ಪತ್ತ್  (pattụ)  : 1
+Figurative, Verb causative of 1ಪತ್ತ್  (pattụ)  : 1
 MG.(105) : 0
 Bhagavato.(3.12.2,301) : 1
 Bhagavato.(1.2.14,14) : 3
@@ -2898,8 +2898,8 @@ Bhagavato.(3.12.17,304) : 2
 TK.ಒಳ್ಳೆಯಹೆಸರುಕೇಳಿಕೊಂಡು(ಸಜ್ಜನರಾಗಿ) : 2
 Bhagavato.(2.3.18,202) : 0
 Bhagavato.(3.22.29,374) : 1
-Verb causative of 1ಪರ್oದ್  (parụndụ)  : 0
-Northen Dialects, Figurative, Verb causative of 1ಪರ್oದ್  (parụndụ)  : 0
+Verb causative of 1ಪರ್oದ್  (parụndụ)  : 0
+Northen Dialects, Figurative, Verb causative of 1ಪರ್oದ್  (parụndụ)  : 0
 Bhagavato.(3.15.4,327) : 2
 Bhagavato.(1.8.15,75) : 0
 Bhagavato.(1.18.29,172) : 2
@@ -2917,8 +2917,8 @@ Bhagavato.(1.17.45,164) : 0
 Bhagavato.(1.12.6,116) : 1
 Bhagavato.(2.6.14,225) : 1
 Bib.ದೇವರೇಹಗಲಿಗೆನಾನುನಿನ್ನನ್ನುಕರೆಯುತ್ತೇನೆ(ಧ್ಯಾನಿಸುತ್ತೇನೆ) : 0
-Verb causative of ಪರ್  (parụ)  : 1
-Verb causative of ಪರ್ಬ್  (parbụ)  : 1
+Verb causative of ಪರ್  (parụ)  : 1
+Verb causative of ಪರ್ಬ್  (parbụ)  : 1
 MK.(4) : 3
 Bhagavato.(3.13.36,318) : 1
 Bhagavato.(3.8.31,281) : 2
@@ -2926,44 +2926,44 @@ MR.(354) : 3
 Bhagavato.(3.5.2,259) : 0
 Southern dialects, Baby talk, Noun : 0
 GT.(20) : 0
-Verb causative of 1ಪಾಡ್  (paaḍụ)  : 3
-Verb reflexive of 1ಪಾಡ್  (paaḍụ)  : 0
+Verb causative of 1ಪಾಡ್  (paaḍụ)  : 3
+Verb reflexive of 1ಪಾಡ್  (paaḍụ)  : 0
 Bhagavato.(1.10.40,101) : 0
-Verb causative of ಪಾತೆರ್  (paaterụ)  : 3
-South brahmin dialect, Verb causative of ಪಾತೆರ್  (paaterụ)  : 3
+Verb causative of ಪಾತೆರ್  (paaterụ)  : 3
+South brahmin dialect, Verb causative of ಪಾತೆರ್  (paaterụ)  : 3
 Bhagavato.(2.3.14,201) : 2
 PV.(27) : 2
 Bhagavato.(1.19.28,181) : 1
 MK.(50) : 0
 Bhagavato.(1.14.5,133) : 1
-Verb causative of 1ಪಾರ್  (paarụ)  : 1
+Verb causative of 1ಪಾರ್  (paarụ)  : 1
 Bhagavato.(2.1.9,185) : 0
 Bhagavato.(3.9.9,282) : 0
 Bhagavato.(1.4.40,39) : 0
 Bhagavato.(1.9.39,90) : 1
 Bhagavato.(1.9.45,91) : 0
 Bhagavato.(1,14.13,134) : 0
-Verb reflexive of ಪಿನ್  (pinụ)  : 0
+Verb reflexive of ಪಿನ್  (pinụ)  : 0
 MR.(53) : 0
-Verb causative of 1ಪಿಜಿಂಟ್  (pijiṇṭụ)  : 1
+Verb causative of 1ಪಿಜಿಂಟ್  (pijiṇṭụ)  : 1
 Kl.(160,28) : 0
 SK.ಅವರಿಗೆಪಿತ್ರಾರ್ಜಿತ(ಆಸ್ತಿ) : 1
 Bhagavato.(1.19.44,183) : 0
 Bhagavato.(1.8.32,78) : 4
-Verb causative of ಪಿನ್  (pinụ)  : 2
+Verb causative of ಪಿನ್  (pinụ)  : 2
 AS.(26) : 0
 MR.(756) : 0
-Verb causative of 1ಪಿರಿ  (piri)  : 0
-Verb causative of 2ಪಿರಿ  (piri)  : 0
-Verb causative of ಪಿಸ್ಕ್  (piskụ)  : 1
+Verb causative of 1ಪಿರಿ  (piri)  : 0
+Verb causative of 2ಪಿರಿ  (piri)  : 0
+Verb causative of ಪಿಸ್ಕ್  (piskụ)  : 1
 MG.(44) : 0
-Verb causative of ಪೀಂಕ್  (piiṅkụ)  : 1
-Verb causative of ಪೀಂಟ್  (piiṇṭụ)  : 1
+Verb causative of ಪೀಂಕ್  (piiṅkụ)  : 1
+Verb causative of ಪೀಂಟ್  (piiṇṭụ)  : 1
 Bhagavato.(3.16.44,338) : 0
 MR.(72) : 0
-Verb causative of ಪುಂಟು  (puṇṭu)  : 1
+Verb causative of ಪುಂಟು  (puṇṭu)  : 1
 Bhagavato.(3.22.25,374) : 0
-Verb causative of ಪುಟ್ಟ್  (puṭṭụ)  : 1
+Verb causative of ಪುಟ್ಟ್  (puṭṭụ)  : 1
 Bhagavato.(3.3.25,27) : 1
 MR.(224) : 0
 Bhagavato.(3.23.10,379) : 4
@@ -2980,25 +2980,25 @@ Adjective, Derogatory : 1
 Bhagavato.(3.18.30,352) : 0
 Bhagavato.(1.9.32,88) : 1
 Bhagavato.(3.2.7,235) : 4
-Verb causative of ಪುಲಾ  (pulaa)  : 0
-Verb causative of ಪುಲೆಂಜ್  (puleñjụ)  : 0
+Verb causative of ಪುಲಾ  (pulaa)  : 0
+Verb causative of ಪುಲೆಂಜ್  (puleñjụ)  : 0
 Bhagavato.(1.9.40,90) : 5
 SK.(77) : 0
 Bhagavato.(3.15.26,330) : 5
 MR.(386) : 0
 MR.(415) : 0
 North common harijan tribal dialects, Figurative, Noun : 2
-Verb causative of ಪೂಜ್  (puujụ)  : 1
+Verb causative of ಪೂಜ್  (puujụ)  : 1
 Bhagavato.(3.22.39,376) : 1
 Bhagavato.(1.17.54,166) : 2
 MR.(79) : 0
 Bhagavato.(3.29.32,387) : 2
-Verb causative of ಪೂರ್ಣಿಪು  (puurṇipu)  : 0
+Verb causative of ಪೂರ್ಣಿಪು  (puurṇipu)  : 0
 Bhagavato.(3.2.11,236) : 0
-Verb causative of 1ಪೂಳ್  (puuḷụ)  : 2
+Verb causative of 1ಪೂಳ್  (puuḷụ)  : 2
 Bhagavato.(3.22.24,373) : 12
 Bhagavato.(3.14.16,323) : 1
-Verb causative of ಪೆದ್  (pedụ)  : 1
+Verb causative of ಪೆದ್  (pedụ)  : 1
 Bhagavato.(3.10.12,289) : 0
 Bhagavato.(1.9.22,86) : 7
 Bhagavato.(1.9.2,81) : 1
@@ -3006,34 +3006,34 @@ MR.(59) : 0
 MK.(11) : 0
 Bhagavato.(1.18.3,166) : 1
 Bhagavato.(3.13.28,317) : 0
-Verb causative of 1ಪೊಂಗು  (poṅgu)  : 0
+Verb causative of 1ಪೊಂಗು  (poṅgu)  : 0
 TK.(3) : 4
-Verb causative of ಪೊಗ್ಗ್  (poggụ)  : 7
+Verb causative of ಪೊಗ್ಗ್  (poggụ)  : 7
 Bhagavato.(1.6.39,61) : 7
-Verb causative of ಪೊಜೆಂಕ್  (pojeṅkụ)  : 0
+Verb causative of ಪೊಜೆಂಕ್  (pojeṅkụ)  : 0
 Common Harijan Tribal, Noun, Figurative : 4
 Adjective, Common Harijan Tribal, Figurative : 4
 MK.(12) : 0
 AS.(44) : 0
-Verb causative of ಪೊತ್ತ್  (pottụ)  : 1
-Verb causative of 1ಪೊದೆಪು  (podepu)  : 1
+Verb causative of ಪೊತ್ತ್  (pottụ)  : 1
+Verb causative of 1ಪೊದೆಪು  (podepu)  : 1
 MG.(65) : 5
 MR.(399) : 0
 Kl.(61,11) : 2
 Bhagavato.(3.12.24,305) : 11
-Verb causative of ಪೊಲಿಪು  (polipu)  : 0
+Verb causative of ಪೊಲಿಪು  (polipu)  : 0
 Bhagavato.(1.6.25,59) : 0
 Bhagavato.(1.6.47,63) : 3
-Verb reflexive of ಪೋಡಿಪು  (pooḍipu)  : 0
-Verb causative of ಪೋಡಿಪು  (pooḍipu)  : 3
-Verb causative of ಪೋಡಿಯು  (pooḍiyu)  : 0
+Verb reflexive of ಪೋಡಿಪು  (pooḍipu)  : 0
+Verb causative of ಪೋಡಿಪು  (pooḍipu)  : 3
+Verb causative of ಪೋಡಿಯು  (pooḍiyu)  : 0
 MR.(247) : 1
 Bhagavato.(1.8.35,79) : 0
 Bhagavato.(3.9.29,285) : 0
 Bhagavato.(1.14.23,137) : 3
 Bhagavato.(3.3.15,25) : 0
-Verb causative of ಪ್ರಕಾಶಿಪು  (prakaaśipu)  : 0
-Verb causative of ಪ್ರಜ್ವಲಿಪು  (prajvalipu)  : 0
+Verb causative of ಪ್ರಕಾಶಿಪು  (prakaaśipu)  : 0
+Verb causative of ಪ್ರಜ್ವಲಿಪು  (prajvalipu)  : 0
 Bhagavato.(1.12.49,124) : 0
 AS.(46) : 0
 Bhagavato.(1.14.33,139) : 5
@@ -3057,21 +3057,21 @@ MR.(167) : 2
 Bhagavato.(3.15.18,329) : 0
 Bhagavato.(3.141.23,324) : 1
 Bhagavato.(1.16.12,143) : 0
-Verb causative of ಬಡತ್ತ್  (baḍattụ)  : 2
+Verb causative of ಬಡತ್ತ್  (baḍattụ)  : 2
 Kl.(19,4) : 2
 MG.ಮಳೆಇದ್ದಕಾಲದಲ್ಲಿಬೆಟ್ಟುಪ್ರದೇಶದವಬದುಕಿಯಾನು(ಚೆನ್ನಾಗಿಜೀವಿಸಿಯಾನು) : 1
 Bhagavato.(1.19.37,182) : 1
-Verb causative of 1ಬದ್ಕ್  (badụkụ)  : 3
+Verb causative of 1ಬದ್ಕ್  (badụkụ)  : 3
 Bhagavato.(2.5.6,241) : 2
 Figurative, Derogatory, Momen propium (proper noun) : 3
 Bhagavato.(3.12.30,306) : 1
 North brahmin Dialect, North common harijan tribal jain dialect, Noun : 0
 Panchavti Raamaayana Vaali Sugriivera Kaalago (by Sankayya Bhagavata; Ed. by T. Keshava Bhatta) : 1
-Verb causative of 1ಬರೆ  (bare)  : 3
+Verb causative of 1ಬರೆ  (bare)  : 3
 AS.(66) : 2
-Verb causative of ಬರೆಲ್  (barelụ)  : 0
+Verb causative of ಬರೆಲ್  (barelụ)  : 0
 Kl.(181, 32) : 1
-Verb causative of ಬರ್  (barụ)  : 1
+Verb causative of ಬರ್  (barụ)  : 1
 Satii Kamale (by S. U. Paniyadi) : 1
 KL.(109,20)  : 0
 KL.(96, 18) : 0
@@ -3091,19 +3091,19 @@ R.R. (12)  : 0
 Ram : 7
 Ram. (81) : 0
 Ram. (58) : 1
-Verb causative of 1ಬಾಂಗ್  (baaṅgụ)  : 0
+Verb causative of 1ಬಾಂಗ್  (baaṅgụ)  : 0
 SK. : 0
 Derogatory, Momen propium (proper noun) : 4
 Kl.(59, 11) : 0
 Ram.(34) : 0
-Verb causative of ಬಾಡ್  (baaḍụ)  : 1
+Verb causative of ಬಾಡ್  (baaḍụ)  : 1
 Ram.(74)  : 3
 KL.(142,25)  : 0
 Baby talk, Figurative, Noun : 1
 Bhagavato.(1.1.30.9) : 0
 Southern dialects, Figurative : 0
 Derogatory, Figurative, Verb active : 1
-Verb causative of 5ಬಾಲ್  (baalụ)  : 1
+Verb causative of 5ಬಾಲ್  (baalụ)  : 1
 Bhagavato.(3.21.16,367) : 4
 Bhagavato.(1.12.4,301) : 0
 South Central South Eastern Common Harijan Tribal : 3
@@ -3115,13 +3115,13 @@ Conjugated form : 4
  , Verb neuter : 1
 Bhagavato.(3.1.7,228) : 3
 Bhagavato.(3.2.15,237) : 0
-10 of ಬುಲೆ  (bule)  : 1
-South brahmin dialect, Verb causative of ಬುಲೆ  (bule)  : 1
+10 of ಬುಲೆ  (bule)  : 1
+South brahmin dialect, Verb causative of ಬುಲೆ  (bule)  : 1
 South brahmin dialect, Verb causative : 0
-Verb causative of ಬುಲ್ಲು  (bullu)  : 0
+Verb causative of ಬುಲ್ಲು  (bullu)  : 0
 Bhagavato.(1.13.9,126) : 0
 Bhagavato.(3.2.59,244) : 0
-Verb causative of ಬೆಂಚ್  (beñcụ)  : 1
+Verb causative of ಬೆಂಚ್  (beñcụ)  : 1
 Bhagavato.(3.5.9,261) : 0
 Bhagavato.(3.24.6,383) : 1
 Bhagavato.(1.10.22,96) : 0
@@ -3130,12 +3130,12 @@ Bhagavato.(1.16.13,143) : 0
 MR.(391) : 1
 Bhagavato.(1.5.7,54) : 0
 SK.(53) : 2
-Verb causative of ಬೆಯ್  (beyụ)  : 2
+Verb causative of ಬೆಯ್  (beyụ)  : 2
 MR.(189) : 3
 MR.(302) : 0
 MR.(228) : 0
 Bhagavato.(3.2.67,245) : 0
-Verb causative of ಬೆಳಗ್  (beḷagụ)  : 1
+Verb causative of ಬೆಳಗ್  (beḷagụ)  : 1
 Bhagavato.ಎಸ್;(ಬಾಣ) : 0
 Adverb, Conjugated form : 1
 Adjective, Conjugated form : 1
@@ -3148,7 +3148,7 @@ South brahmin dialect, Adjective : 3
 Bhagavato.(1.18.1,166) : 3
 Bhagavato.(2.1.14,186) : 0
 Bhagavato.(1.1.8,3) : 5
-Verb causative of ಭಕ್ಷಿಪು  (bhakṣipu)  : 0
+Verb causative of ಭಕ್ಷಿಪು  (bhakṣipu)  : 0
 GT.(59) : 1
 Bhagavato.(2.4.13,207) : 2
 Bhagavato.(2.4.39.212) : 0
@@ -3171,7 +3171,7 @@ Bhagavato.(1.9.20,85) : 4
 Bhagavato.(2.3.4,199) : 0
 Bhagavato.(1.13.36,131) : 0
 Bhagavato.(2,4,20,209) : 0
-Verb causative of ಭ್ರಮಿಪು  (bhramipu)  : 0
+Verb causative of ಭ್ರಮಿಪು  (bhramipu)  : 0
 Bhagavato.(3.10.33,293) : 2
 Bhagavato.(3.7.7,270) : 0
 Bhagavato.(1.18.39,173) : 4
@@ -3186,17 +3186,17 @@ TK.(3,11) : 1
 Bhagavato.(3.2.28,239) : 0
 Bhagavato.(1.8.5,72) : 4
 Ram.(59) : 0
-Verb causative of 1ಮಗ್ರ್  (magụrụ)  : 3
+Verb causative of 1ಮಗ್ರ್  (magụrụ)  : 3
 SK.(34) : 3
 Bhagavato.(1.16.5,142) : 0
 KI.(251, 45) : 0
 Bhagavato.(3.22.3,370) : 2
 Coomana Dudi. (Tr. K. Jattappa Rai) : 0
 Bhagavato.(2.5.,214) : 0
-Verb causative of 1ಮಡಿಪು  (maḍipu)  : 3
+Verb causative of 1ಮಡಿಪು  (maḍipu)  : 3
 Kl.(321,57) : 2
 MR.(83) : 1
-Verb causative of ಮಣ್ಪು  (maṇpu)  : 1
+Verb causative of ಮಣ್ಪು  (maṇpu)  : 1
 MK. (49) : 3
 MK.(66) : 3
 KP.(77) : 5
@@ -3208,27 +3208,27 @@ RR (9) : 1
 Kl. (116,21) : 1
 MR.(294) : 1
 Kl. (8,2) : 4
-Verb causative of 1ಮಯ್ಪು  (maypu)  : 0
+Verb causative of 1ಮಯ್ಪು  (maypu)  : 0
 Bhagavato.(1.5.8,42) : 0
 MG.(11) : 3
 Bhagavato.(2.5.26,218) : 0
 Kl.(154,27) : 0
 Kl. (305, 54) : 1
 Kl. (109, 20) : 0
-Verb causative of 2ಮರ್ಚ್  (marcụ)  : 0
-Verb causative of ಮರ್ಜ್  (marjụ)  : 0
+Verb causative of 2ಮರ್ಚ್  (marcụ)  : 0
+Verb causative of ಮರ್ಜ್  (marjụ)  : 0
 Noun, Momen propium (proper noun) : 0
 Kl. (20,4) : 0
-Verb causative of 1ಮರ್ಲ್  (marlụ)  : 0
+Verb causative of 1ಮರ್ಲ್  (marlụ)  : 0
 Kl.(422,74) : 1
 RR(20)  : 1
 Honorific : 1
 Bhagavato. (1.9.5, 82)  : 3
 KI. (290, 52) : 3
 MG.(111) : 3
-Verb causative of ಮಲ್ಪು  (malpu)  : 0
-Verb causative of ಮಾಂಗ್  (maaṅgụ)  : 0
-Verb causative of ಮಾಜ್  (maajụ)  : 0
+Verb causative of ಮಲ್ಪು  (malpu)  : 0
+Verb causative of ಮಾಂಗ್  (maaṅgụ)  : 0
+Verb causative of ಮಾಜ್  (maajụ)  : 0
 Bhagavato.(2.5.25,217) : 0
 Kv.(6.120,17) : 0
 Kl.(1,1) : 0
@@ -3237,32 +3237,32 @@ Kn.(23)  : 0
 Kl. (355, 63)  : 2
 GT.(7) : 3
 Bhagavato.(1.13.11,127) : 3
-Verb causative of 1ಮಾರ್  (maarụ)  : 5
+Verb causative of 1ಮಾರ್  (maarụ)  : 5
 Rare occurance, Noun : 1
 Bhagavato. (1.14.15, 135)  : 0
 DM.(97) : 0
-Past participle of 1ಮೀ  (mii)  : 0
+Past participle of 1ಮೀ  (mii)  : 0
 Bhagavato.(3.16.25,335) : 0
-Verb causative of ಮಿತ್ತರ್   (mittarụ)  : 0
+Verb causative of ಮಿತ್ತರ್   (mittarụ)  : 0
 Bhagavato.(3.8.6,276) : 1
-Verb causative of 1ಮೀ  (mii)  : 0
-Verb causative of 1ಮೀರ್  (miirụ)  : 0
+Verb causative of 1ಮೀ  (mii)  : 0
+Verb causative of 1ಮೀರ್  (miirụ)  : 0
 Brahmin Common Jain dialects : 2
-Verb causative of ಮುಂಗು  (muṅgu)  : 1
+Verb causative of ಮುಂಗು  (muṅgu)  : 1
 Bhagavato.(3.21.10,365) : 4
 Bhagavato.(1.11.21,107) : 0
 Kl.(152, 27)  : 0
 MR.(383) : 2
 Bhagavato.(1.11.16,105) : 0
-Verb causative of ಮುಚ್ಚ್  (muccụ)  : 1
-Verb causative of 2ಮುಟ್ಟ್  (muṭṭụ)  : 1
-Verb causative of 7ಮುಟ್ಟ್  (muṭṭụ)  : 1
-Verb causative of 1ಮುಡಿಪು  (muḍipu)  : 3
-Northen Dialects, Figurative, Verb causative of 1ಮುಡಿಪು  (muḍipu)  : 3
+Verb causative of ಮುಚ್ಚ್  (muccụ)  : 1
+Verb causative of 2ಮುಟ್ಟ್  (muṭṭụ)  : 1
+Verb causative of 7ಮುಟ್ಟ್  (muṭṭụ)  : 1
+Verb causative of 1ಮುಡಿಪು  (muḍipu)  : 3
+Northen Dialects, Figurative, Verb causative of 1ಮುಡಿಪು  (muḍipu)  : 3
 Northen Dialects, Momen propium (proper noun) : 2
 Kl.(231,41) : 0
 Bhagavato.(3.16.11,333) : 0
-Verb causative of 1ಮುತ್ತ್  (muttụ)  : 3
+Verb causative of 1ಮುತ್ತ್  (muttụ)  : 3
 MR.(344) : 0
 Ram.(39) : 0
 Formal speech, Verb active : 0
@@ -3270,24 +3270,24 @@ Bhagavato.(1.6.15,56) : 0
 MG.(56) : 2
 Bhagavato.(3.14.29,325) : 1
 Adverb, Figurative, Noun : 7
-Verb causative of ಮುರುಂಗು  (muruṅgu)  : 0
+Verb causative of ಮುರುಂಗು  (muruṅgu)  : 0
 MR.(248) : 1
 Bhagavato.(3.24.32,387) : 0
 Kv.(10.20.55) : 8
 Bhagavato.(3.12.18,304) : 2
 Kn. (16) : 1
-Verb causative of ಮೂಸ್  (muusụ)  : 1
+Verb causative of ಮೂಸ್  (muusụ)  : 1
 Kn.(12) : 2
-Verb causative of ಮೆಚ್ಚ್  (meccụ)  : 1
+Verb causative of ಮೆಚ್ಚ್  (meccụ)  : 1
 Ram. (106) : 2
-Verb causative of ಮೆದ್ಕ್  (medkụ)  : 1
+Verb causative of ಮೆದ್ಕ್  (medkụ)  : 1
 MG.(107) : 0
 CD. : 1
 Kn. (54) : 2
 Southern dialects, Adverb : 1
 Bhagavato.(1.13.13,127) : 3
 KL(33, 6)  : 2
-Verb causative of 1ಮೇ   (mee)  : 1
+Verb causative of 1ಮೇ   (mee)  : 1
 Honorific Singular, Pronoun : 0
 Kv.(9.70,49) : 2
  P.V.(31). : 0
@@ -3295,11 +3295,11 @@ KI.(35, 7)  : 0
 Pronoun, Third Person, Honorific Singular : 6
  P.V.(22) : 6
 SK.(30) : 0
-Verb causative of 1ಮೋಂಟ್  (mooṇṭụ)  : 1
-Verb causative of 2ಮೋಂಟ್  (mooṇṭụ)  : 1
+Verb causative of 1ಮೋಂಟ್  (mooṇṭụ)  : 1
+Verb causative of 2ಮೋಂಟ್  (mooṇṭụ)  : 1
 Pronoun, Third Person : 1
 Bhagavato.(3.2.46,242) : 0
-Verb causative of ಮೋಹಿಪು  (moohipu)  : 1
+Verb causative of ಮೋಹಿಪು  (moohipu)  : 1
 Bhagavato.(1.15.38,140) : 0
 Bhagavato.(1.14.8,133) : 2
 Bhagavato.(2.4.15,208) : 1
@@ -3320,16 +3320,16 @@ Bhagavato.(1.6.42,62) : 0
 Bhagavato.(3.5.12,260) : 1
 Bhagavato.(3.6.32,269) : 1
 Bhagavato.(1.13.34,131) : 1
-Verb causative of ರಾ  (raa)  : 1
-Northen Dialects, Verb causative of ರಾ  (raa)  : 1
+Verb causative of ರಾ  (raa)  : 1
+Northen Dialects, Verb causative of ರಾ  (raa)  : 1
 Bhagavato.(3.10.20,291) : 0
 Bhagavato.(1.9.9.83) : 0
 Bhagavato.(1.2.27,17.)ಶುಭ್ರಮೇಘವರ್ಣದವರಾದ(ಕ್ರಮವಾಗಿಬಿಳಿಮತ್ತುಶ್ಯಾಮವರ್ಣದವರಾದ) : 0
 MR.(68) : 0
 Noun, Plural, Honorific Singular : 0
 Bhagavato.(3.13.33,317) : 0
-Verb causative of ರಕ್ಷಿಪು  (rakṣipu)  : 0
-Verb causative of ರೆಮಿಪು  (remipu)  : 0
+Verb causative of ರಕ್ಷಿಪು  (rakṣipu)  : 0
+Verb causative of ರೆಮಿಪು  (remipu)  : 0
 Bhagavato.(1.8.26,17) : 1
 KP.(15) : 2
 Bhagavato.(3.12.8,302) : 1
@@ -3341,11 +3341,11 @@ Bhagavato.(3.8.22,279) : 1
 Bhagavato.(3.3.3,246) : 2
 Bh (1.5.25, 46) : 1
 Bhagavato.(1.17.22,158) : 0
-Verb causative of 1ಲೆಪ್ಪು  (leppu)  : 0
+Verb causative of 1ಲೆಪ್ಪು  (leppu)  : 0
 Kl (106, 19) : 0
 RR.(17) : 0
 Bhagavato.(1.6.49,52) : 1
-Verb causative of 1ಲೈಪು  (laipu)  : 0
+Verb causative of 1ಲೈಪು  (laipu)  : 0
 Pv.(9) : 0
 Kl.(331,59) : 0
 Bhagavato.(1.17.24,150) : 0
@@ -3376,7 +3376,7 @@ Southern dialects, Verb active : 2
 Bhagavato.(3.20.3,358) : 1
 Bhagavato.(2.4.12,207) : 0
 Bhagavato.(3.21.36,388) : 0
-Verb causative of ವಿರಾಜಿಪು  (viraajipu)  : 0
+Verb causative of ವಿರಾಜಿಪು  (viraajipu)  : 0
 SK.(11) : 0
 Bhagavato.(1.17.5,117) : 1
 GM.(5) : 4
@@ -3388,12 +3388,12 @@ Bhagavato.(1.5.6,42) : 0
 Bhagavato.(1.2.7,82) : 4
 North brahmin Dialect, Adjective : 0
 Bhagavato.(3.23.9,378) : 0
-Verb causative of ವ್ಯಂಜಿಪು  (vyañjipu)  : 0
+Verb causative of ವ್ಯಂಜಿಪು  (vyañjipu)  : 0
 Bhagavato.(3.2.66,245) : 0
-Verb causative of ವ್ಯಗ್ರಿಪು  (vyagripu)  : 0
+Verb causative of ವ್ಯಗ್ರಿಪು  (vyagripu)  : 0
 Bhagavato. (3.23.12, 379) : 1
-Verb causative of ವ್ಯಥಿಪು  (vyathipu)  : 0
-Verb causative of ವ್ಯಾಕುಲಿಪು  (vyaakulipu)  : 0
+Verb causative of ವ್ಯಥಿಪು  (vyathipu)  : 0
+Verb causative of ವ್ಯಾಕುಲಿಪು  (vyaakulipu)  : 0
 Bhagavato.(1.4.11,32) : 2
 Formal speech, Northen Dialects, Noun : 1
 Bhagavato.(3.18.7,348) : 0
@@ -3402,10 +3402,10 @@ Bhagavato.(3.23.30,374) : 0
 Bhagavato.(3.9.16,383) : 0
 Bhagavato.(3.1.2,227) : 5
 Bhagavato.(3.3.31,251) : 1
-Verb causative of 3ಸಂದ್  (sandụ)  : 2
+Verb causative of 3ಸಂದ್  (sandụ)  : 2
 Bhagavato.(1.11.5,114) : 0
 MK.(96) : 0
-Verb causative of ಸಂಧಿಪು  (sandhipu)  : 0
+Verb causative of ಸಂಧಿಪು  (sandhipu)  : 0
 Ram.(86) : 2
 Bhagavato.(3.8.9,260) : 0
 Bhagavato.(3.1.41,234) : 1
@@ -3421,43 +3421,43 @@ Ram. (82) : 0
 Bhagavato.(1.4.476,51) : 1
 Ram. (48) : 0
 KP.(51) : 1
-Verb causative of ಸಾಂಕ್  (saaṅkụ)  : 6
+Verb causative of ಸಾಂಕ್  (saaṅkụ)  : 6
 Southern dialects, Uses : 0
-Verb causative of 2ಸಾಗ್  (saagụ)  : 1
+Verb causative of 2ಸಾಗ್  (saagụ)  : 1
 Bhagavato.(3.19.3.354) : 4
 Kl(190,34) : 0
-Verb causative of ಸಾಧಿಪು  (saadhipu)  : 0
+Verb causative of ಸಾಧಿಪು  (saadhipu)  : 0
 Conjugated form, Particle : 0
 Kl. (430) : 0
 Kl. (135,24) : 0
-Verb causative of 1ಸಾರ್   (saarụ)  : 0
+Verb causative of 1ಸಾರ್   (saarụ)  : 0
 MR.(205) : 0
 Bhagavato.(1.12.33,121) : 3
 Kl. (113, 21) : 4
 North Eastern Harijan Tribal : 2
-Verb causative of ಸೀಂತ್  (siintụ)  : 1
-Verb causative of ಸುಂದ್  (sundụ)  : 1
+Verb causative of ಸೀಂತ್  (siintụ)  : 1
+Verb causative of ಸುಂದ್  (sundụ)  : 1
 Kl.(77,14) : 2
 Bible, Noun : 0
 SK.(10) : 0
 Ram.(12) : 0
 South harijan tribal dialects, Noun : 9
-Verb causative of 1ಸೆರಿ  (seri)  : 0
-Verb causative of 2ಸೇರ್  (seerụ)  : 5
-Verb causative of 1ಸೇರ್ಪು  (seerpu)  : 1
+Verb causative of 1ಸೆರಿ  (seri)  : 0
+Verb causative of 2ಸೇರ್  (seerụ)  : 5
+Verb causative of 1ಸೇರ್ಪು  (seerpu)  : 1
 Bhagavato.(3.10.23,291) : 0
-Verb causative of ಸೋಜ್  (soojụ)  : 4
+Verb causative of ಸೋಜ್  (soojụ)  : 4
 AS.(31) : 0
-Verb causative of ಸೋಲ್ಪು  (soolpu)  : 5
+Verb causative of ಸೋಲ್ಪು  (soolpu)  : 5
 Bhagavato.(1.14.11,134) : 5
 South harijan tribal dialects, Figurative, Noun : 4
 SK.(63) : 6
 Bhagavato.(1.13.24,129) : 2
 Formal speech, Northen Dialects, South common harijan tribal dialects, Noun : 0
 Sk.(25) : 0
-Verb causative of ಹೆಚ್ಚ್  (heccụ)  : 2
+Verb causative of ಹೆಚ್ಚ್  (heccụ)  : 2
 MK.(60) : 5
-Verb causative of ಅಣೆಪು  (aṇepu)  : 1
+Verb causative of ಅಣೆಪು  (aṇepu)  : 1
 Bhagavato.(3.19.25,357) : 3
  , Pronoun, Remote, Singular : 1
 GM.(18.27.63) : 0
