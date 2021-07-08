@@ -116,6 +116,39 @@ def write_as_html_files(strings):
 #
 # write_to_file("D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\headers_data_sorted.txt",dict(sorted(header_count.items(), key=lambda item: item[1])))
 
-write_as_html_files(
-    find_and_list(raw_html_data,"MEANINGS", 10)
-)
+# write_as_html_files(
+#     find_and_list(raw_html_data,"MEANINGS", 10)
+# )
+
+def find_different(raw_html_file, tags, tag_type):
+    new_tags = []
+    dup_tags = set()
+    for line in raw_html_data:
+        line_html = BeautifulSoup(line, 'html.parser')
+        line_tags = line_html.find_all(tag_type)
+        if len(line_tags) != 0:
+            for line_tag in line_tags:
+                if line_tag not in dup_tags:
+                    for tag in tags:
+                        if line_tag != tag:
+                            new_tags.append(line)
+                    dup_tags.add(line_tag)
+
+    f = open(
+        f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\dump.txt",
+        "w",
+        encoding="utf-8")
+    for tag in new_tags:
+        f.write(tag)
+    f.close()
+
+# tags = ['<img src="images/EBig.JPG"/>']
+# find_different(raw_html_data,tags,'img')
+
+f = open(
+    f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\dump.txt",
+    "r",
+    encoding="utf-8")
+
+line = find_and_prettify(raw_html_data,"ಅತಿಯುಕ್ತಿ ( ಕುಳು)")
+print("done")
