@@ -1,9 +1,12 @@
 from bs4 import BeautifulSoup
+import re
 '''
 TODO:
 - parse all the words and look for special symbols (non english and non kannada)
 - some lines seems to be missing the words, investigate
 - anytime hyper text is used for words we can just the js(id) to link things (mayb)
+- missing a few words, check new codes 
+- can do sql db structure with main, meanings and variation tables
 '''
 def trim(string): # could flesh this out later
     start = 0
@@ -21,19 +24,62 @@ def trim(string): # could flesh this out later
 
     return string[start:end+1]
 
+class Variations:
+
+    def __init__(self):
+        self.dialects = {}
+
+    def create(self, table):
+        td_elements = table.findAll('td')
+        current_dialect = ''
+        current_words = []
+        for td in td_elements:
+            if td.has_attr('colspan') and not td.has_attr('class'):
+                if len(current_dialect) != 0 and len(current_words) > 0:
+                    self.dialects[current_dialect] = current_words
+                    current_words = []
+                current_dialect = td.text
+            else:
+                links = td.findAll('a')
+                text = re.findall('\(.*?\)', td.text)
+                counter = 0
+                for link in links:
+                    word = trim(link.text.replace("\n",''))
+                    current_words.append({'tulu': word, 'english': text[counter][1:len(text[counter])]})
+                    counter+=1
+        self.dialects[current_dialect] = current_words
+
 class Word:
 
-    def __init__(self, kannada, english, dialect):
+    def __init__(self, kannada, english, origin):
         self.kannada = kannada
         self.english = english
-        self.dialect = dialect
+        self.origin = origin
 
 def parse_html(html):
 
     # create soup object and find the needed tags
     html_soup = BeautifulSoup(html,'html.parser')
-    header = html_soup.findAll('center') # center is only used in word and dialect type display at the top
+    header = html_soup.findAll('center') # center is only used in word and origin display at the top
     word_text = header[0].find('b').text
+
+    table_list = html_soup.findAll('table')
+    table_list = table_list[1:len(table_list)]
+
+    variation = Variations()
+    for table in table_list:
+        header_rows = table.findAll('td')
+        for row in header_rows:
+            if row.has_attr('class') and row['class'][0] == 'tblhead':
+                # print(row.parent.parent)
+                print('table title', row.text)
+                if row.text == 'VARIATIONS (Region/Caste wise)':
+                    variation.create(row.parent.parent)
+
+
+            # elif row.has_attr('colspan') and not row.has_attr('class'):
+            #     print('section title', row.text)
+       # print(table.prettify())
 
     # website used  and image instead of '್' so this is just to add the actual unicode
     word_html = str(header[0].find('b'))
@@ -62,14 +108,15 @@ def parse_html(html):
     words[0] = words[0].replace("( ","(")
     words[1] = words[1].replace("( ", "(")
 
-    return Word(words[0], words[1], trim(header[1].text.replace(u"\xa0", u"")))  # Kannada, English, Dialect Type
+    return Word(words[0], words[1], trim(header[1].text.replace(u"\xa0", u"")))  # Kannada, English, Origin
 
 
 # test_html = '<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಅತಿಯುಕ್ತಿ ( ಕುಳು),&nbsp;&nbsp;\n    atiyukti ( kuḷu),    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i> </i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ವಿವಿಧ ಯುಕ್ತಿಗಳು</TD><TD valign=top>Varieties of means and devices</TD></TR>      </TABLE><br></BODY>\n</html>'
+
 # word = parse_html(test_html)
 # print(word.kannada)
 # print(word.english)
-# print(word.dialect)
+# print(word.origin)
 
 
 raw_html_data = open('D:\projects\Pythonnnn\TuluProject\data_creation\data\\raw_html_data.txt',
@@ -90,7 +137,7 @@ def create_word_dump():
                 # if count == 699: # 803
                 #     print(html_line)
                 word = parse_html(html_line)
-                data = f'{word.kannada},{word.english},{word.dialect}\n'
+                data = f'{word.kannada},{word.english},{word.origin}\n'
                 words.write(data)
             except (AttributeError,IndexError):
                 print("testsstttt", html_line)
@@ -111,11 +158,14 @@ def empty_pages(num):
         if not html_line.replace("\n","").isdigit() and not html_line == "\n":
             count += 1
             try:
-                if count == num: # 803 do one count down
+                if count == num:
                     page0.write(html_line)
                     page1.write(raw_html_data.readline())
                     return
             except (AttributeError,IndexError):
                 print("testsstttt", html_line)
 
-empty_pages(403)
+# empty_pages(12721) #403, 699, 803,
+
+print(parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಸಾತ್ತಿರ&nbsp;&nbsp;\n    saattira    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;Paaddana, Tulu folk literature. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Noun</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಶಾಸ್ತ್ರ;ಕಟ್ಟುಪಾಡು;ನಿಯಮ;ಪದ್ಧತಿ</TD><TD valign=top>Law;System;Rule;Custom</TD></TR><TR><TD valign=top></TD><TD valign=top>ಶುಭಾಶುಭಕಾರ್ಯಗಳಲ್ಲಿ ರೂಢಿಗತವಾಗಿರುವ ಆಚರಣೆ</TD><TD valign=top>Customary rites;Traditionally accepted rituals</TD></TR><TR><TD valign=top></TD><TD valign=top>ಭಾಷೆ, ಛಂದಸ್ಸು, ಸಂಪ್ರದಾಯ ಮೊದಲಾದುವುಗಳ ಕುರಿತಾದ ನಿಯಮಗಳನ್ನು ತಿಳಿಸುವ ವಿಜ್ಞಾನ</TD><TD valign=top>Science which tells about language, metre, tradition etc</TD></TR><TR><TD valign=top></TD><TD valign=top>ಧರ್ಮ, ವಿಜ್ಞಾನ ಮೊದಲಾದುವುಗಳ ಬಗೆಗೆ ತಿಳಿಸುವ ಗ್ರಂಥ;ಶಾಸ್ತ್ರಗ್ರಂಥ</TD><TD valign=top>Any work of literature or science which deals with religion;A treatise on religion or science</TD></TR><TR><TD valign=top></TD><TD valign=top>ಮುಂದಾಗುವ ಘಟನೆಗಳನ್ನು ತಿಳಿಸುವ ವಿಜ್ಞಾನ;ಭವಿಷ್ಯ</TD><TD valign=top>Sooth saying;Prediction</TD></TR><TR><TD colspan=3><b><i>Figurative, Noun</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಪರಂಪರಾಗತ ಪದ್ಧತಿಯ ಅಲ್ಪಾನುಸರಣೆ</TD><TD valign=top>Perfunctory work;Following the customary rites without interest</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Mandaara Raamaayana (by Mandara Keshava Bhatta)</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("28420000000020");\'>\n                ಸಾತ್ರ</a>\n                &nbsp;(saatra).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Northen Dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("28420000000015");\'>\n                ಶಾಸ್ತ್ರ</a>\n                &nbsp;(śaastra).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South brahmin dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("28420000000016");\'>\n                ಶಾಸ್ತ್ರೊ</a>\n                &nbsp;(śaastro).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South Common dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("28420000000017");\'>\n                ಸಾಸ್ತ್ರೊ</a>\n                &nbsp;(saastro).&nbsp;&nbsp;                                <a href=\'javascript:cFunc("28420000000018");\'>\n                ಸಾತ್ರೊ</a>\n                &nbsp;(saatro).&nbsp;&nbsp;                                <a href=\'javascript:cFunc("28420000000019");\'>\n                ಸಾಸ್ರೊ</a>\n                &nbsp;(saasro).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South harijan tribal dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("28420000000021");\'>\n                ಚಾತ್ರೊ</a>\n                &nbsp;(caatro).&nbsp;&nbsp;<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>REFERENCES</b></TD></TR><TR><TD>&nbsp;&nbsp;</TD><TD COLSPAN=2><i><b>Bhagavato.(1.2.25,17)</TD></TR><TD>&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>ಧರೆಟ್ ಸರ್ವಪುರಾಣ ಶಾಸ್ತ್ರೊಮಿ ವ್ಯಾಸರೂಪುಟ್ ನಿರ್ಮಿತ್.&nbsp;dhareṭụ sarvapuraaṇa śaastromi vyaasaruupuṭụ nirmitụ.&nbsp;ಭೂಮಿಯಲ್ಲಿ ವ್ಯಾಸರೂಪದಲ್ಲಿ ಬಂದು ಎಲ್ಲ ಪುರಾಣಶಾಸ್ತ್ರಗಳನ್ನು ಸೃಷ್ಟಿಮಾಡಿ.<br></TD></TR><TR><TD>&nbsp;&nbsp;</TD><TD COLSPAN=2><i><b>Proverb</TD></TR><TD>&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>ಓದುನೆ<img src=images/EBig.JPG width=10 height=13 /> ಶಾಸ್ತ್ರೊ ಪಾಡುನೆ<img src=images/EBig.JPG width=10 height=13 /> ಗಾಳೊ.&nbsp;oodunϵ śaastro paaḍunϵ gaaḷo.&nbsp;ಓದುವುದು ಶಾಸ್ತ್ರ ಇಕ್ಕುವುದು ಗಾಳ.<br></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>Language References</b></TD></TR><TR><TD><i><b></TD><TD COLSPAN=2>Skt.śaastra.<br/></TD></TR></TABLE><br></BODY>\n</html>'
+))

@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import re
 
 raw_html_data = open('D:\projects\Pythonnnn\TuluProject\data_creation\data\\raw_html_data.txt', 'r', encoding="utf-8")
 
@@ -145,10 +146,47 @@ def find_different(raw_html_file, tags, tag_type):
 # tags = ['<img src="images/EBig.JPG"/>']
 # find_different(raw_html_data,tags,'img')
 
-f = open(
-    f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\dump.txt",
-    "r",
-    encoding="utf-8")
+# f = open(
+#     f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\dump.txt",
+#     "r",
+#     encoding="utf-8")
+#
+# line = find_and_prettify(raw_html_data,"ಅತಿಯುಕ್ತಿ ( ಕುಳು)")
+# print("done")
 
-line = find_and_prettify(raw_html_data,"ಅತಿಯುಕ್ತಿ ( ಕುಳು)")
-print("done")
+def substring_until(string, start, end_at_char):
+    index = start
+    while index < len(string):
+        if string[index] == end_at_char:
+            return string[start:index]
+        index += 1
+
+def new_codes(raw_html_data, dump_file):
+    # common layout is number + eight zeros + number
+    # rare is seven or nine zeros and/or has letter after second number
+
+    codes = []
+
+    # find the javascript codes in html line
+    # javascript:cFunc("code")
+    for line in raw_html_data:
+        indices = [m.start() for m in re.finditer("javascript:cFunc", line)] # learn the regex stuff later lmao
+        for index in indices:
+            code = substring_until(line,index+(len('javascript:cFunc("')),'"') # index starts at j in javascript:cFunc
+            if code.__contains__('00000000'):
+                if code[len(code)-1].isalpha():
+                    codes.append(code)
+            else:
+                codes.append(code)
+
+    for code in codes:
+        dump_file.write(code+'\n')
+
+    dump_file.close()
+
+# dump = open(
+#     f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\dump2.txt",
+#     "w",
+#     encoding="utf-8")
+#
+# new_codes(raw_html_data, dump)
