@@ -22,6 +22,8 @@ def create_headers_dict(html_data):
             for tag in line_html.find_all('b'):
                 current_text = tag.get_text();
                 if '\\n' not in current_text:
+                    if current_text.__contains__('Uses'):
+                        print()
                     if headers_dict.__contains__(current_text):
                         headers_dict[current_text] += 1
                     else:
@@ -34,7 +36,7 @@ def write_to_file(filepath, dictionary):
         file.write(header + " : " + str(count) + '\n')
     file.close()
 
-# headers_dict = create_headers_dict(raw_html_data)
+headers_dict = create_headers_dict(raw_html_data)
 # write_to_file("/data_creation/scripts/headers_data.txt", headers_dict)
 
 def read_dict(filepath):
@@ -190,3 +192,5 @@ def new_codes(raw_html_data, dump_file):
 #     encoding="utf-8")
 #
 # new_codes(raw_html_data, dump)
+
+find_and_prettify('kaṭṭaḷϵ kandaacaara')
