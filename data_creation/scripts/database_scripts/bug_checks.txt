@@ -1,0 +1,12 @@
+<img src="images/EBig.JPG"/> : 12379
+<img border="0" height="13" src="images/E.JPG" width="10"/> : 12411
+<img src="images/E.JPG" width="0"/> : 23341
+<img border="0" height="0" src="images/E.JPG" width="0"/> : 3068
+<img height="13" src="images/EBig.JPG" width="10"/> : 12408
+<img height="25/" src="images/LBig.JPG" width="15"/> : 10
+<img src="images/E.JPG" width="0">ಸ್ಟ್<img src="images/E.JPG" width="0"/>ತ್ ಜ್ವಾಲೇ ಪಿದೆಯಾಸ್ಟ್. uresṭụụ pugesṭụụkiḍikiitụsṭụtụụ jvaalee pideyaasṭụ. ಘರ್ಷಣೆಗೊಂಡು ಹೊಗೆತು ಕಿಡಿಯೆದ್ದು ಜ್ವಾಲೆ ಹೊರಟು.<br/></img> : 0
+<img src="images/L.JPG" width="0"/> : 180
+<img border="0" height="13" src="images/L.JPG" width="10"/> : 9
+<img src="images/E.JPG" width="0">ಪಂಟ  \n    jaanϵϵndụpaṇṭa    </img> : 0
+<img border="0" height="13" src="images/E.JPG" width="10">oಡಲಾ</img> : 0
+<img border="0" height="13" src="images/E.JPG" width="10">oಪುಣ</img> : 0

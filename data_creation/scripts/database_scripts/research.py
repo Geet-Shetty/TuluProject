@@ -193,4 +193,6 @@ def new_codes(raw_html_data, dump_file):
 #
 # new_codes(raw_html_data, dump)
 
-find_and_prettify('kaṭṭaḷϵ kandaacaara')
+# find_and_prettify('kaṭṭaḷϵ kandaacaara')
+
+
