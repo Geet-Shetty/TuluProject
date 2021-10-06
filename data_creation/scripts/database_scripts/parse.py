@@ -61,105 +61,106 @@ def convert_unicode(kannada_word, keylist): # converts the kannada unicode into 
     return tulu_word
     # return ''
 
-class Variations:
+def create_variations(table):
+    # the smaller versions of the images ex E.jpg compared to EBig.jpg is for variations
+    # also have to consider if some words in it might be poorly formatted
+    variations = {} # could also be the context of the word, like medicinal instead of Lexical categories
+    td_elements = table.findAll('td')
+    current_dialect = ''
+    current_words = []
+    td_elements = td_elements[1:len(td_elements)] # remove first td that is just the title VARIATIONS (Region/Caste wise)
+    for td in td_elements:
+        if td.has_attr('colspan'): # and not td.has_attr('class')
+            if len(current_dialect) != 0 and len(current_words) > 0:
+                variations[current_dialect] = current_words
+                current_words = []
+            current_dialect = td.text
+        else:
+            supobj = td.find('sup')
+            links = td.findAll('a')
 
-    def __init__(self):
-        self.dialects = {} # could also be the context of the word, like medicinal instead of Lexical categories
+            img_tags = td.findAll('img')
+            for img in img_tags:
+                if (img.has_attr('height') and img['height'] == '0') or (img.has_attr('width') and img['width'] == '0'):
+                    exclude_flag = True
+                elif img.has_attr('src') and img['src'] == 'images/E.JPG':
+                    img.insert_after(u'್')
 
-    def create(self, table):
-        td_elements = table.findAll('td')
-        current_dialect = ''
-        current_words = []
-        td_elements = td_elements[1:len(td_elements)] # remove first td that is just the title VARIATIONS (Region/Caste wise)
-        for td in td_elements:
-            if td.has_attr('colspan'): # and not td.has_attr('class')
-                if len(current_dialect) != 0 and len(current_words) > 0:
-                    self.dialects[current_dialect] = current_words
-                    current_words = []
-                current_dialect = td.text
-            else:
-                supobj = td.find('sup')
-                links = td.findAll('a')
-                text = re.findall('\(.*?\)', td.text) # english words stored as plain text between parathesises
-                counter = 0
-                for link in links:
-                    word = trim(link.text.replace("\n",''))
-                    current_words.append({'kannda': word, 'english_tulu': text[counter][1:len(text[counter])-1], 'tulu': convert_unicode(word,keylist), 'id':  int(supobj.text) if supobj and supobj.text.isdigit() else 0})
-                    counter+=1
-        self.dialects[current_dialect] = current_words
+            text = re.findall('\(.*?\)', td.text) # english words stored as plain text between parathesises
+            counter = 0
+            for link in links:
+                word = trim(link.text.replace("\n",''))
+                current_words.append({'kannda': word, 'english_tulu': text[counter][1:len(text[counter])-1], 'tulu': convert_unicode(word,keylist), 'id':  int(supobj.text) if supobj and supobj.text.isdigit() else 0})
+                counter+=1
 
-class Meanings:
+    variations[current_dialect] = current_words
+    return variations
 
-    def __init__(self):
-        self.contexts={}
+def create_meanings(table):
+    meanings = {}
+    tr_elements = table.findAll('tr')
+    current_context = ''
+    current_definitions = []
+    tr_elements = tr_elements[1:len(tr_elements)]  # remove first td that is just the title MEANINGS
 
-    def create(self, table):
-        tr_elements = table.findAll('tr')
-        current_context = ''
-        current_definitions = []
-        tr_elements = tr_elements[1:len(tr_elements)]  # remove first td that is just the title MEANINGS
+    for tr in tr_elements:
+        td = tr.find('td')
+        if td.has_attr('colspan'):
+            if len(current_context) != 0 and len(current_definitions) > 0:
+                meanings[current_context] = current_definitions
+                current_definitions = []
+            current_context = td.text
+        else:
+            td_elements = tr.findAll('td')
+            td_elements = td_elements[1:len(td_elements)] # get rid of empty td element, so the list should be length of 2
+            if len(td_elements) == 2:
+                current_definitions.append({'kannada': td_elements[0].text.split(';'), 'english': td_elements[1].text.split(';')})
+            elif len(td_elements) == 1:
+                if td_elements[0].text.isascii():
+                    current_definitions.append({'kannada': [], 'english': td_elements[0].text.split(';')})
+                else:
+                    current_definitions.append({'kannada': td_elements[0].text.split(';'), 'english': []})
 
-        for tr in tr_elements:
-            td = tr.find('td')
-            if td.has_attr('colspan'):
-                if len(current_context) != 0 and len(current_definitions) > 0:
-                    self.contexts[current_context] = current_definitions
-                    current_definitions = []
-                current_context = td.text
-            else:
-                td_elements = tr.findAll('td')
-                td_elements = td_elements[1:len(td_elements)] # get rid of empty td element, so the list should be length of 2
-                if len(td_elements) == 2:
-                    current_definitions.append({'kannada': td_elements[0].text.split(';'), 'english': td_elements[1].text.split(';')})
-                elif len(td_elements) == 1:
-                    if td_elements[0].text.isascii():
-                        current_definitions.append({'kannada': [], 'english': td_elements[0].text.split(';')})
-                    else:
-                        current_definitions.append({'kannada': td_elements[0].text.split(';'), 'english': []})
+    meanings[current_context] = current_definitions
+    return meanings
 
+def create_word(table):
 
+    exclude_flag = False
+    center_elements = table.findAll('center')  # center is only used in word and origin display at the top
+    supobj = center_elements[0].find('sup')  # find the sup object that hold the word sub id
+    id = int(supobj.string.extract()) if supobj and supobj.text.isdigit() else 0
+    word_btag = center_elements[0].find('b')  # contains the kannada and english tulu word
 
-        self.contexts[current_context] = current_definitions
+    img_tags = word_btag.findAll('img')
+    for img in img_tags:
+        if (img.has_attr('height') and img['height'] == '0') or (img.has_attr('width') and img['width'] == '0'):
+            exclude_flag = True
+        elif img.has_attr('src') and img['src'] == 'images/EBig.JPG':
+            img.insert_after(u'್')
 
-class Word:
+    # split kannada and english and trim spaces from left and right
+    words = []
+    if word_btag.text.__contains__('\xa0\xa0\n'):
+        words = word_btag.text.split('\xa0\xa0\n')
+    elif word_btag.text.__contains__('\xa0\xa0\\n'):
+        words = word_btag.text.split('\xa0\xa0\\n')
+    words[1] = trim(words[1])
 
-    def __init__(self,table):
+    # remove english O in kannada word
+    if words[0].__contains__("o"):
+        words[0] = words[0].replace("o", u"ಂ")
 
-        exclude_flag = False
-        center_elements = table.findAll('center')  # center is only used in word and origin display at the top
-        supobj = center_elements[0].find('sup')  # find the sup object that hold the word sub id
-        id = int(supobj.string.extract()) if supobj and supobj.text.isdigit() else 0
-        word_btag = center_elements[0].find('b')  # contains the kannada and english tulu word
+    word ={'kannada': words[0], 'english': words[1], 'tulu': convert_unicode(words[0], keylist),'origin': trim(center_elements[1].text.replace(u"\xa0", u"")), 'id':  id}
 
-        img_tags = word_btag.findAll('img')
-        for img in img_tags:
-            if (img.has_attr('height') and img['height'] == '0') or (img.has_attr('width') and img['width'] == '0'):
-                exclude_flag = True
-            elif img.has_attr('src') and img['src'] == 'images/EBig.JPG':
-                img.insert_after(u'್')
+    if exclude_flag:
+        print() # add the write to file for html lines u want to exclude using table.parent.parent
 
-        # split kannada and english and trim spaces from left and right
-        words = []
-        if word_btag.text.__contains__('\xa0\xa0\n'):
-            words = word_btag.text.split('\xa0\xa0\n')
-        elif word_btag.text.__contains__('\xa0\xa0\\n'):
-            words = word_btag.text.split('\xa0\xa0\\n')
-        words[1] = trim(words[1])
+    # sometimes instead of dialect it is a source origin or type origin like noun or verb
+    # seperate id needed because some words have the same spelling but different meaning and need a way to differentiate between them
 
-        # remove english O in kannada word
-        if words[0].__contains__("o"):
-            words[0] = words[0].replace("o", u"ಂ")
+    return word
 
-        self.word ={'kannada': words[0], 'english': words[1], 'tulu': convert_unicode(words[0], keylist),'origin': trim(center_elements[1].text.replace(u"\xa0", u"")), 'id':  id}
-
-        if exclude_flag:
-            print() # add the write to file for html lines u want to exclude using table.parent.parent
-
-        # sometimes instead of dialect it is a source origin or type origin like noun or verb
-        # seperate id needed because some words have the same spelling but different meaning and need a way to differentiate between them
-
-    def dict(self):
-        return self.word
 
 def parse_html(html):
 
@@ -169,23 +170,24 @@ def parse_html(html):
     # word_text = header[0].find('b').text
 
     table_list = html_soup.findAll('table')
+    word = create_word(table_list[0])
     # supobj = table_list[0].find('sup')
     #print(supobj.text.isdigit())
-    #table_list = table_list[1:len(table_list)] # all table objects except the first one with main word
+    table_list = table_list[1:len(table_list)] # all table objects except the first one with main word
 
-    # meanings = Meanings()
-    # variations = Variations()
-    # for table in table_list:
-    #     header_rows = table.findAll('td')
-    #     for row in header_rows:
-    #         if row.has_attr('class') and row['class'][0] == 'tblhead':
-    #             # print(row.parent.parent)
-    #             #print('table title', row.text)
-    #             if row.text == 'VARIATIONS (Region/Caste wise)':
-    #                 variations.create(row.parent.parent)
-    #             elif row.text == 'MEANINGS':
-    #                 meanings.create(row.parent.parent)
-    #
+    meanings = {}
+    variations = {}
+    for table in table_list:
+        header_rows = table.findAll('td')
+        for row in header_rows:
+            if row.has_attr('class') and row['class'][0] == 'tblhead':
+                # print(row.parent.parent)
+                #print('table title', row.text)
+                if row.text == 'VARIATIONS (Region/Caste wise)':
+                    variations = create_variations(row.parent.parent)
+                elif row.text == 'MEANINGS':
+                    meanings = create_meanings(row.parent.parent)
+
 
             # elif row.has_attr('colspan') and not row.has_attr('class'):
             #     print('section title', row.text)
@@ -222,7 +224,7 @@ def parse_html(html):
     # word = Word(words[0], words[1], originh, int(supobj.text) if supobj.text.isdigit() else 0)
     # word.create(table_list[0])
     # return {'word': word, 'meanings':meanings, 'variations':variations}  # Kannada, English, Origin
-    return Word(table_list[0]).dict()
+    return {'word': word, 'meanings': meanings, 'variations': variations}
     #return {Word(words[0], words[1], convert_unicode(words[0],keylist), trim(header[1].text.replace(u"\xa0", u"")), int(supobj.text) if supobj.text.isdigit() else 0), meanings, variations}
 
 # test_html = '<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಅತಿಯುಕ್ತಿ ( ಕುಳು),&nbsp;&nbsp;\n    atiyukti ( kuḷu),    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i> </i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ವಿವಿಧ ಯುಕ್ತಿಗಳು</TD><TD valign=top>Varieties of means and devices</TD></TR>      </TABLE><br></BODY>\n</html>'

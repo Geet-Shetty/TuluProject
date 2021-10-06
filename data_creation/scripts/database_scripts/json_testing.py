@@ -8,7 +8,7 @@ import parse
 #     "department": "HR"
 # }
 
-dictionary = parse.word7
+dictionary = parse.word5
 
 # Serializing json
 json_object = json.dumps(dictionary, indent=4)
