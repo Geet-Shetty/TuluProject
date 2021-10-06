@@ -234,7 +234,7 @@ raw_html_data = open(os.path.join(path.data, 'raw_html_data.txt'),
 
 def create_word_dump():
     words = open(
-        f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\dump.txt",
+        f"dump.txt",
         "w",
         encoding="utf-8")
 

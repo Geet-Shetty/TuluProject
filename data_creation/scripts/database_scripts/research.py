@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup
 import re
+import os
+import path
 
-raw_html_data = open('D:\projects\Pythonnnn\TuluProject\data_creation\data\\raw_html_data.txt', 'r', encoding="utf-8")
+raw_html_data = open(os.path.join(path.data, 'raw_html_data.txt'), 'r', encoding="utf-8")
 
 bold_tag = ['variations (region/caste wise)', 'dialects', 'suffix', 'meanings', 'examples', 'references', 'language references']
 
@@ -138,7 +140,7 @@ def find_different(raw_html_file, tags, tag_type):
                     dup_tags.add(line_tag)
 
     f = open(
-        f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\dump.txt",
+        f"dump.txt",
         "w",
         encoding="utf-8")
     for tag in new_tags:

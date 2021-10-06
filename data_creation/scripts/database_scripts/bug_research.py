@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
+import os
+import path
 
-raw_html_data = open('D:\projects\Pythonnnn\TuluProject\data_creation\data\\raw_html_data.txt', 'r', encoding="utf-8")
+raw_html_data = open(os.path.join(path.data, 'raw_html_data.txt'), 'r', encoding="utf-8")
 
 def map_tag(raw_html_data, tag):
     img_set = {}
@@ -24,7 +26,7 @@ def map_tag(raw_html_data, tag):
 img_set = map_tag(raw_html_data, 'img')
 
 words = open(
-    f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\\bug_checks.txt",
+    f"bug_checks.txt",
     "w",
     encoding="utf-8")
 
