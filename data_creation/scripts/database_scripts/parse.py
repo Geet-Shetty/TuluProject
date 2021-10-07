@@ -152,8 +152,8 @@ def create_word(table):
 
     word ={'kannada': words[0], 'english': words[1], 'tulu': convert_unicode(words[0], keylist),'origin': trim(center_elements[1].text.replace(u"\xa0", u"")), 'id':  id}
 
-    if exclude_flag:
-        print() # add the write to file for html lines u want to exclude using table.parent.parent
+    # if exclude_flag:
+    #     print() # add the write to file for html lines u want to exclude using table.parent.parent
 
     # sometimes instead of dialect it is a source origin or type origin like noun or verb
     # seperate id needed because some words have the same spelling but different meaning and need a way to differentiate between them
