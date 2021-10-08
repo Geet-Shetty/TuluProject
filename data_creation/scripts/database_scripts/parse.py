@@ -115,6 +115,7 @@ def create_meanings(table):
     meanings = {}
     tr_elements = table.findAll('tr')
     current_context = ''
+    current_id = 0
     current_definitions = []
     tr_elements = tr_elements[1:len(tr_elements)]  # remove first td that is just the title MEANINGS
 
@@ -124,6 +125,10 @@ def create_meanings(table):
             if len(current_context) != 0 and len(current_definitions) > 0:
                 meanings[current_context] = current_definitions
                 current_definitions = []
+                current_id = 0
+
+            supobj = td.find('sup')
+            current_id = int(supobj.string.extract()) if supobj and supobj.text.isdigit() else 0
             current_context = td.text
         else:
             td_elements = tr.findAll('td')
@@ -174,7 +179,7 @@ def create_word(table):
     words[0] = words[0].replace("( ","(")
     words[1] = words[1].replace("( ", "(")
 
-    word ={'kannada': words[0], 'english': words[1], 'tulu': convert_unicode(words[0], keylist),'origin': trim(center_elements[1].text.replace(u"\xa0", u"")), 'id':  id}
+    word = {'kannada': words[0], 'english': words[1], 'tulu': convert_unicode(words[0], keylist),'origin': trim(center_elements[1].text.replace(u"\xa0", u"")), 'id':  id}
 
     # sometimes instead of dialect it is a source origin or type origin like noun or verb
     # seperate id needed because some words have the same spelling but different meaning and need a way to differentiate between them
