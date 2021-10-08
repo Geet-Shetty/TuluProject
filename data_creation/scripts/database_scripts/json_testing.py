@@ -8,8 +8,13 @@ import parse
 #     "department": "HR"
 # }
 
-dictionary = parse.word5
+dictionary = [parse.word10,parse.word9]
 
-# Serializing json
-json_object = json.dumps(dictionary, indent=4)
+
+with open("words.txt", "w") as outfile:
+    # json.dump(dictionary, outfile)
+    for word in dictionary:
+        outfile.write(json.dumps(word)+'\n')
+# # Serializing json
+json_object = json.dumps(dictionary[0])
 print(json_object)
