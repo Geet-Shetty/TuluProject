@@ -38,7 +38,7 @@ def write_to_file(filepath, dictionary):
         file.write(header + " : " + str(count) + '\n')
     file.close()
 
-headers_dict = create_headers_dict(raw_html_data)
+#headers_dict = create_headers_dict(raw_html_data)
 # write_to_file("/data_creation/scripts/headers_data.txt", headers_dict)
 
 def read_dict(filepath):
@@ -198,3 +198,44 @@ def new_codes(raw_html_data, dump_file):
 # find_and_prettify('kaṭṭaḷϵ kandaacaara')
 
 
+
+def create_word_dump(): # check that imgs don't exist in the meanings context (not the headers)
+    include = open(
+        f"word_test.txt",
+        "w",
+        encoding="utf-8")
+
+    exclude = open(
+        f"word_exclude_m.txt",
+        "w",
+        encoding="utf-8")
+
+    count = 0
+    for html_line in raw_html_data:
+        if not html_line.replace("\n","").isdigit() and not html_line == "\n":
+            count += 1
+            try:
+                html_soup = BeautifulSoup(html_line, 'html.parser')
+                # header = html_soup.findAll('center') # center is only used in word and origin display at the top
+                # word_text = header[0].find('b').text
+
+                table_list = html_soup.findAll('table')
+                for table in table_list:
+                    header_rows = table.findAll('td')
+                    for row in header_rows:
+                        if row.has_attr('class') and row['class'][0] == 'tblhead':
+                            if row.text == 'MEANINGS':
+                                tr_elements = row.parent.parent.findAll('tr')
+                                tr_elements = tr_elements[1:len(tr_elements)]
+                                for tr in tr_elements:
+                                    td = tr.find('td')
+                                    if td.has_attr('colspan'):
+                                       continue
+                                    else:
+                                        if len(td.findAll('img')) > 0:
+                                            exclude.write(html_line)
+
+            except (AttributeError,IndexError):
+                print("testsstttt", html_line)
+
+create_word_dump()

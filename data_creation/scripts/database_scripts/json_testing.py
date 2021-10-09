@@ -8,7 +8,7 @@ import parse
 #     "department": "HR"
 # }
 
-dictionary = [parse.word10,parse.word9]
+dictionary = [parse.word11,parse.word5]
 
 
 with open("words.txt", "w") as outfile:
