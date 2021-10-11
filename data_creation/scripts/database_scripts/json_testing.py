@@ -11,7 +11,7 @@ import parse
 dictionary = [parse.word11,parse.word5]
 
 
-with open("words.txt", "w") as outfile:
+with open("research_data/words.txt", "w") as outfile:
     # json.dump(dictionary, outfile)
     for word in dictionary:
         outfile.write(json.dumps(word)+'\n')

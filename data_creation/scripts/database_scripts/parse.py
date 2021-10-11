@@ -72,7 +72,7 @@ def convert_unicode(kannada_word, keylist): # converts the kannada unicode into 
         return kannada_word
     # return ''
 
-def fix_unicode(tag):
+def img_to_unicode(tag):
     img_tags = tag.findAll('img')
     for img in img_tags:
         if (img.has_attr('height') and img['height'] == '0') or (img.has_attr('width') and img['width'] == '0'): # ignore the tags that don't show up
@@ -83,6 +83,31 @@ def fix_unicode(tag):
             elif img['src'] == 'images/EBig.JPG' or img['src'] == 'images/E.JPG':
                 img.insert_after(u'್')
 
+def correct_unicode(string):
+
+    def find_occurances(str, chr):
+        indices = []
+        for i in range(len(str)):
+            if (str[i] == chr):
+                indices.append(i)
+        return indices
+
+    '''
+    let = 0x0C80
+    print(let)
+    3200
+    print(0xC80)
+    3200
+    print(0xc80)
+    3200
+    ord('ಮ')
+    3246
+    
+    'o': u'ಂ', 
+    '''
+    # conversions = {u'೦': u'ಂ'}
+    # for c1,c2 in conversions.items():
+
 def create_word(table):
 
     center_elements = table.findAll('center')  # center is only used in word and origin display at the top
@@ -90,7 +115,7 @@ def create_word(table):
     id = int(supobj.string.extract()) if supobj and supobj.text.isdigit() else 0
     word_btag = center_elements[0].find('b')  # contains the kannada and english tulu word
 
-    fix_unicode(word_btag)
+    #fix_unicode(word_btag)
 
     # split kannada and english and trim spaces from left and right
     words = []
@@ -100,9 +125,10 @@ def create_word(table):
         words = word_btag.text.split('\xa0\xa0\\n')
     words[1] = trim(words[1])
 
-    # remove english O in kannada word and add proper unicode
-    if words[0].__contains__("o"):
-        words[0] = words[0].replace("o", u"ಂ")
+    # better to do on the html string level will have to check for not ascii chars on both sides
+    # # remove english O in kannada word and add proper unicode
+    # if words[0].__contains__("o"): # has to be done at this lvl instead of the whole html string because we don't wanna replace the Os in the english ext
+    #     words[0] = words[0].replace("o", u"ಂ")
 
     # remove random commas in words (only specially for one fucken word lmao)
     words[0] = words[0].replace(",","")
@@ -129,7 +155,7 @@ def create_meanings(table):
     for tr in tr_elements:
         td = tr.find('td')
         if td.has_attr('colspan'):
-            fix_unicode(td)
+            #fix_unicode(td)
 
             if len(current_definitions) > 0:
                 if len(current_contexts['linked_context']):
@@ -156,7 +182,6 @@ def create_meanings(table):
                 current_contexts['linked_context']['kannada'] = kannada
                 current_contexts['linked_context']['english'] = trim(words[1][:len(words[1])-1])
                 current_contexts['linked_context']['tulu'] = convert_unicode(kannada,keylist)
-                print()
             else:
                 header_list = td.text.split(',')
                 current_contexts['contexts'] = header_list
@@ -196,7 +221,7 @@ def create_variations(table):
             supobj = td.find('sup')
             links = td.findAll('a')
 
-            fix_unicode(td)
+            #fix_unicode(td)
 
             text = re.findall('\(.*?\)', td.text) # english words stored as plain text between parathesises
             counter = 0
@@ -215,12 +240,11 @@ def parse_html(html):
     # header = html_soup.findAll('center') # center is only used in word and origin display at the top
     # word_text = header[0].find('b').text
 
+    img_to_unicode(html_soup)
+
     table_list = html_soup.findAll('table')
     word = create_word(table_list[0])
-    # supobj = table_list[0].find('sup')
-    #print(supobj.text.isdigit())
-    # table_list = table_list[1:len(table_list)] # all table objects except the first one with main word
-    #
+    table_list = table_list[1:len(table_list)] # all table objects except the first one with main word
     meanings = []
     variations = {}
     for table in table_list:
@@ -239,36 +263,6 @@ def parse_html(html):
             #     print('section title', row.text)
        # print(table.prettify())
 
-    # # website used  and image instead of '್' so this is just to add the actual unicode
-    # word_html = str(header[0].find('b'))
-    # img_html = '<img src="images/EBig.JPG"/>'
-    # index = word_html.find(img_html)
-    # if(index != -1):
-    #     word_html = word_html[:index] + u'್' + word_html[index+len(img_html):]
-    #     word_soup = BeautifulSoup(word_html,'html.parser')
-    #     word_text = word_soup.text
-    #
-    # # split kannada and english and trim spaces from left and right
-    # words = []
-    # if word_text.__contains__('\xa0\xa0\n'):
-    #     words = word_text.split('\xa0\xa0\n')
-    # elif word_text.__contains__('\xa0\xa0\\n'):
-    #     words = word_text.split('\xa0\xa0\\n')
-    # words[1] = trim(words[1])
-    #
-    # # remove english O in kannada word
-    # if words[0].__contains__("o"):
-    #     words[0] = words[0].replace("o",u"ಂ")
-    #
-    # # remove random commas in words (only specially for one fucken word lmao)
-    # words[0] = words[0].replace(",","")
-    # words[1] = words[1].replace(",", "")
-    # words[0] = words[0].replace("( ","(")
-    # words[1] = words[1].replace("( ", "(")
-    #
-    # originh = trim(header[1].text.replace(u"\xa0", u""))
-    # word = Word(words[0], words[1], originh, int(supobj.text) if supobj.text.isdigit() else 0)
-    # word.create(table_list[0])
     # return {'word': word, 'meanings':meanings, 'variations':variations}  # Kannada, English, Origin
     # return {'word': word, 'meanings': meanings, 'variations': variations}
     return {'word': word, 'meanings': meanings, 'variations': variations}
@@ -282,7 +276,7 @@ raw_html_data = open(os.path.join(path.data, 'raw_html_data.txt'),
 
 def create_word_dump():
     include = open(
-        f"word_test.txt",
+        f"research_data/word_test.txt",
         "w",
         encoding="utf-8")
 
@@ -340,13 +334,16 @@ word3 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="t
 word4 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಅೞಿ&nbsp;&nbsp;\n    aḻi    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Verb neuter</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಲಯವಾಗು (?)</TD><TD valign=top>Be saturated(?)</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>REFERENCES</b></TD></TR><TR><TD>&nbsp;&nbsp;</TD><TD COLSPAN=2><i><b>Bhagavato.(3.21.21;367)</TD></TR><TD>&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>ಕರೊಸ್ಟ್ ಕರಣೇಂದ್ರಿಯೊ ಭಕ್ತಿಸುಖೊಂಟೞಿಸ್ಟೀ ವರ ಚಿತ್ತೊಂಟೊರೊ ಪಾರ್ಪನೆ.&nbsp;karosṭụụ karaṇeendriyo bhaktisukhoṇṭaḻisṭii vara cittoṇṭoro paarpane.&nbsp;ಭಕ್ತಿ ಸುಖದಲ್ಲಿ ಕರಣೇಂದ್ರಿಯಗಳು ಕರಗಿ ಲಯವಾಗಿ (?) ಪವಿತ್ರವಾದ ಚಿತ್ತದಲ್ಲಿ ಒಮ್ಮೆಯೂ ಚಲಿಸದೆ.<br></TD></TR></TABLE><br></BODY>\n</html>\n')
 word5 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1>2</font></sup><font size=+3><b>ಅಣಿಲೆ<img src=images/EBig.JPG />&nbsp;&nbsp;\n    aṇilϵ    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Noun</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಭತ್ತದ ಮೊಳಕೆ</TD><TD valign=top>Germ of paddy seed</TD></TR><TR><TD valign=top></TD><TD valign=top>ಭತ್ತದ ಮೊಳಕೆಯೊಡೆಯುವ ತುದಿ</TD><TD valign=top>Germinating point of paddy seed</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>All</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("770000000048");\'>\n                ಅನಿಲೆ<img src=images/E.JPG height=13 width=10 BoRDER=0 /></a>\n                &nbsp;(anilϵ).&nbsp;&nbsp;<br/></TD></TR></TABLE><br></BODY>\n</html>\n')
 word6 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1>8</font></sup><font size=+3><b>ಆಯ&nbsp;&nbsp;\n    aaya    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Postposition</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಸಾಮಾನ್ಯವಾಗಿ ಶಿವಳ್ಳಿ ಬ್ರಾಹ್ಮಣ ಕುಲನಾಮಗಳ ಅಂತ್ಯದಲ್ಲಿ ಬರುವ ಪರಸರ್ಗ;<sup>1</sup><b>ಆಯೆ</b> \'ಅವನು\' ಎಂಬುದರ ರೂಪಭೇದ</TD><TD valign=top>The postposition appended usually in a shivalli Brahmin’s surname;A variant of <sup>1</sup><b>aaye</b> \'he’</TD></TR>      </TABLE><br></BODY>\n</html>')
-#word7 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>-ಒಲು&nbsp;&nbsp;\n    -olu    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;North common harijan tribal jain dialect. &nbsp;Pancavati Raamaayana Vaali Sugreevera Kaalago (by Sankayya Bhagavatha; Ed. T. Keshava Bhatta). &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Suffix</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಕ್ರಿಯಾ ರೂಪಗಳ ಪ್ರಥಮ ಪುರುಷ ಸ್ತ್ರೀಲಿಂಗ ಏಕವಚನ ಪ್ರತ್ಯಯ</TD><TD valign=top>Third person feminine singular suffix of verbal forms</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Common Harijan Tribal Jain</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000087");\'>\n                -ಅಲ್</a>\n                &nbsp;(-alụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North brahmin Dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000086");\'>\n                -ಅಳ್</a>\n                &nbsp;(-aḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North common harijan tribal jain dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000089");\'>\n                -ಒಳು</a>\n                &nbsp;(-oḷu).&nbsp;&nbsp;                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000091");\'>\n                -ಓಲು</a>\n                &nbsp;(-oolu).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Pancavati Raamaayana Vaali Sugreevera Kaalago (by Sankayya Bhagavatha; Ed. T. Keshava Bhatta)</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000089");\'>\n                -ಒಳು</a>\n                &nbsp;(-oḷu).&nbsp;&nbsp;                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000091");\'>\n                -ಓಲು</a>\n                &nbsp;(-oolu).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Rare occurance</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>2</font></sup>                <a href=\'javascript:cFunc("2060000000088");\'>\n                -ಆಳ್</a>\n                &nbsp;(-aaḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South common harijan tribal jain dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>2</font></sup>                <a href=\'javascript:cFunc("2060000000088");\'>\n                -ಆಳ್</a>\n                &nbsp;(-aaḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Southern dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000086");\'>\n                -ಅಳ್</a>\n                &nbsp;(-aḷụ).&nbsp;&nbsp;<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>EXAMPLES</b></TD></TR><TR><TD><i><b></TD><TD COLSPAN=2>battaḷụ/battalụ/battaaḷụ/battoḷu/battolu/battoolu<br/></TD></TR></TABLE><br></BODY>\n</html>')
+word7 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>-ಒಲು&nbsp;&nbsp;\n    -olu    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;North common harijan tribal jain dialect. &nbsp;Pancavati Raamaayana Vaali Sugreevera Kaalago (by Sankayya Bhagavatha; Ed. T. Keshava Bhatta). &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Suffix</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಕ್ರಿಯಾ ರೂಪಗಳ ಪ್ರಥಮ ಪುರುಷ ಸ್ತ್ರೀಲಿಂಗ ಏಕವಚನ ಪ್ರತ್ಯಯ</TD><TD valign=top>Third person feminine singular suffix of verbal forms</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Common Harijan Tribal Jain</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000087");\'>\n                -ಅಲ್</a>\n                &nbsp;(-alụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North brahmin Dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000086");\'>\n                -ಅಳ್</a>\n                &nbsp;(-aḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North common harijan tribal jain dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000089");\'>\n                -ಒಳು</a>\n                &nbsp;(-oḷu).&nbsp;&nbsp;                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000091");\'>\n                -ಓಲು</a>\n                &nbsp;(-oolu).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Pancavati Raamaayana Vaali Sugreevera Kaalago (by Sankayya Bhagavatha; Ed. T. Keshava Bhatta)</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000089");\'>\n                -ಒಳು</a>\n                &nbsp;(-oḷu).&nbsp;&nbsp;                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000091");\'>\n                -ಓಲು</a>\n                &nbsp;(-oolu).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Rare occurance</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>2</font></sup>                <a href=\'javascript:cFunc("2060000000088");\'>\n                -ಆಳ್</a>\n                &nbsp;(-aaḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South common harijan tribal jain dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>2</font></sup>                <a href=\'javascript:cFunc("2060000000088");\'>\n                -ಆಳ್</a>\n                &nbsp;(-aaḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Southern dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000086");\'>\n                -ಅಳ್</a>\n                &nbsp;(-aḷụ).&nbsp;&nbsp;<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>EXAMPLES</b></TD></TR><TR><TD><i><b></TD><TD COLSPAN=2>battaḷụ/battalụ/battaaḷụ/battoḷu/battolu/battoolu<br/></TD></TR></TABLE><br></BODY>\n</html>')
+word7 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>-ಒಲು&nbsp;&nbsp;\n    -olu    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;North common harijan tribal jain dialect. &nbsp;Pancavati Raamaayana Vaali Sugreevera Kaalago (by Sankayya Bhagavatha; Ed. T. Keshava Bhatta). &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Suffix</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಕ್ರಿಯಾ ರೂಪಗಳ ಪ್ರಥಮ ಪುರುಷ ಸ್ತ್ರೀಲಿಂಗ ಏಕವಚನ ಪ್ರತ್ಯಯ</TD><TD valign=top>Third person feminine singular suffix of verbal forms</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Common Harijan Tribal Jain</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000087");\'>\n                -ಅಲ್</a>\n                &nbsp;(-alụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North brahmin Dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000086");\'>\n                -ಅಳ್</a>\n                &nbsp;(-aḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North common harijan tribal jain dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000089");\'>\n                -ಒಳು</a>\n                &nbsp;(-oḷu).&nbsp;&nbsp;                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000091");\'>\n                -ಓಲು</a>\n                &nbsp;(-oolu).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Pancavati Raamaayana Vaali Sugreevera Kaalago (by Sankayya Bhagavatha; Ed. T. Keshava Bhatta)</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000089");\'>\n                -ಒಳು</a>\n                &nbsp;(-oḷu).&nbsp;&nbsp;                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000091");\'>\n                -ಓಲು</a>\n                &nbsp;(-oolu).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Rare occurance</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>2</font></sup>                <a href=\'javascript:cFunc("2060000000088");\'>\n                -ಆಳ್</a>\n                &nbsp;(-aaḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South common harijan tribal jain dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>2</font></sup>                <a href=\'javascript:cFunc("2060000000088");\'>\n                -ಆಳ್</a>\n                &nbsp;(-aaḷụ).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Southern dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("2060000000086");\'>\n                -ಅಳ್</a>\n                &nbsp;(-aḷụ).&nbsp;&nbsp;<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>EXAMPLES</b></TD></TR><TR><TD><i><b></TD><TD COLSPAN=2>battaḷụ/battalụ/battaaḷụ/battoḷu/battolu/battoolu<br/></TD></TR></TABLE><br></BODY>\n</html>')
 word8 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1>2</font></sup><font size=+3><b>ಬಲಂಬಾಯಿ&nbsp;&nbsp;\n    balambaayi    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;Dictionary of Rev. Manner. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Noun</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>The bamboo in a roof at the entrance of a house</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Dictionary of Rev. Manner</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("50040000000046");\'>\n                ಬಲಬಾಯಿ</a>\n                &nbsp;(balabaayi).&nbsp;&nbsp;<br/></TD></TR></TABLE><br></BODY>\n</html>\n')
 word9 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>-ದೆ<img src=images/EBig.JPG /><img src=images/LBig.JPG width=15 height=25/>&nbsp;&nbsp;\n    -dϵϵ    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;Northen Dialects. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Particle</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ನಿರಾಸೆ, ಅಸಹಾಯಕಸ್ಥಿತಿ, ಪಶ್ಚಾತ್ತಾಪ ಮೊದಲಾದವುಗಳನ್ನು ಸೂಚಿಸುವ ಘಟಕ</TD><TD valign=top>An element added at the end of an expression to indicate disappointment, helplessness, repulsion etc</TD></TR>      </TABLE><br></BODY>\n</html>\n')
 word10 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಅಕ್ಕ&nbsp;&nbsp;\n    akka    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Noun, Vocative</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಅಕ್ಕಾ ! ಹಿರಿಯ ಸೋದರಿಯನ್ನು ಅಥವಾ ಹಿರಿಯ ಹೆಂಗಸರನ್ನು ಕರೆಯುವಾಗ ಗೌರವಾರ್ಥವಾಗಿ ಬಳಸುವ ಪದ</TD><TD valign=top>A term used in addressing one\'s elder sister or an elderly woman honorifically</TD></TR><TR><TD valign=top></TD><TD valign=top>ದೊಡ್ಡ ಮಗಳನ್ನು ಪ್ರೀತಿಯಿಂದ, ಚಿಕ್ಕ ಹುಡುಗಿಯನ್ನು ವಾತ್ಸಲ್ಯದಿಂದ ಸಂಬೋಧಿಸುವ ಪದ</TD><TD valign=top>A term used while affectionately addressing the first daughter or any young female child</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>All</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("3100000000122");\'>\n                ಅಕ್ಕಾ</a>\n                &nbsp;(akkaa).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Common Harijan Tribal Jain</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("3100000000123");\'>\n                ಅಕ್ಕೆ<img src=images/E.JPG height=13 width=10 BoRDER=0 /><img src=images/L.JPG height=13 width=10 BoRDER=0 /></a>\n                &nbsp;(akkϵϵ).&nbsp;&nbsp;<br/></TD></TR></TABLE><br></BODY>\n</html>\n')
 word11 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಮುಡಿಪ್ಪಾ&nbsp;&nbsp;\n    muḍippaa    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;South common harijan tribal jain dialects. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Verb causative<a href=\'javascript:cFunc("26210000000010");\'> of <sup><font size=-2>1</font></sup>ಮುಡಿಪು&nbsp; (muḍipu) </a></i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಮುಡಿಪು;ಹೂ ಮುಡಿಯುವಂತೆಮಾಡು</TD><TD valign=top>Cause to wear flower;Cause to decorate head with flower</TD></TR><TR><TD colspan=3><b><i>Northen Dialects, Figurative, Verb causative<a href=\'javascript:cFunc("26210000000010");\'> of <sup><font size=-2>1</font></sup>ಮುಡಿಪು&nbsp; (muḍipu) </a></i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಸುಂದರಗೊಳಿಸು</TD><TD valign=top>Decorate;Beautify</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North brahmin Dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("2621000000006");\'>\n                ಮುಡಿಪೋ</a>\n                &nbsp;(muḍipoo).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North common harijan tribal jain dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("2621000000004");\'>\n                ಮುಡಿಪಾ</a>\n                &nbsp;(muḍipaa).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South brahmin dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("2621000000007");\'>\n                ಮುಡಿಪ್ಪೋ</a>\n                &nbsp;(muḍippoo).&nbsp;&nbsp;<br/></TD></TR></TABLE><br></BODY>\n</html>')
 word12 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಬುಲೆಪಾ&nbsp;&nbsp;\n    bulepaa    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;Common Harijan Tribal. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>10<a href=\'javascript:cFunc("23520000000022");\'> of ಬುಲೆ&nbsp; (bule) </a></i></b></TD></TR><TR><TD valign=top></TD></TR><TR><TD colspan=3><b><i>South brahmin dialect, Verb causative<a href=\'javascript:cFunc("23520000000022");\'> of ಬುಲೆ&nbsp; (bule) </a></i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಬೆಳೆಯಿಸು;ಬೆಳೆಯುವಂತೆ ಮಾಡು;ಬೆಳೆಸು</TD><TD valign=top>Grow (crops);Make grow;Rear</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>North brahmin Dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("23500000000041a");\'>\n                ಬೊಳೆಪಾ</a>\n                &nbsp;(boḷepaa).&nbsp;&nbsp;                                <a href=\'javascript:cFunc("23500000000041b");\'>\n                ಬುಳೆಪಾ</a>\n                &nbsp;(buḷepaa).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South brahmin dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("23500000000041c");\'>\n                ಬುಳೆಪ್ಪೋ</a>\n                &nbsp;(buḷeppoo).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South common harijan tribal jain dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("23500000000040");\'>\n                ಬುಳೆಪ್ಪಾ</a>\n                &nbsp;(buḷeppaa).&nbsp;&nbsp;<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>REFERENCES</b></TD></TR><TR><TD>&nbsp;&nbsp;</TD><TD COLSPAN=2><i><b>Proverb</TD></TR><TD>&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>ಮಗಲೆನ್ ಪುಗರ್ದ್ ಬುಲೆಪಾವೊಡ್ಚಿ ಮಗನ್ ನೆರ್<img src=images/E.JPG width=0 />ದ್ ಬುಲೆಪಾವೊದ್ಚಿ.&nbsp;magalenụ pugardụ bulepaavoḍci maganụ nerụdụ bulepaavodci.&nbsp;ಮಗಳನ್ನು ಹೊಗಳಿ ಬೆಳೆಸಬೇಡ ಮಗನನ್ನು ಗದರಿಸಿ ಬೆಳೆಸಬೇಡ.<br></TD></TR><TR><TD>&nbsp;&nbsp;</TD><TD COLSPAN=2><i><b>Saying</TD></TR><TD>&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>ನಮನ್ ಬುಳೆಪಾದು ಸಾಂಕ್<img src=images/E.JPG width=0 />ದ್.&nbsp;namanụ buḷepaadu saaṅkụdụ.&nbsp;ನಮ್ಮನ್ನು ಬೆಳೆಸಿ ಸಾಕಿ.<br></TD></TR></TABLE><br></BODY>\n</html>\n')
-print('done')
+(correct_unicode('asdf'))
+
+
 #print(word9['word']['kannada'])
 # print(iskannada('-ದೆ್ೕ'))
 # print(iskannada('ಜಾನೆoದ್ಪಂಟ'))

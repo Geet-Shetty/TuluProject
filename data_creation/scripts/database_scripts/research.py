@@ -140,7 +140,7 @@ def find_different(raw_html_file, tags, tag_type):
                     dup_tags.add(line_tag)
 
     f = open(
-        f"dump.txt",
+        f"research_data/dump.txt",
         "w",
         encoding="utf-8")
     for tag in new_tags:
@@ -201,7 +201,7 @@ def new_codes(raw_html_data, dump_file):
 
 def create_word_dump(): # check that imgs don't exist in the meanings context (not the headers)
     include = open(
-        f"word_test.txt",
+        f"research_data/word_test.txt",
         "w",
         encoding="utf-8")
 
@@ -238,4 +238,28 @@ def create_word_dump(): # check that imgs don't exist in the meanings context (n
             except (AttributeError,IndexError):
                 print("testsstttt", html_line)
 
-create_word_dump()
+# create_word_dump()
+
+def list(): # check that imgs don't exist in the meanings context (not the headers)
+    all_text = open(
+        f"research_data/etext.txt",
+        "w",
+        encoding="utf-8")
+
+    count = 0
+    for html_line in raw_html_data:
+        if not html_line.replace("\n","").isdigit() and not html_line == "\n":
+            count += 1
+            try:
+                html_soup = BeautifulSoup(html_line, 'html.parser')
+                table_list = html_soup.findAll('table')
+                for table in table_list:
+                    header_rows = table.findAll('td')
+                    for row in header_rows:
+                        if row.has_attr('class') and row['class'][0] == 'tblhead':
+                            if row.text == 'EXAMPLES':
+                                all_text.write(table.text+'\n')
+            except (AttributeError,IndexError):
+                print("testsstttt", html_line)
+
+list()
