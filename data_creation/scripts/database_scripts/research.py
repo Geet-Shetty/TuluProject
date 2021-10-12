@@ -241,10 +241,10 @@ def create_word_dump(): # check that imgs don't exist in the meanings context (n
 # create_word_dump()
 
 def list(): # check that imgs don't exist in the meanings context (not the headers)
-    all_text = open(
-        f"research_data/etext.txt",
-        "w",
-        encoding="utf-8")
+    # all_text = open(
+    #     f"research_data/etext.txt",
+    #     "w",
+    #     encoding="utf-8")
 
     count = 0
     for html_line in raw_html_data:
@@ -257,23 +257,29 @@ def list(): # check that imgs don't exist in the meanings context (not the heade
                     header_rows = table.findAll('td')
                     for row in header_rows:
                         if row.has_attr('class') and row['class'][0] == 'tblhead':
-                            if row.text == 'EXAMPLES':
-                                if table.text.count('1.') > 0:
-                                    print(html_line)
-                                data = ''
-                                for row in header_rows[1:]:
-                                    if not row.text == '':
-                                        data += row.text + ' newline'
-                                all_text.write(data+'\n')
+                            if row.text == 'REFERENCES':
+                                td_elements = table.findAll('td',attrs={"colspan": "2"})
+                                for td in td_elements:
+                                    list = td.findAll('img')
+                                    if len(list)>0:
+                                        print(html_line)
+                            # if row.text == 'EXAMPLES':
+                            #     if table.text.count('1.') > 0:
+                            #         print(html_line)
+                            #     data = ''
+                            #     for row in header_rows[1:]:
+                            #         if not row.text == '':
+                            #             data += row.text + ' newline'
+                                # all_text.write(data+'\n')
             except (AttributeError,IndexError):
                 print("testsstttt", html_line)
 
 list()
 
-# Using readlines()
-file1 = open(f"research_data/etext.txt", 'r',encoding="utf-8")
-Lines = file1.readlines()
-# Strips the newline character
-for line in Lines:
-    if line.count('newline') > 1:
-        print(line)
+# # Using readlines()
+# file1 = open(f"research_data/etext.txt", 'r',encoding="utf-8")
+# Lines = file1.readlines()
+# # Strips the newline character
+# for line in Lines:
+#     if line.count('newline') > 1:
+#         print(line)
