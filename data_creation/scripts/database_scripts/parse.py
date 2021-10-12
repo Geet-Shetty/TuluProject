@@ -76,7 +76,7 @@ def img_to_unicode(tag):
     img_tags = tag.findAll('img')
     for img in img_tags:
         if (img.has_attr('height') and img['height'] == '0') or (img.has_attr('width') and img['width'] == '0'): # ignore the tags that don't show up
-            return
+            continue
         elif img.has_attr('src'):
             if img['src'] == 'images/LBig.JPG' or img['src'] == 'images/L.JPG':  # this has to be added first to work in combination with character below
                 img.insert_after(u'ೕ')
