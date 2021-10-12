@@ -258,8 +258,22 @@ def list(): # check that imgs don't exist in the meanings context (not the heade
                     for row in header_rows:
                         if row.has_attr('class') and row['class'][0] == 'tblhead':
                             if row.text == 'EXAMPLES':
-                                all_text.write(table.text+'\n')
+                                if table.text.count('1.') > 0:
+                                    print(html_line)
+                                data = ''
+                                for row in header_rows[1:]:
+                                    if not row.text == '':
+                                        data += row.text + ' newline'
+                                all_text.write(data+'\n')
             except (AttributeError,IndexError):
                 print("testsstttt", html_line)
 
 list()
+
+# Using readlines()
+file1 = open(f"research_data/etext.txt", 'r',encoding="utf-8")
+Lines = file1.readlines()
+# Strips the newline character
+for line in Lines:
+    if line.count('newline') > 1:
+        print(line)
