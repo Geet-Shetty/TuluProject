@@ -232,7 +232,7 @@ def create_word_dump(): # check that imgs don't exist in the meanings context (n
                                     if td.has_attr('colspan'):
                                        continue
                                     else:
-                                        if len(td.findAll('img')) > 0:
+                                        if len(td.findAll('a')) > 0:
                                             exclude.write(html_line)
 
             except (AttributeError,IndexError):
@@ -241,11 +241,11 @@ def create_word_dump(): # check that imgs don't exist in the meanings context (n
 # create_word_dump()
 
 def list(): # check that imgs don't exist in the meanings context (not the headers)
-    # all_text = open(
-    #     f"research_data/etext.txt",
-    #     "w",
-    #     encoding="utf-8")
-
+    exclude = open(
+        f"research_data\word_exclude_m.txt",
+        "w",
+        encoding="utf-8")
+    s = set()
     count = 0
     for html_line in raw_html_data:
         if not html_line.replace("\n","").isdigit() and not html_line == "\n":
@@ -257,12 +257,24 @@ def list(): # check that imgs don't exist in the meanings context (not the heade
                     header_rows = table.findAll('td')
                     for row in header_rows:
                         if row.has_attr('class') and row['class'][0] == 'tblhead':
-                            if row.text == 'REFERENCES':
-                                td_elements = table.findAll('td',attrs={"colspan": "2"})
+                            if row.text == 'MEANINGS':
+                                td_elements = table.findAll('td',attrs={"colspan": "3"})
                                 for td in td_elements:
-                                    list = td.findAll('img')
-                                    if len(list)>0:
-                                        print(html_line)
+                                    test = td.text                                    # list = td.findAll('img')
+                                    # if len(list)>0:
+                                    #     print(html_line)
+
+                                    # for references
+                                    # if test.__contains__('Bhagavato'):
+                                    #     continue
+                                    # if len(test) > 3 and test[0].isalpha() and test[1].isalpha() and test[2] == '.':
+                                    #     continue
+
+
+                                    if not s.__contains__(td.text):
+                                        print(test)
+                                    s.add(test)
+
                             # if row.text == 'EXAMPLES':
                             #     if table.text.count('1.') > 0:
                             #         print(html_line)

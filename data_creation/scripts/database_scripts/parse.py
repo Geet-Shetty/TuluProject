@@ -149,7 +149,6 @@ def create_word(table):
 
     return word
 
-# TODO: convert meanings to td style like in variation
 def create_meanings(table):
     meanings = []
     tr_elements = table.findAll('tr')
@@ -161,7 +160,7 @@ def create_meanings(table):
 
     for tr in tr_elements:
         td = tr.find('td')
-        if td.has_attr('colspan'):
+        if td.has_attr('colspan'): # its a sub header
             #fix_unicode(td)
 
             if len(current_definitions) > 0:
@@ -180,7 +179,8 @@ def create_meanings(table):
                 header_list = td.text.split(',')
 
                 current_contexts['linked_context'] = {'context': '', 'kannada': '', 'english': '', 'tulu': '', 'id': 0}
-                current_contexts['contexts'] = header_list[:len(header_list)-1]
+                current_contexts['contexts'] = list(filter(lambda context: not context.isspace(), header_list[:len(header_list)-1]))
+                current_contexts['contexts'] = list(map(lambda context: trim(context), current_contexts['contexts']))
                 link = trim(header_list[len(header_list)-1]).split('of')
                 current_contexts['linked_context']['context'] = link[0]
                 link[1] = link[1].replace('\xa0', '')
@@ -191,7 +191,9 @@ def create_meanings(table):
                 current_contexts['linked_context']['tulu'] = convert_unicode(kannada,keylist)
             else:
                 header_list = td.text.split(',')
-                current_contexts['contexts'] = header_list
+                current_contexts['contexts'] = list(filter(lambda context: not context.isspace(), header_list))
+                current_contexts['contexts'] = list(map(lambda context: trim(context), current_contexts['contexts']))
+                #current_contexts['contexts'] = header_list
 
         else:
             td_elements = tr.findAll('td')
@@ -243,24 +245,11 @@ def create_variations(table):
 # TODO: finish references using variation style not meanings style
 def create_references(table): # could just go by td elements instead
     references = {}
-    tr_elements = table.findAll('tr')
-    current_context = ''
-    current_sentence = {}
-    tr_elements = tr_elements[1:len(tr_elements)]  # remove first td that is just the title REFERENCES
-    for tr in tr_elements:
-        td = tr.find('td')
-        if td.has_attr('colspan'):
-            if len(current_context) > 1:
-                references[current_context] = current_sentence
-                current_sentence = {}
-            current_context = td.text
-        else:
-            td_elements = tr.findAll('td')
-            td_elements = td_elements[2:len(td_elements)]  # get rid of empty td element, so the list should be length of 2
-            current_sentence = {'tulu': '', 'english': '', 'kannada': ''}
+    td_elements = table.findAll('td')
+    current_ref_type = ''
+    current_refs = []
+    td_elements = td_elements[1:len(td_elements)] # remove first td that is just the title REFERENCES
 
-    references[current_context] = current_sentence
-    return references
 
 def create_examples(table):
     td_elements = table.findAll('td',attrs={"colspan": "2"})
@@ -391,6 +380,8 @@ word13 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="
 word14 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಆವಾಡ್&nbsp;&nbsp;\n    aavaaḍụ    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;Rare occurance. &nbsp;South common harijan tribal dialects. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Permissive, Verb neuter<a href=\'javascript:cFunc("20600000000228");\'> of <sup><font size=-2>2</font></sup>ಆ&nbsp; (aa) </a></i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಆಗಲಿ</TD><TD valign=top>Let it be so</TD></TR><TR><TD valign=top></TD><TD valign=top>ಹಾರೈಕೆ;ಅನುಮೋದನೆ;ಆಜ್ಞೆ ಮೊದಲಾದ ಅರ್ಥಗಳನ್ನು ಸೂಚಿಸುವ ಪದ</TD><TD valign=top>Word used to express one’s desire, agreement, command</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>South common harijan tribal dialects</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                <sup><font size=-2>1</font></sup>                <a href=\'javascript:cFunc("26600000000136");\'>\n                ಆವಡ್</a>\n                &nbsp;(aavaḍụ).&nbsp;&nbsp;<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>REFERENCES</b></TD></TR><TR><TD>&nbsp;&nbsp;</TD><TD COLSPAN=2><i><b>Saying</TD></TR><TD>&nbsp;&nbsp;</TD><TD>&nbsp;&nbsp;</TD><TD>ಆವಡ್ ಪೋವಡ್ ಮಲ್ಪುನವು ಮಲ್ಪೊಡೆ.&nbsp;aavaḍụ poovaḍụ malpunavu malpoḍe.&nbsp;ಆಗಲಿ ಹೋಗಲಿ ಮಾಡುವುದನ್ನು ಮಾಡಲೇ ಬೇಕು.<br></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>EXAMPLES</b></TD></TR><TR><TD><i><b>1.</TD><TD COLSPAN=2>aavaḍụ may (you) prosper well, let it be well done aa kelasa aavaḍụ, let that work continue</TD></TR><TR><TD><i><b>2.</TD><TD COLSPAN=2>vaadya aavaḍụ, let the pipers blow pipes<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>Language References</b></TD></TR><TR><TD><i><b></TD><TD COLSPAN=2>aa   aḍụ.<br/></TD></TR></TABLE><br></BODY>\n</html>')
 word15 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>-ಅ<img src=images/EBig.JPG /><img src=images/E.JPG width=0 />ನ್ನೆ&nbsp;&nbsp;\n    -ụnne    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;Common Harijan Tribal Jain. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>Suffix</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಬಳಿಕ;ಮೇಲೆ;ಕೂಡಲೇ;ಕ್ರಿಯೆ ನಡೆದೊಡನೆ ಎ೦ಬರ್ಥದ ಕೃದ೦ತಾವ್ಯಯವನ್ನು ಸಾಧಿಸಲು ಸೇರಿಸುವ ಪ್ರತ್ಯಯ</TD><TD valign=top>After doing etc;A suffix added to obtain indeclinable participle meaning subsequent to an action</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>VARIATIONS (Region/Caste wise)</b></TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Brahmin dialect</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("3720000000010");\'>\n                -ಅ<img src=images/E.JPG height=13 width=10 BoRDER=0 /><img src=images/E.JPG height=0 width=0 BORDER=0 />ಣ್ಣೆ</a>\n                &nbsp;(-ụṇṇe).&nbsp;&nbsp;                                <a href=\'javascript:cFunc("372000000009");\'>\n                -ಉಣ್ಣೆ</a>\n                &nbsp;(-uṇṇe).&nbsp;&nbsp;</TD></TR><TR><TD>&nbsp;</TD><TD COLSPAN=2><b><i>Common Harijan Tribal Jain</i></b></TD></TR><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>                                <a href=\'javascript:cFunc("372000000006");\'>\n                -ಉನ್ನೆ</a>\n                &nbsp;(-unne).&nbsp;&nbsp;                                <a href=\'javascript:cFunc("372000000008");\'>\n                -ಉನೆ</a>\n                &nbsp;(-une).&nbsp;&nbsp;<br/></TD></TR></TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>EXAMPLES</b></TD></TR><TR><TD><i><b>1.</TD><TD COLSPAN=2>barepunne, barepuṇṇe after writing; immediately after writing</TD></TR><TR><TD><i><b>2.</TD><TD COLSPAN=2>poopunne, poopuṇṇe after going; immediately after going<br/></TD></TR></TABLE><br></BODY>\n</html>')
 word16 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1></font></sup><font size=+3><b>ಅತಿಯುಕ್ತಿ ( ಕುಳು),&nbsp;&nbsp;\n    atiyukti ( kuḷu),    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i> </i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ವಿವಿಧ ಯುಕ್ತಿಗಳು</TD><TD valign=top>Varieties of means and devices</TD></TR>      </TABLE><br></BODY>\n</html>')
+
+word17 = parse_html('<html>\n\n<head>\n<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>\n<LINK href="style.css" rel="stylesheet" type="text/css">\n<script type="text/javascript">function cFunc(val){top.frames["synonym"].location=\'synonym.php?search=\'+val;top.frames["similar"].location=\'similar.php?search=\'+val;top.frames["result"].location=\'detail.php?search=\'+val;}</script>\n</head>\n\n<BODY topmargin=1 LEFTMARGIN=1 rigntmargin="1">\n\n<TABLE WIDTH=100%>\n<TR><TD COLSPAN=3>\n<center><sup><font size=+1>1</font></sup><font size=+3><b>ಅದ್&nbsp;&nbsp;\n    adụ    </center></b></font><br> </TD>\n</TR>\n\n<TR><TD COLSPAN=3><center>&nbsp;Rare occurance. &nbsp;South West harijan trial dialects. &nbsp;&nbsp;</center></TD></TR></TABLE><br><font size=-1><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>MEANINGS</b></TD></TR><TR><TD colspan=3><b><i>10</i></b></TD></TR><TR><TD valign=top></TD></TR><TR><TD colspan=3><b><i> , Pronoun, Remote, Singular</i></b></TD></TR><TR><TD valign=top></TD><TD valign=top>ಅದು</TD><TD valign=top>That</TD></TR>      </TABLE><br><TABLE WIDTH=100%><TR><TD COLSPAN=3 class=tblhead><b>Language References</b></TD></TR><TR><TD><i><b></TD><TD COLSPAN=2>Ta.,Ma.atu;Ko.adu;Ha.aduśe,it;Te.adiid.;Kol.;ṇk.,Pa.;Ga.,Go.ad.id.,Kur.add;Mal.ath<br/></TD></TR></TABLE><br></BODY>\n</html>\n')
 print(correct_unicode('asdf'))
 
 
