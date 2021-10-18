@@ -274,7 +274,9 @@ def create_references(table): # could just go by td elements instead
     #TODO: flush out this function, currently there is only one case (in nbsp over 2) where a general method would be needed for so now imma cheese it
     def split_kt(string): # this function would find the chunks of sentence ender and clean it to just only the first
         char_list = list(string)
+
         '''
+        so far this have not been cleaned up but just separated by nbsp
         ....,.
         .,.
         ....
@@ -286,8 +288,8 @@ def create_references(table): # could just go by td elements instead
     current_refs = []
     td_elements = td_elements[1:len(td_elements)] # remove first td that is just the title REFERENCES
     for td in td_elements:
-        if td.has_attr('colspan'):  # and not td.has_attr('class')
-            if len(current_ref_type) != 0 and len(current_refs) > 0:
+        if td.has_attr('colspan'):  # sub header
+            if len(current_ref_type) and len(current_refs): # if neither are zero
                 references[current_ref_type] = current_refs
                 current_refs = []
             current_ref_type = td.text
@@ -295,12 +297,14 @@ def create_references(table): # could just go by td elements instead
             if td.text.isspace(): # if td is empty
                 continue
 
+            # nbsp is a space character that usually breaks up the different languages but sections with more than one saying kannada and tulu are not split by nbsp
             sentences = td.text.split(' ')
             if len(find_occurances(td.text,' ')) == 2:
                 current_refs.append({'tulu': convert_unicode(sentences[0]), 'english': sentences[1], 'kannada': sentences[2]})
             else:
                 current_ref = {'tulu': convert_unicode(sentences[0]), 'english': '', 'kannada': ''}
 
+                #TODO: could remove the eflag and just do increments of 2
                 eflag = True
                 for i in range(1,len(sentences)-1):
                     if eflag:
@@ -308,6 +312,11 @@ def create_references(table): # could just go by td elements instead
                         eflag = not eflag
                     else:
                         # this current method is a hack, but hey it should work
+                        # do not split by ;, split isn't just single character like . ? ! it can also be ... etc
+                        # if len is 3 then just do t e k
+                        # if len is 5 then just do t e kt e t and split the kt
+                        # if len is 7 then just do t e kt e kt e k  and split both of the kt
+                        # the greater lens follow the same pattern as 5 and 7
                         kannada_tulu = []
                         if sentences[i].__contains__('...'):
                             kannada_tulu = sentences[i].split('...')
@@ -322,8 +331,6 @@ def create_references(table): # could just go by td elements instead
                             elif sentences[i].__contains__('.'):
                                 index = sentences[i].find('.')
 
-
-
                             kannada_tulu.append(sentences[i][:index + 1])
                             kannada_tulu.append(sentences[i][index + 1:])
 
@@ -334,13 +341,6 @@ def create_references(table): # could just go by td elements instead
 
                 current_ref['kannada'] = sentences[len(sentences)-1]
                 current_refs.append(current_ref)
-            # do not split by ;, split isn't just single character like . ? ! it can also be ... etc
-            # if len is 3 then just do t e k
-            # if len is 5 then just do t e kt e t and split the kt
-            # if len is 7 then just do t e kt e kt e k  and split both of the kt
-            #
-            # print(len(sentences))
-            # print(sentences)
 
     references[current_ref_type] = current_refs
     return references
