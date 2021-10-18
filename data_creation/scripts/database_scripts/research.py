@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import re
 import os
 import path
-
+import parse
 raw_html_data = open(os.path.join(path.data, 'raw_html_data.txt'), 'r', encoding="utf-8")
 
 bold_tag = ['variations (region/caste wise)', 'dialects', 'suffix', 'meanings', 'examples', 'references', 'language references']
@@ -241,11 +241,15 @@ def create_word_dump(): # check that imgs don't exist in the meanings context (n
 # create_word_dump()
 
 def list(): # check that imgs don't exist in the meanings context (not the headers)
-    exclude = open(
-        f"research_data\word_exclude_m.txt",
+    # exclude = open(
+    #     f"research_data\word_exclude_m.txt",
+    #     "w",
+    #     encoding="utf-8")
+    # s = set()
+    refs = open(
+        f"research_data\\reftexts.txt",
         "w",
         encoding="utf-8")
-    s = set()
     count = 0
     for html_line in raw_html_data:
         if not html_line.replace("\n","").isdigit() and not html_line == "\n":
@@ -257,23 +261,34 @@ def list(): # check that imgs don't exist in the meanings context (not the heade
                     header_rows = table.findAll('td')
                     for row in header_rows:
                         if row.has_attr('class') and row['class'][0] == 'tblhead':
-                            if row.text == 'MEANINGS':
-                                td_elements = table.findAll('td',attrs={"colspan": "3"})
+                            if row.text == 'REFERENCES':
+                                td_elements = table.findAll('td')
+                                td_elements = td_elements[
+                                              1:len(td_elements)]  # remove first td that is just the title REFERENCES
                                 for td in td_elements:
-                                    test = td.text                                    # list = td.findAll('img')
-                                    # if len(list)>0:
-                                    #     print(html_line)
-
-                                    # for references
-                                    # if test.__contains__('Bhagavato'):
-                                    #     continue
-                                    # if len(test) > 3 and test[0].isalpha() and test[1].isalpha() and test[2] == '.':
-                                    #     continue
-
-
-                                    if not s.__contains__(td.text):
-                                        print(test)
-                                    s.add(test)
+                                    if td.has_attr('colspan'):  # and not td.has_attr('class')
+                                       continue
+                                    else:
+                                        if td.text.isspace():  # if td is empty
+                                            continue
+                                        text = td.text
+                                        refs.write(text + '\n')
+                            # if row.text == 'MEANINGS':
+                            #     td_elements = table.findAll('td',attrs={"colspan": "3"})
+                            #     for td in td_elements:
+                            #         test = td.text                                    # list = td.findAll('img')
+                            #         # if len(list)>0:
+                            #         #     print(html_line)
+                            #
+                            #         # for references
+                            #         # if test.__contains__('Bhagavato'):
+                            #         #     continue
+                            #         # if len(test) > 3 and test[0].isalpha() and test[1].isalpha() and test[2] == '.':
+                            #         #     continue
+                            #
+                            #         if not s.__contains__(td.text):
+                            #             print(test)
+                            #         s.add(test)
 
                             # if row.text == 'EXAMPLES':
                             #     if table.text.count('1.') > 0:
@@ -286,8 +301,40 @@ def list(): # check that imgs don't exist in the meanings context (not the heade
             except (AttributeError,IndexError):
                 print("testsstttt", html_line)
 
-list()
+# list()
 
+def sort_file(file_name):
+    file = open(
+        f"research_data\\{file_name}.txt",
+        "r",
+        encoding="utf-8")
+    out = open(
+        f"research_data\\{file_name}_sorted.txt",
+        "w",
+        encoding="utf-8")
+    Lines = file.readlines()
+    Lines = sorted(Lines,key=len)
+    for line in Lines:
+        out.write(line)
+
+# sort_file('reftexts')
+
+def filter(file_name):
+    file = open(
+        f"research_data\\{file_name}.txt",
+        "r",
+        encoding="utf-8")
+    out = open(
+        f"research_data\\{file_name}_filtered.txt",
+        "w",
+        encoding="utf-8")
+    Lines = file.readlines()
+    Lines = sorted(Lines,key=len)
+    for line in Lines:
+        if len(parse.find_occurances(line,' ')) > 3:
+            out.write(line)
+
+filter('reftexts_sorted')
 # # Using readlines()
 # file1 = open(f"research_data/etext.txt", 'r',encoding="utf-8")
 # Lines = file1.readlines()
@@ -295,3 +342,29 @@ list()
 # for line in Lines:
 #     if line.count('newline') > 1:
 #         print(line)
+
+# def empty_pages(num):
+#     page0 = open(
+#         f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\html_view\page.html",
+#         "w",
+#         encoding="utf-8")
+#
+#     page1 = open(
+#         f"D:\projects\Pythonnnn\TuluProject\data_creation\scripts\database_scripts\html_view\page1.html",
+#         "w",
+#         encoding="utf-8")
+#
+#     count = 0
+#     for html_line in raw_html_data:
+#         if not html_line.replace("\n","").isdigit() and not html_line == "\n":
+#             count += 1
+#             try:
+#                 if count == num:
+#                     page0.write(html_line)
+#                     page1.write(raw_html_data.readline())
+#                     return
+#             except (AttributeError,IndexError):
+#                 print("testsstttt", html_line)
+#
+# # empty_pages(12721) #403, 699, 803,
+# #
