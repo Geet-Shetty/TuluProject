@@ -1,5 +1,6 @@
 import json
 import parse
+import pymongo
 
 # Data to be written
 # dictionary = {
@@ -8,7 +9,7 @@ import parse
 #     "department": "HR"
 # }
 
-dictionary = [parse.word11,parse.word5]
+dictionary = parse.words
 
 
 with open("research_data/words.txt", "w") as outfile:
