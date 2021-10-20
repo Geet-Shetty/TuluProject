@@ -36,9 +36,9 @@ def create_word_dump():
 dictionary = create_word_dump()
 
 with open("research_data/words.txt", "w") as outfile:
-    json.dump(dictionary, outfile)
-    # for word in dictionary:
-    #     outfile.write(json.dumps(word)+'\n')
+    # json.dump(dictionary, outfile)
+    for word in dictionary:
+        outfile.write(json.dumps(word)+'\n')
 
 # # # Serializing json
 # json_object = json.dumps(dictionary[0])
