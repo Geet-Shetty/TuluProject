@@ -10,7 +10,7 @@ print(os.environ.get("CONNECTION"))
 
 client = pymongo.MongoClient(os.environ.get("CONNECTION"))
 db = client.dictionary
-collection = db.tulu
+collection = db.tulus
 requesting = []
 
 with open(r"research_data/words.txt") as f:
