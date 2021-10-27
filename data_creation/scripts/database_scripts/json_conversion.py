@@ -22,8 +22,11 @@ def create_word_dump():
         if not html_line.replace("\n","").isdigit() and not html_line == "\n": # don't worry about replace it does not affect the original string
             try:
                 word = parse.parse_html(html_line)
-                if not (word['word']['kannada'].isspace() or word['word']['tulu'].isspace() or word['word']['english'].isspace()): # mayb make and
-                    data.append(word)
+                # if not (word['word']['kannada'].isspace() or word['word']['tulu'].isspace() or word['word']['english'].isspace()): # mayb make and
+                #     data.append(word)
+                if word['word']['kannada'] == "" or word['word']['english'] == "": # dont need to check or word['word']['tulu'] != ""  because tulu is just conversion of kannada
+                    continue
+                data.append(word)
             except (AttributeError,IndexError):
                 print("some error with line: ", html_line)
 
