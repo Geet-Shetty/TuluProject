@@ -18,5 +18,6 @@ with open(r"research_data/words.txt") as f:
         myDict = json.loads(jsonObj)
         requesting.append(InsertOne(myDict))
 
+collection.create_index()
 result = collection.bulk_write(requesting)
 client.close()
