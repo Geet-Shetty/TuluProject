@@ -299,6 +299,10 @@ def create_variations(table):
                 current_words = []
             current_origin = trim(td.text)
         else:
+
+            for child in td.children:
+                x = 3
+                # todo: fix the issue where there is more than one sup object, example -olu
             # get links
             supobj = td.find('sup')
             links = td.findAll('a')
