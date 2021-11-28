@@ -17,7 +17,9 @@ TODO:
 
 def iskannada(string): # might be better to check range using the order function
     for char in string:
-        if char.isascii() and char.isalpha():
+        if not char.isalpha():
+            continue
+        elif not (ord(char) >= 3200 and ord(char) <= 3327):
             return False
     return True
 
@@ -140,7 +142,7 @@ def correct_unicode(string):
     olist = find_occurances(string,'o') + find_occurances(string,'O')
     for index in olist:
         # if the english o is
-        if index > 0 and ((ord(char_list[index-1]) >= 3200 and ord(char_list[index-1]) <= 3327) or char_list[index-1] == '>'): # insstances where the o is in a tag so check for >o
+        if index > 0 and ((ord(char_list[index-1]) >= 3200 and ord(char_list[index-1]) <= 3327) or (char_list[index-1] == '>' and char_list[index+1] == '<')): # instances where the o is in a tag so check for >o
             char_list[index] = u'ಂ'
 
     return ''.join(char_list)
@@ -182,7 +184,6 @@ def create_word(table):
     words[1] = words[1].replace("( ", "(")
 
     word = {'kannada': words[0], 'english': words[1], 'tulu': convert_unicode(words[0])}
-
     origin = trim(center_elements[1].text.replace(u"\xa0", u""))
     if len(origin):
         word['origin'] = origin
@@ -198,7 +199,8 @@ def create_word(table):
 def create_meanings(table):
     meanings = []
     tr_elements = table.findAll('tr')
-    current_contexts = {'contexts': [], 'linked_context': {}, 'definitions': []}
+    # current_contexts = {'contexts': [], 'linked_context': {}, 'definitions': []}
+    current_contexts = {}
     id = 0
     current_definitions = []
     tr_elements = tr_elements[1:len(tr_elements)]  # remove first td that is just the title MEANINGS
@@ -210,18 +212,18 @@ def create_meanings(table):
             if len(current_definitions): # remember this is true if the length is not zero
 
                 # add data to meanings
-                if len(current_contexts['linked_context']):
+                if 'linked_context' in current_contexts and len(current_contexts['linked_context']) and id:
                     current_contexts['linked_context']['id'] = id
-                else:
-                    current_contexts.pop('linked_context')
+
                 current_contexts['definitions'] = current_definitions
                 meanings.append(current_contexts)
 
                 # clear variables
                 id = 0
-                current_contexts = {'contexts': [], 'linked_context': {}, 'definitions': []}
+                # current_contexts = {'contexts': [], 'linked_context': {}, 'definitions': []}
+                current_contexts = {}
                 current_definitions = []
-                current_contexts['linked_context'] = {}
+                # current_contexts['linked_context'] = {}
 
             if td.findAll('a'): # true if the list is longer than one, in our case it will either be len of 0 or 1
                 # create id
@@ -229,10 +231,15 @@ def create_meanings(table):
                 id = create_id(supobj)
                 header_list = td.text.split(',')
 
-                current_contexts['linked_context'] = {'kannada': '', 'english': '', 'tulu': '', 'id': 0}
-                current_contexts['contexts'] = list(filter(lambda context: not (context.isspace() or context == ""), header_list[:len(header_list)-1])) # this is -1 for the len because we don't want to inlude the linked context
-                current_contexts['contexts'] = list(map(lambda context: trim(context), current_contexts['contexts']))
+                # create context
+                contexts = list(filter(lambda context: not (context.isspace() or context == ""), header_list[:len(header_list)-1])) # this is -1 for the len because we don't want to inlude the linked context
+                contexts = list(map(lambda context: trim(context), contexts))
+                if len(contexts):
+                    current_contexts['contexts'] = contexts
+
                 # create link context
+                current_contexts['linked_context'] = {'kannada': '', 'english': '', 'tulu': '', 'id': 0}
+                # current_contexts['linked_context'] = {}
                 link = trim(header_list[len(header_list)-1]).split('of') # all the links of far have been xxxxx of xxxxx
                 l_context = trim(link[0])
                 if len(l_context):
@@ -242,55 +249,48 @@ def create_meanings(table):
                 # link[1] = trim(link[1])
                 words = link[1].split('(')
                 kannada = trim(words[0])
-                current_contexts['linked_context']['kannada'] = kannada
-                current_contexts['linked_context']['english'] = trim(words[1][:len(words[1])-1]) # the len is -1 because we want to get rid of the ending )
-                current_contexts['linked_context']['tulu'] = convert_unicode(kannada)
+                english = trim(words[1][:len(words[1])-1]) # the len is -1 because we want to get rid of the ending )
+                if len(kannada):
+                    current_contexts['linked_context']['kannada'] = kannada
+                    current_contexts['linked_context']['tulu'] = convert_unicode(kannada)
+                if len(english):
+                    current_contexts['linked_context']['english'] = english
+
             else:
 
                 # this is for creating the context if no linked context exists
                 header_list = td.text.split(',')
-                current_contexts['contexts'] = list(filter(lambda context: not (context.isspace() or context == ""), header_list))
-                current_contexts['contexts'] = list(map(lambda context: trim(context), current_contexts['contexts']))
+                contexts = list(filter(lambda context: not (context.isspace() or context == ""), header_list))  # this is -1 for the len because we don't want to inlude the linked context
+                contexts = list(map(lambda context: trim(context), contexts))
+                if len(contexts):
+                    current_contexts['contexts'] = contexts
 
         else:
             # get meanings
             td_elements = tr.findAll('td')
             td_elements = td_elements[1:len(td_elements)] # get rid of empty td element, so the list should be length of 2
-            not_empty = False
-            for element in td_elements:
-                if len(element):
-                    not_empty = True
-                    break
-
-            if not_empty:
-                if len(td_elements) == 2:
-                    # if len(find_occurances(td_elements[0].text,';')) != len(find_occurances(td_elements[1].text,';')):
-                    #     print(td_elements[0].text)
-                    #     print(td_elements[1].text)
-                    #     print('--------------')
-                    # current_definitions.append({'kannada': list(map(lambda meaning: trim(meaning), td_elements[0].text.split(';'))), 'english': list(map(lambda meaning: trim(meaning),td_elements[1].text.split(';')))})
-                    td_elements[0] = list(filter(lambda context: not (context.isspace() or context == ""), td_elements[0].text.split(';')))
-                    td_elements[1] = list(filter(lambda context: not (context.isspace() or context == ""), td_elements[1].text.split(';')))
-                    current_definitions.append({'kannada': list(map(lambda meaning: trim(meaning), td_elements[0])),'english': list(map(lambda meaning: trim(meaning), td_elements[1]))})
-                elif len(td_elements) == 1:
-                    elements = list(filter(lambda context: not (context.isspace() or context == ""), td_elements[0].text.split(';')))
-                    data = list(map(lambda meaning: trim(meaning),elements))
-                    if td_elements[0].text.isascii():
-                        current_definitions.append({'english': data})
+            pair = {}
+            for td_element in td_elements:
+                if td_element.text != "":
+                    elements = list(filter(lambda context: not (context.isspace() or context == ""), td_element.text.split(';')))
+                    data = list(map(lambda meaning: trim(meaning), elements))
+                    if iskannada(td_element.text):
+                        pair['kannada'] = data
                     else:
-                        current_definitions.append({'kannada': data})
+                        pair['english'] = data
 
+            if len(pair):
+                current_definitions.append(pair)
     # adds the last context
-    if len(current_contexts['linked_context']) and id: # if the linked context isn't empty then set the id (don't want to add id if object is empty)
+    if 'linked_context' in current_contexts and len(current_contexts['linked_context']) and id: # if the linked context isn't empty then set the id (don't want to add id if object is empty)
         current_contexts['linked_context']['id'] = id
-    else:
-        current_contexts.pop('linked_context')
+
     current_contexts['definitions'] = current_definitions
     meanings.append(current_contexts)
 
     for meaning in meanings:
-        if len(meaning['contexts']) == 0:
-            meaning.pop('contexts')
+        # if len(meaning['contexts']) == 0:
+        #     meaning.pop('contexts')
         if len(meaning['definitions']) == 0:
             meaning.pop('definitions')
         if meaning == {}:
@@ -363,9 +363,9 @@ def create_references(table): # could just go by td elements instead
                 continue
 
             text = ''
-            print(len(list(td.children)))
+            # print(len(list(td.children)))
             for child in td.children:
-                print(child.name)
+                # print(child.name)
                 # print(type(child))
                 # print(child.name)
                 # print(type(child))
@@ -373,7 +373,7 @@ def create_references(table): # could just go by td elements instead
                     text += child.string
                 elif child.text is not None:
                     text += child.text
-                print(text)
+                # print(text)
                 if child.name == 'br':
                     # print(text)
                     # nbsp is a space character that usually breaks up the different languages but sections with more than one saying kannada and tulu are not split by nbsp
