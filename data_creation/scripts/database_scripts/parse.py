@@ -89,7 +89,6 @@ def read_keys(path):
 keylist = read_keys('keylist.csv')
 
 def convert_unicode(kannada_word): # converts the kannada unicode into the malayalam unicode
-    keylist = read_keys('keylist.csv')
     try:
         tulu_word = ''
         for char in kannada_word:
